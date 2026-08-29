@@ -1,0 +1,23 @@
+{
+  "name": "New Bloomfield Athletic Boosters",
+  "short_name": "NB Boosters",
+  "description": "Empowering New Bloomfield student-athletes, supporting coaches, and building Wildcat pride.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#f36c21",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "Images/Wildcats-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "Images/Wildcats-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
