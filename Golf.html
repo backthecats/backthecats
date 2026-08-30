@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Open Graph / Social Media Preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backthecats.org/">
+<meta property="og:title" content="Rod Haley memorial Scramble">
+<meta property="og:description" content="Empowering Wildcat student-athletes, funding coach requests, and building community pride.">
+<meta property="og:image" content="https://backthecats.org/Images/Scramble.jpg">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RXHW0TS7Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1RXHW0TS7Y');
+    </script>
+
+    <!-- PWA & Mobile Settings -->
+    <link rel="manifest" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/manifest.json">
+    <meta name="theme-color" content="#f36c21">
+    
+    <!-- Apple / iOS Specific Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NB Boosters">
+    <link rel="apple-touch-icon" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/Images/Wildcats-logo.jpg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rod Haley Memorial Scramble | NB Boosters</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --wildcat-orange: #f36c21;
+            --wildcat-orange-dark: #d95a13;
+            --wildcat-black: #111111;
+            --wildcat-dark-gray: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #212529;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-brand-primary {
+            background-color: var(--wildcat-orange);
+            border-color: var(--wildcat-orange);
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.75rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-brand-primary:hover {
+            background-color: var(--wildcat-orange-dark);
+            border-color: var(--wildcat-orange-dark);
+            color: #ffffff;
+        }
+
+        .text-orange { color: var(--wildcat-orange) !important; }
+        .bg-dark-custom { background-color: var(--wildcat-black) !important; }
+        .bg-charcoal { background-color: var(--wildcat-dark-gray) !important; }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--wildcat-orange);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .toggle-btn-custom {
+            background-color: #ffffff;
+            border: 2px solid #dee2e6;
+            color: var(--wildcat-black);
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn-custom:hover {
+            border-color: var(--wildcat-orange);
+            background-color: #ffffff;
+            color: var(--wildcat-orange);
+            transform: translateY(-3px);
+        }
+
+        .toggle-btn-custom[aria-expanded="true"] {
+            border-color: var(--wildcat-orange) !important;
+            background-color: #fffaf6 !important;
+            color: var(--wildcat-orange) !important;
+        }
+
+        .feature-box {
+            border-top: 4px solid var(--wildcat-orange);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        }
+
+        .sponsor-tier-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-top: 4px solid #dee2e6;
+        }
+        .sponsor-tier-card.featured {
+            border-top: 4px solid var(--wildcat-orange);
+        }
+        .sponsor-tier-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 2rem;
+            bottom: -1rem;
+            width: 2px;
+            background-color: #dee2e6;
+        }
+        .timeline-step:last-child::before {
+            display: none;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--wildcat-black);
+            color: var(--wildcat-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #fffaf6;
+            color: var(--wildcat-orange);
+            box-shadow: none;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--wildcat-orange);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand brand-font" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html">
+                NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html#coaches">Coaches</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html#highlights">Highlights</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold text-orange active" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/golf.html">Golf Tournament</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html#board-members">Board</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- ⛳ HERO / HEADER -->
+    <section class="py-5 bg-charcoal text-white text-center border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+        <div class="container py-4">
+            
+            <!-- Clickable Google Maps Directions Badge -->
+            <a href="https://maps.google.com/?q=Meadow+Lake+Acres+Country+Club+New+Bloomfield+MO" target="_blank" rel="noopener noreferrer" class="badge bg-dark border border-secondary text-orange text-uppercase fw-bold text-decoration-none px-3 py-2 mb-3 d-inline-block shadow-sm">
+                <i class="bi bi-geo-alt-fill me-1"></i> Meadow Lake Acres Country Club <i class="bi bi-box-arrow-up-right ms-1 small"></i>
+            </a>
+
+            <h1 class="display-4 fw-bold mb-2">THE ROD HALEY <span class="text-orange">MEMORIAL SCRAMBLE</span></h1>
+            <p class="lead text-white-50 col-md-8 mx-auto mb-4">Supporting New Bloomfield Athletics with 18 holes of flighted competition, 1st–3rd place flight prizes, on-course contests, 50/50 raffle, live auctions, and all-day drinks & meals.</p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <a href="#perks" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">What's Covered</a>
+                <a href="#sponsorship-tiers" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Sponsorship Tiers (Open Now)</a>
+                <a href="#schedule" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Flight Times</a>
+                <a href="#impact" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Our Impact</a>
+                <a href="#faq" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">FAQ</a>
+            </div>
+        </div>
+    </section>
+
+   <!-- ⛳ TOURNAMENT SHOWCASE: FLYER & VIDEO HIGHLIGHT -->
+    <section class="py-5 bg-light" id="golf-registration">
+        <div class="container py-4">
+            
+            <div class="text-center mb-5">
+                <h2 class="section-title">Tournament Overview & Highlights</h2>
+                <p class="text-muted col-md-8 mx-auto mt-2">See the course flyovers, auction items, and tournament energy that make the Rod Haley Memorial Scramble our biggest fundraiser of the year.</p>
+            </div>
+
+            <!-- 2-Column Side-by-Side: Video Left, Flyer Right -->
+            <div class="row g-4 align-items-center justify-content-center mb-5">
+                
+                <!-- Left: 16:9 Video Player -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg rounded-3 overflow-hidden bg-dark">
+                        <div class="ratio ratio-16x9">
+                            <video controls preload="metadata" poster="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/Images/Scramble.jpg" playsinline class="w-100 h-100 object-fit-cover">
+                                <source src="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/videos/Scramble-Recap.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="p-3 bg-dark-custom text-center text-white border-top border-secondary border-opacity-25">
+                            <span class="small text-white-50"><i class="bi bi-play-circle-fill text-orange me-1"></i> Watch: Scramble Highlights & Course Flyover</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Tournament Flyer Poster -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg rounded-3 overflow-hidden">
+                        <img src="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/Images/Scramble.jpg" alt="The Rod Haley Memorial Scramble Flyer" class="img-fluid w-100 object-fit-cover">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 🔒 LOCKED STATE WITH LIVE COUNTDOWN CLOCK FOR TEAMS -->
+            <div id="golf-locked" class="row justify-content-center">
+                <div class="col-md-9 text-center py-3">
+                    <div class="card border-0 shadow-sm bg-white p-4 p-md-5 rounded-3">
+                        <i class="bi bi-clock-history text-orange display-4 mb-2 d-block"></i>
+                        <h3 class="h4 fw-bold text-dark text-uppercase mb-2">Team Registration Opens Soon</h3>
+                        <p class="text-secondary mb-4">4-Person Team entry ($125/golfer or $500/team) will officially open on <strong>January 1, 2027</strong>. <em>Hole sponsorships are open now below!</em></p>
+                        
+                        <div class="d-flex justify-content-center gap-2 gap-md-3 mb-4">
+                            <div class="p-3 bg-dark-custom text-white rounded-3 shadow-sm" style="min-width: 75px;">
+                                <span id="cd-days" class="d-block display-6 fw-bold text-orange">00</span>
+                                <span class="small text-uppercase text-white-50" style="font-size: 0.75rem;">Days</span>
+                            </div>
+                            <div class="p-3 bg-dark-custom text-white rounded-3 shadow-sm" style="min-width: 75px;">
+                                <span id="cd-hours" class="d-block display-6 fw-bold text-orange">00</span>
+                                <span class="small text-uppercase text-white-50" style="font-size: 0.75rem;">Hours</span>
+                            </div>
+                            <div class="p-3 bg-dark-custom text-white rounded-3 shadow-sm" style="min-width: 75px;">
+                                <span id="cd-minutes" class="d-block display-6 fw-bold text-orange">00</span>
+                                <span class="small text-uppercase text-white-50" style="font-size: 0.75rem;">Mins</span>
+                            </div>
+                            <div class="p-3 bg-dark-custom text-white rounded-3 shadow-sm" style="min-width: 75px;">
+                                <span id="cd-seconds" class="d-block display-6 fw-bold text-orange">00</span>
+                                <span class="small text-uppercase text-white-50" style="font-size: 0.75rem;">Secs</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct Contacts -->
+                        <div class="border-top pt-3">
+                            <p class="small text-muted mb-2">Questions or early team inquiries? Reach out directly to Booster President Ben Fuhriman:</p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap small">
+                                <a href="tel:3142885026" class="text-dark fw-bold text-decoration-none">
+                                    <i class="bi bi-telephone-fill text-orange me-1"></i> 314-288-5026
+                                </a>
+                                <a href="mailto:race2345@gmail.com" class="text-dark fw-bold text-decoration-none">
+                                    <i class="bi bi-envelope-fill text-orange me-1"></i> race2345@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                        <!-- Direct Contacts -->
+                        <div class="border-top pt-3">
+                            <p class="small text-muted mb-2">Questions or early team inquiries? Reach out directly to Booster President Ben Fuhriman or email the Booster Club Presidency:</p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap small">
+                                <a href="tel:3142885026" class="text-dark fw-bold text-decoration-none">
+                                    <i class="bi bi-telephone-fill text-orange me-1"></i> 314-288-5026
+                                </a>
+                                <a href="mailto:race2345@gmail.com" class="text-dark fw-bold text-decoration-none">
+                                    <i class="bi bi-envelope-fill text-orange me-1"></i> NBAthleticboosterclub@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔓 ACTIVE TEAM REGISTRATION STATE (Revealed when countdown finishes) -->
+            <div id="golf-active" style="display: none;">
+                <div class="row justify-content-center g-3 mb-4">
+                    <div class="col-md-6 col-lg-5">
+                        <button class="btn btn-outline-dark w-100 py-3 fw-bold text-uppercase shadow-sm toggle-btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#teamCollapse" aria-expanded="false" aria-controls="teamCollapse">
+                            <i class="bi bi-people-fill text-orange fs-4 d-block mb-1"></i>
+                            Register a Team ($500 / 4-Some)
+                            <span class="d-block small text-muted font-monospace mt-1">Click to Expand Form ↓</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Team Form Container -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="collapse mb-4" id="teamCollapse">
+                            <div class="card border-0 shadow rounded-3 overflow-hidden">
+                                <div class="bg-dark-custom text-white p-3 d-flex justify-content-between align-items-center flex-wrap gap-2 border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+                                    <h3 class="h6 mb-0 text-white fw-bold text-uppercase">4-Person Scramble Team Entry ($500 / 4-Some)</h3>
+                                    <div class="d-flex gap-2">
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9tRXKiUufZOgJpCC5vtPhRJ7ZiV8VFPyzuW5Vxzg-k_JFvA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-brand-primary">
+                                            Open Full Page <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="collapse" data-bs-target="#teamCollapse">Close ✕</button>
+                                    </div>
+                                </div>
+                                <div class="p-2 p-md-4 bg-white text-center">
+                                    <iframe title="Team Registration Form" src="https://docs.google.com/forms/d/e/1FAIpQLSf9tRXKiUufZOgJpCC5vtPhRJ7ZiV8VFPyzuW5Vxzg-k_JFvA/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border: none; max-width: 100%;">Loading…</iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🏆 WHAT YOUR ENTRY COVERS -->
+    <section class="py-5 bg-white border-top" id="perks">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What Your Entry Covers</h2>
+                <p class="text-muted col-md-8 mx-auto mt-2">At $125 per golfer ($500 per 4-some), the Rod Haley Memorial Scramble provides a full day of premier golf, meals, drinks, and prize opportunities.</p>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-md-4 col-lg-2">
+                    <div class="card h-100 border-0 shadow-sm bg-light feature-box p-3">
+                        <i class="bi bi-cup-straw display-6 text-orange mb-2"></i>
+                        <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Drinks All Day</h3>
+                        <p class="small text-secondary mb-0">Complimentary drinks on the course and in the clubhouse all day long.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="card h-100 border-0 shadow-sm bg-light feature-box p-3">
+                        <i class="bi bi-egg-fried display-6 text-orange mb-2"></i>
+                        <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Lunch & Dinner</h3>
+                        <p class="small text-secondary mb-0">Full meal service provided for both morning and afternoon flights.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="card h-100 border-0 shadow-sm bg-light feature-box p-3">
+                        <i class="bi bi-trophy display-6 text-orange mb-2"></i>
+                        <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Flight Prizes</h3>
+                        <p class="small text-secondary mb-0">Prizes awarded to 1st, 2nd, and 3rd place teams across each competitive flight.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="card h-100 border-0 shadow-sm bg-light feature-box p-3">
+                        <i class="bi bi-ticket-perforated display-6 text-orange mb-2"></i>
+                        <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Mulligans & 50/50</h3>
+                        <p class="small text-secondary mb-0">Mulligans included, plus our popular 50/50 cash raffle and morning door prizes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="card h-100 border-0 shadow-sm bg-light feature-box p-3">
+                        <i class="bi bi-bullseye display-6 text-orange mb-2"></i>
+                        <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Course Contests</h3>
+                        <p class="small text-secondary mb-0">Longest Drive & Closest-to-the-Pin contest holes on the course.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <div class="card h-100 border-0 shadow-sm bg-light feature-box p-3">
+                        <i class="bi bi-hammer display-6 text-orange mb-2"></i>
+                        <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Live Auction</h3>
+                        <p class="small text-secondary mb-0">Exciting live auction featuring many sports, experiences, and local items.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🤝 OFFICIAL SPONSORSHIP CATEGORIES (OPEN NOW) -->
+    <section class="py-5 bg-light border-top" id="sponsorship-tiers">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <div class="badge bg-dark-custom text-orange text-uppercase fw-bold px-3 py-2 mb-2">Open Now for 2027</div>
+                <h2 class="section-title d-block">Sponsorship Categories</h2>
+                <p class="text-muted col-md-8 mx-auto mt-2">Hundreds of golfers will gather and see your business's commitment to New Bloomfield Athletics. Select a tier below to sponsor immediately.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Par Sponsor ($100) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm bg-white p-4 rounded-3 sponsor-tier-card text-center d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-secondary text-uppercase fw-bold px-3 py-2">Tee / Green Sign</span>
+                        </div>
+                        <h3 class="h4 fw-bold text-dark text-uppercase mb-1">Par Sponsor</h3>
+                        <div class="display-5 fw-bold text-orange my-3">$100</div>
+                        <ul class="list-unstyled text-secondary small mb-4 flex-grow-1 text-start d-flex flex-column gap-2">
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Custom professional <strong>Hole Sign</strong> placed on tee box</li>
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Sponsor recognition on <strong>Website Ads</strong></li>
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> 100% tax-deductible athletic program contribution</li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-dark fw-bold text-uppercase w-100" onclick="openSponsorModal('Par Sponsor ($100)')">Select Par Tier</button>
+                    </div>
+                </div>
+
+                <!-- Birdie Sponsor ($125) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm bg-white p-4 rounded-3 sponsor-tier-card text-center d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-dark-custom text-orange text-uppercase fw-bold px-3 py-2">Digital + Signage</span>
+                        </div>
+                        <h3 class="h4 fw-bold text-dark text-uppercase mb-1">Birdie Sponsor</h3>
+                        <div class="display-5 fw-bold text-orange my-3">$125</div>
+                        <ul class="list-unstyled text-secondary small mb-4 flex-grow-1 text-start d-flex flex-column gap-2">
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Custom professional <strong>Hole Sign</strong> on tee box</li>
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Sponsor recognition on <strong>Website Ads</strong></li>
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Dedicated <strong>Social Media Spotlight Ads</strong></li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-dark fw-bold text-uppercase w-100" onclick="openSponsorModal('Birdie Sponsor ($125)')">Select Birdie Tier</button>
+                    </div>
+                </div>
+
+                <!-- Eagle Sponsor ($250 - Featured) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-lg bg-white p-4 rounded-3 sponsor-tier-card featured text-center d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-warning text-dark text-uppercase fw-bold px-3 py-2" style="background-color: var(--wildcat-orange) !important; color: white !important;">Most Popular • On-Course Tent</span>
+                        </div>
+                        <h3 class="h4 fw-bold text-dark text-uppercase mb-1">Eagle Sponsor</h3>
+                        <div class="display-5 fw-bold text-orange my-3">$250</div>
+                        <ul class="list-unstyled text-secondary small mb-4 flex-grow-1 text-start d-flex flex-column gap-2">
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> <strong>All Birdie Sponsor items</strong> (Hole sign, web & social ads)</li>
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> <strong>Tent Spot on Your Hole</strong> (Promote directly to golfers)</li>
+                            <li><i class="bi bi-check-circle-fill text-orange me-2"></i> Special <strong>Thank You at Awards Ceremony</strong></li>
+                        </ul>
+                        <button type="button" class="btn btn-brand-primary fw-bold text-uppercase w-100" onclick="openSponsorModal('Eagle Sponsor ($250)')">Select Eagle Tier</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ⏰ TOURNAMENT SCHEDULE & FLIGHTS -->
+    <section class="py-5 bg-white border-top" id="schedule">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Schedule of Flights</h2>
+                <p class="text-muted col-md-8 mx-auto mt-2">Meadow Lake Acres Country Club hosts dual shotgun starts to accommodate all participating teams.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm bg-light p-4 p-md-5 rounded-3">
+                        
+                        <!-- Morning Flight -->
+                        <div class="timeline-step mb-4">
+                            <div class="timeline-icon"><i class="bi bi-sun-fill"></i></div>
+                            <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Morning Flight (Shotgun Start)</h3>
+                            <span class="badge bg-dark-custom text-orange mb-2">Tee Off: 8:00 AM</span>
+                            <p class="small text-secondary mb-0">Check-in opens prior to tee-off. Includes complimentary drinks, riding carts, lunch following the round, and <strong>automatic entry into an exclusive door prize drawing</strong> for all morning teams!</p>
+                        </div>
+
+                        <!-- Afternoon Flight -->
+                        <div class="timeline-step mb-4">
+                            <div class="timeline-icon"><i class="bi bi-flag-fill"></i></div>
+                            <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Afternoon Flight (Shotgun Start)</h3>
+                            <span class="badge bg-dark-custom text-orange mb-2">Tee Off: 12:30 PM</span>
+                            <p class="small text-secondary mb-0">Afternoon shotgun start with all-day drinks on course, followed by post-round dinner and awards ceremonies.</p>
+                        </div>
+
+                        <!-- Awards & Auction -->
+                        <div class="timeline-step">
+                            <div class="timeline-icon"><i class="bi bi-award-fill"></i></div>
+                            <h3 class="h6 fw-bold text-dark text-uppercase mb-1">Awards, 50/50 & Live Auction</h3>
+                            <span class="badge bg-dark-custom text-orange mb-2">Clubhouse Festivities</span>
+                            <p class="small text-secondary mb-0">1st, 2nd, and 3rd place prizes for all flights, Longest Drive & Closest-to-the-Pin awards, 50/50 raffle winner drawing, and our exciting live auction.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📈 WHAT DOES YOUR PARTICIPATION SUPPORT -->
+    <section class="py-5 bg-dark-custom text-white border-top border-bottom border-2" style="border-color: var(--wildcat-orange) !important;" id="impact">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-white">What Does Your Participation Support?</h2>
+                <p class="text-white-50 col-md-8 mx-auto mt-2">Over $19,000 was generated in previous scrambles to directly fund essential equipment across every Wildcat athletic program.</p>
+            </div>
+
+            <div class="row g-3 justify-content-center text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="p-3 bg-charcoal rounded-3 border border-secondary border-opacity-25 shadow-sm h-100">
+                        <i class="bi bi-shield-check text-orange fs-3 mb-2 d-block"></i>
+                        <h4 class="h6 fw-bold text-white mb-1">Track & Field</h4>
+                        <p class="small text-white-50 mb-0">Javelins & Competition Pole Vaults</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="p-3 bg-charcoal rounded-3 border border-secondary border-opacity-25 shadow-sm h-100">
+                        <i class="bi bi-cart4 text-orange fs-3 mb-2 d-block"></i>
+                        <h4 class="h6 fw-bold text-white mb-1">Golf Program</h4>
+                        <p class="small text-white-50 mb-0">Team Golf Pull Carts</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="p-3 bg-charcoal rounded-3 border border-secondary border-opacity-25 shadow-sm h-100">
+                        <i class="bi bi-grid-3x3 text-orange fs-3 mb-2 d-block"></i>
+                        <h4 class="h6 fw-bold text-white mb-1">Softball & Baseball</h4>
+                        <p class="small text-white-50 mb-0">Dugout Cubbies & Helmet Decals</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="p-3 bg-charcoal rounded-3 border border-secondary border-opacity-25 shadow-sm h-100">
+                        <i class="bi bi-lock-fill text-orange fs-3 mb-2 d-block"></i>
+                        <h4 class="h6 fw-bold text-white mb-1">Basketball</h4>
+                        <p class="small text-white-50 mb-0">Custom Locking Ball Carts</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="p-3 bg-charcoal rounded-3 border border-secondary border-opacity-25 shadow-sm h-100">
+                        <i class="bi bi-arrow-repeat text-orange fs-3 mb-2 d-block"></i>
+                        <h4 class="h6 fw-bold text-white mb-1">Volleyball</h4>
+                        <p class="small text-white-50 mb-0">Volleyball Rebounder Machine</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="p-3 bg-charcoal rounded-3 border border-secondary border-opacity-25 shadow-sm h-100">
+                        <i class="bi bi-music-note-beamed text-orange fs-3 mb-2 d-block"></i>
+                        <h4 class="h6 fw-bold text-white mb-1">Dance Team</h4>
+                        <p class="small text-white-50 mb-0">Professional Choreographer Grants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ❓ FREQUENTLY ASKED QUESTIONS -->
+    <section class="py-5 bg-light border-top" id="faq">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="text-muted col-md-8 mx-auto mt-2">Have questions regarding team entry, flight prizes, or sponsorships?</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion shadow-sm" id="golfFaqAccordion">
+                        
+                        <!-- Question 1 -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqOneHeader">
+                                <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                                    What is the cost and what does registration include?
+                                </button>
+                            </h3>
+                            <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    Entry is <strong>$125 per individual golfer</strong> or <strong>$500 per 4-person team</strong>. Cost covers 18 holes of golf with riding carts, flighted scramble competition with prizes for 1st, 2nd, and 3rd place teams in each flight, mulligans, entry into Closest-to-the-Pin and Longest Drive contests, lunch, dinner, and drinks all day long! Plus, all morning teams are automatically entered into an exclusive door prize drawing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqTwoHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                                    What sponsorship tiers are available for businesses?
+                                </button>
+                            </h3>
+                            <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    We offer three distinct tiers:
+                                    <ul class="mb-0 mt-2">
+                                        <li><strong>Par Sponsor ($100):</strong> Hole sign on tee box + website ads.</li>
+                                        <li><strong>Birdie Sponsor ($125):</strong> Hole sign + website and social media ads.</li>
+                                        <li><strong>Eagle Sponsor ($250):</strong> All Birdie items + on-course tent spot on your hole + thank you recognition at the awards ceremony.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqThreeHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                                    Where is the tournament held and what are the flight times?
+                                </button>
+                            </h3>
+                            <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    The scramble is held at <strong>Meadow Lake Acres Country Club</strong> with two shotgun starts: <strong>8:00 AM (Morning Flight)</strong> and <strong>12:30 PM (Afternoon Flight)</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="accordion-item border-0 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqFourHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                                    Who can I contact to register or donate items for the live auction?
+                                </button>
+                            </h3>
+                            <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    You can sponsor online above, register a team when the countdown opens, or contact Booster Club President Ben Fuhriman directly by call/text at <strong>(314) 288-5026</strong> or via email at <strong>race2345@gmail.com</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Home Button -->
+            <div class="text-center mt-5">
+                <a href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/index.html" class="btn btn-outline-dark fw-bold text-uppercase">
+                    ← Back to Main Home Page
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 📱 POPUP SPONSOR MODAL (Instantly opens in place) -->
+    <div class="modal fade" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-3 overflow-hidden">
+                <div class="bg-dark-custom text-white p-3 d-flex justify-content-between align-items-center border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+                    <div>
+                        <h3 class="h6 mb-0 text-white fw-bold text-uppercase" id="sponsorModalLabel">Hole & Event Sponsorship Form</h3>
+                        <span class="small text-white-50" id="modalSelectedTierBadge"><i class="bi bi-tag-fill text-orange me-1"></i> Selected: Par Sponsor ($100)</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjRSaV3p_L8fxGclqkKinfXHBEC7E6KiVIXWUjBuQeBzIjkg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-brand-primary">
+                            Open Full Page <i class="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                        <button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal" aria-label="Close">✕</button>
+                    </div>
+                </div>
+                <div class="p-2 p-md-4 bg-white text-center">
+                    <iframe title="Hole Sponsor Form" src="https://docs.google.com/forms/d/e/1FAIpQLSdjRSaV3p_L8fxGclqkKinfXHBEC7E6KiVIXWUjBuQeBzIjkg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border: none; max-width: 100%;">Loading…</iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-custom text-white-50 py-4 border-top border-dark">
+        <div class="container text-center small">
+            <p class="mb-0">&copy; 2026 New Bloomfield Athletic Booster Club. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- ⏱️ Team Registration Countdown Script -->
+    <script>
+        const openDate = new Date(2027, 0, 1, 8, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeRemaining = openDate - now;
+
+            const daysElem = document.getElementById('cd-days');
+            const hoursElem = document.getElementById('cd-hours');
+            const minsElem = document.getElementById('cd-minutes');
+            const secsElem = document.getElementById('cd-seconds');
+            const lockedSection = document.getElementById('golf-locked');
+            const activeSection = document.getElementById('golf-active');
+
+            if (timeRemaining <= 0) {
+                if (lockedSection) lockedSection.style.display = 'none';
+                if (activeSection) activeSection.style.display = 'block';
+                if (window.countdownTimer) clearInterval(window.countdownTimer);
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            if (daysElem) daysElem.textContent = String(days).padStart(2, '0');
+            if (hoursElem) hoursElem.textContent = String(hours).padStart(2, '0');
+            if (minsElem) minsElem.textContent = String(minutes).padStart(2, '0');
+            if (secsElem) secsElem.textContent = String(seconds).padStart(2, '0');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountdown();
+            window.countdownTimer = setInterval(updateCountdown, 1000);
+        });
+
+        // Instant In-Place Modal Trigger
+        function openSponsorModal(tierName) {
+            const badgeEl = document.getElementById('modalSelectedTierBadge');
+            if (badgeEl) {
+                badgeEl.innerHTML = '<i class="bi bi-tag-fill text-orange me-1"></i> Selected: ' + tierName;
+            }
+            const modalEl = document.getElementById('sponsorModal');
+            if (modalEl) {
+                const sponsorModal = new bootstrap.Modal(modalEl);
+                sponsorModal.show();
+            }
+        }
+    </script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+    </script>
+</body>
+</html>
