@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><head>+
-	<!-- Open Graph / Social Media Preview -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://backthecats.org/">
-<meta property="og:title" content="New Bloomfield Athletic Booster Club">
-<meta property="og:description" content="Empowering Wildcat student-athletes, funding coach requests, and building community pride.">
-<meta property="og:image" content="https://backthecats.org/Images/Wildcats-logo.jpg">
+<html lang="en">
+<head>
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://backthecats.org/">
+    <meta property="og:title" content="New Bloomfield Athletic Booster Club">
+    <meta property="og:description" content="Empowering Wildcat student-athletes, funding coach requests, and building community pride.">
+    <meta property="og:image" content="https://backthecats.org/Images/Wildcats-logo.jpg">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RXHW0TS7Y"></script>
     <script>
@@ -17,14 +19,14 @@
     </script>
 
     <!-- PWA & Mobile Settings -->
-    <link rel="manifest" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#f36c21">
     
     <!-- Apple / iOS Specific Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="NB Boosters">
-    <link rel="apple-touch-icon" href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/Images/Wildcats-logo.jpg">
+    <link rel="apple-touch-icon" href="Images/Wildcats-logo.jpg">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +40,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- BRAND CUSTOMIZATIONS --- */
         :root {
             --wildcat-orange: #f36c21;
             --wildcat-orange-dark: #d95a13;
@@ -59,7 +60,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- BUTTONS & ACCENTS --- */
         .btn-brand-primary {
             background-color: var(--wildcat-orange);
             border-color: var(--wildcat-orange);
@@ -102,7 +102,6 @@
             background-color: var(--wildcat-dark-gray) !important;
         }
 
-        /* --- SECTION HEADER DECORATION --- */
         .section-title {
             position: relative;
             display: inline-block;
@@ -119,14 +118,12 @@
             border-radius: 2px;
         }
 
-        /* --- HERO --- */
         .hero-section {
             background-color: var(--wildcat-black);
             background: radial-gradient(circle at center, #242424 0%, var(--wildcat-black) 85%);
             min-height: 80vh;
         }
 
-        /* --- CARDS --- */
         .mission-card {
             border-top: 4px solid var(--wildcat-orange) !important;
         }
@@ -141,7 +138,6 @@
             object-fit: cover;
         }
 
-        /* --- COLLAPSIBLE BUTTON STYLING --- */
         .toggle-btn-custom {
             background-color: #ffffff;
             border: 2px solid #dee2e6;
@@ -168,7 +164,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
         <div class="container">
-            <a class="navbar-brand brand-font" href="#">
+            <a class="navbar-brand brand-font" href="index.html">
                 NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -180,9 +176,7 @@
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#coaches">Coaches</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#highlights">Highlights</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#events">Events</a></li>
-                    <li class="nav-item">
-    <a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Tournament</a>
-</li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Tournament</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#board-members">Board</a></li>
                 </ul>
             </div>
@@ -195,7 +189,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="mb-4">
-                        <img src="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/Images/Wildcats-logo.jpg" alt="New Bloomfield Wildcats Mascot" class="img-fluid rounded-circle shadow-lg" style="max-height: 180px; border: 3px solid var(--wildcat-orange);">
+                        <img src="Images/Wildcats-logo.jpg" alt="New Bloomfield Wildcats Mascot" class="img-fluid rounded-circle shadow-lg" style="max-height: 180px; border: 3px solid var(--wildcat-orange);">
                     </div>
                     <h1 class="display-3 fw-bold mb-3">POWERING <span class="text-orange">NEW BLOOMFIELD</span> ATHLETICS</h1>
                     <p class="lead text-secondary-light mb-5 fs-4 text-light opacity-75">Celebrating the heart, grit, and energy of our student-athletes. Join the Booster Club and elevate our programs to the next level.</p>
@@ -218,7 +212,6 @@
                 </p>
             </div>
             <div class="row g-4 text-center">
-                <!-- Pillar 1: Coach Grants -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm bg-light mission-card p-4">
                         <div class="card-body d-flex flex-column">
@@ -231,7 +224,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Pillar 2: Atmosphere -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm bg-light mission-card p-4">
                         <div class="card-body d-flex flex-column">
@@ -241,7 +233,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Pillar 3: Community -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm bg-light mission-card p-4">
                         <div class="card-body d-flex flex-column">
@@ -322,16 +313,14 @@
             </div>
 
             <div class="row g-4 align-items-center">
-                <!-- Video -->
                 <div class="col-lg-6">
                     <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg border border-secondary border-opacity-25">
                         <video autoplay muted loop playsinline controls class="w-100 h-100 object-fit-cover">
-                            <source src="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/videos/Welcome-video.mp4" type="video/mp4">
+                            <source src="videos/Welcome-video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
                 </div>
-                <!-- 3 Pillars -->
                 <div class="col-lg-6">
                     <div class="d-flex flex-column gap-3">
                         <div class="p-3 rounded-3 highlight-card shadow-sm border border-secondary border-opacity-25">
@@ -442,9 +431,9 @@
 
                     <!-- Scramble Card (Direct Link to golf.html) -->
                     <div class="card border-0 shadow-sm bg-white rounded-3 overflow-hidden">
-                        <img src="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/Images/Scramble.jpg" alt="The Rod Haley Memorial Scramble" class="w-100 object-fit-cover">
+                        <img src="Images/Scramble.jpg" alt="The Rod Haley Memorial Scramble" class="w-100 object-fit-cover">
                         <div class="card-body p-3 text-center bg-dark-custom">
-                            <a href="file:///C|/Users/race2/OneDrive/Desktop/BoosterWebsite/golf.html" class="btn btn-brand-primary btn-sm w-100 fw-bold text-uppercase">
+                            <a href="golf.html" class="btn btn-brand-primary btn-sm w-100 fw-bold text-uppercase">
                                 Scramble Details & Registration →
                             </a>
                         </div>
