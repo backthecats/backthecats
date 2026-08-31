@@ -39,10 +39,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-		/* Prevent horizontal page blow-out */
+	/* Prevent horizontal page blow-out */
 html, body {
-    overflow-x: hidden;
-    width: 100%;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
 }
 
 /* Responsive navbar brand scaling */
@@ -53,9 +54,28 @@ html, body {
     line-height: 1.2;
 }
 
+/* Mobile Typography & Container Adjustments */
 @media (max-width: 576px) {
     .navbar-brand {
         font-size: 0.85rem;
+    }
+
+    h1.display-4, h1.display-5 {
+        font-size: 1.75rem !important;
+    }
+
+    /* Prevents Golf Countdown Timer from pushing screen width */
+    #golf-locked .p-3.bg-dark-custom {
+        min-width: 60px !important;
+        padding: 0.5rem !important;
+    }
+
+    #golf-locked .display-6 {
+        font-size: 1.5rem !important;
+    }
+
+    iframe {
+        max-width: 100% !important;
     }
 }
         :root {
