@@ -30,13 +30,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Bloomfield Athletic Booster Club</title>
+    <title>New Bloomfield Athletic Booster Club | Powering Wildcat Athletics</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -121,67 +120,115 @@
         .hero-section {
             background-color: var(--wildcat-black);
             background: radial-gradient(circle at center, #242424 0%, var(--wildcat-black) 85%);
-            min-height: 80vh;
+            min-height: 75vh;
         }
 
         .mission-card {
             border-top: 4px solid var(--wildcat-orange) !important;
         }
 
-        .highlight-card {
-            border: 1px solid #333333;
-            background-color: #242424;
+        .quick-link-btn {
+            background: #252525;
+            border: 1px solid #3d3d3d;
+            padding: 12px 18px;
+            border-radius: 6px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
         }
 
-        .highlight-card img {
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .toggle-btn-custom {
-            background-color: #ffffff;
-            border: 2px solid #dee2e6;
-            color: var(--wildcat-black);
-            transition: all 0.3s ease;
-        }
-
-        .toggle-btn-custom:hover {
+        .quick-link-btn:hover {
             border-color: var(--wildcat-orange);
-            background-color: #ffffff;
+            background: #303030;
             color: var(--wildcat-orange);
-            transform: translateY(-3px);
         }
 
-        .toggle-btn-custom[aria-expanded="true"] {
-            border-color: var(--wildcat-orange) !important;
-            background-color: #fffaf6 !important;
-            color: var(--wildcat-orange) !important;
+        /* Document 2 Footer Styles */
+        footer {
+            background: var(--wildcat-black);
+            border-top: 3px solid var(--wildcat-orange);
+            padding: 45px 20px 25px;
+            font-size: 0.88rem;
+            color: #aaaaaa;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--wildcat-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #222222;
+            text-align: center;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" tabindex="0">
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand brand-font" href="index.html">
-                NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-                <ul class="navbar-nav gap-2 align-items-center">
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#mission">Mission</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#coaches">Coaches</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#highlights">Highlights</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Tournament</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#board-members">Board</a></li>
-                </ul>
-            </div>
+   <!-- 🧭 TOP NAVBAR (Reordered to Match Page Scroll Flow) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand brand-font" href="index.html">
+            NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+            <ul class="navbar-nav gap-2 align-items-center">
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#mission">Mission</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#coverage">Live Coverage</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="coaches.html">Coaches</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Scramble</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#join">Get Involved</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#board-members">Leadership</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- 📣 HERO SECTION -->
     <section class="hero-section text-white d-flex align-items-center justify-content-center text-center py-5" id="hero">
@@ -194,8 +241,12 @@
                     <h1 class="display-3 fw-bold mb-3">POWERING <span class="text-orange">NEW BLOOMFIELD</span> ATHLETICS</h1>
                     <p class="lead text-secondary-light mb-5 fs-4 text-light opacity-75">Celebrating the heart, grit, and energy of our student-athletes. Join the Booster Club and elevate our programs to the next level.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-lg">Join the Booster Club</a>
-                        <a href="#events" class="btn btn-brand-outline btn-lg">Upcoming Events</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-lg">
+                            Join the Booster Club Today (100% Free)
+                        </a>
+                        <a href="https://www.mshsaa.org/MySchool/?s=376" target="_blank" rel="noopener noreferrer" class="btn btn-brand-outline btn-lg">
+                            View Upcoming Schedule ↗
+                        </a>
                     </div>
                 </div>
             </div>
@@ -206,9 +257,9 @@
     <section class="py-5 bg-white" id="mission">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <h2 class="section-title">Our Mission</h2>
+                <h2 class="section-title">Our Three Pillars</h2>
                 <p class="text-muted col-md-8 mx-auto mt-2">
-                    Dedicated to empowering New Bloomfield student-athletes by fulfilling coach-requested needs, elevating the game-day experience, and rallying community support for every high school program.
+                    Dedicated to empowering New Bloomfield student-athletes by fulfilling coach-requested needs, elevating the game-day experience, and rallying community support for every program.
                 </p>
             </div>
             <div class="row g-4 text-center">
@@ -219,7 +270,7 @@
                             <h3 class="h5 card-title fw-bold text-dark">Fund (Coach Requests)</h3>
                             <p class="card-text text-secondary mb-3">Purchasing essential equipment, practice aids, safety gear, and supplemental tools requested directly by coaching staff that fall outside standard school budgets.</p>
                             <div class="mt-auto">
-                                <a href="#coaches" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">Submit Wishlist ↓</a>
+                                <a href="coaches.html" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">Submit Coach Wishlist →</a>
                             </div>
                         </div>
                     </div>
@@ -228,8 +279,11 @@
                     <div class="card h-100 border-0 shadow-sm bg-light mission-card p-4">
                         <div class="card-body d-flex flex-column">
                             <i class="bi bi-shop-window display-4 text-orange mb-3 d-inline-block"></i>
-                            <h3 class="h5 card-title fw-bold text-dark">Elevate (Wildcat Experience)</h3>
-                            <p class="card-text text-secondary mb-0">Enhancing program culture through running the spirit store, tournament hospitality rooms, senior recognition, and game-day atmospheres.</p>
+                            <h3 class="h5 card-title fw-bold text-dark">Elevate (Wildcat Spirit)</h3>
+                            <p class="card-text text-secondary mb-3">Enhancing program culture through running the spirit store, tournament hospitality rooms, senior recognition, and game-day atmospheres.</p>
+                            <div class="mt-auto">
+                                <a href="#join" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">Volunteer for Events →</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,7 +292,10 @@
                         <div class="card-body d-flex flex-column">
                             <i class="bi bi-people-fill display-4 text-orange mb-3 d-inline-block"></i>
                             <h3 class="h5 card-title fw-bold text-dark">Unite (Community Pride)</h3>
-                            <p class="card-text text-secondary mb-0">Bringing parents, alumni, and local business sponsors together to raise vital funds, volunteer, and pack the stands at every event.</p>
+                            <p class="card-text text-secondary mb-3">Bringing parents, alumni, and local business sponsors together to raise vital funds, volunteer, and pack the stands at every event.</p>
+                            <div class="mt-auto">
+                                <a href="golf.html" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">View Fundraisers →</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -246,164 +303,58 @@
         </div>
     </section>
 
-    <!-- 📋 COACHES WISHLIST SECTION -->
-    <section class="py-5 bg-light border-top" id="coaches">
-        <div class="container py-4">
-            <div class="text-center mb-4">
-                <h2 class="section-title">Coaches Corner & Wishlists</h2>
-                <p class="text-muted col-md-8 mx-auto mt-2">
-                    Are you a New Bloomfield High School coach needing specialized equipment, training tools, or program support? Submit your formal request below for Booster Club review.
-                </p>
-            </div>
-
-            <div class="row justify-content-center g-3 mb-4">
-                <div class="col-md-6 col-lg-5">
-                    <button class="btn btn-outline-dark w-100 py-3 fw-bold text-uppercase shadow-sm toggle-btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#coachCollapse" aria-expanded="false" aria-controls="coachCollapse">
-                        <i class="bi bi-clipboard-check-fill text-orange fs-4 d-block mb-1"></i>
-                        Submit Coach Wishlist Request
-                        <span class="d-block small text-muted font-monospace mt-1">Click to Expand Form ↓</span>
-                    </button>
+    <!-- 📡 LIVE COVERAGE & BROADCAST HUB -->
+    <section class="py-5 bg-dark-custom text-white" id="coverage">
+        <div class="container py-2 text-center">
+            <h2 class="section-title text-white">Live Scores, Broadcasts &amp; Coverage</h2>
+            <p class="text-white-50 small mb-4 col-md-8 mx-auto">Follow the Wildcats all season long with official schedules, live audio commentary, and gymnasium video streams.</p>
+            
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <a href="https://www.mshsaa.org/MySchool/?s=376" target="_blank" rel="noopener noreferrer" class="quick-link-btn">
+                        <i class="bi bi-trophy-fill text-orange"></i> MSHSAA Hub &amp; Brackets
+                    </a>
                 </div>
+                <div class="col-6 col-md-3">
+                    <a href="https://fan.hudl.com/" target="_blank" rel="noopener noreferrer" class="quick-link-btn">
+                        <i class="bi bi-camera-video-fill text-orange"></i> Watch on Hudl TV
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="https://nemopressbox.com/" target="_blank" rel="noopener noreferrer" class="quick-link-btn">
+                        <i class="bi bi-mic-fill text-orange"></i> NEMO Pressbox Audio
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="https://jwhite020.wixsite.com/my-site" target="_blank" rel="noopener noreferrer" class="quick-link-btn">
+                        <i class="bi bi-globe text-orange"></i> Wildcat Athletics Site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📅 EVENTS & GOOGLE CALENDAR SECTION (Compact) -->
+    <section class="py-4 bg-light" id="events">
+        <div class="container py-2">
+            <div class="text-center mb-3">
+                <h2 class="section-title">Meetings &amp; Events</h2>
+                <p class="text-muted small col-md-6 mx-auto mt-1 mb-0">Get involved, attend booster sessions, and stay connected with Wildcat athletics.</p>
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="collapse" id="coachCollapse">
-                        <div class="card border-0 shadow rounded-3 overflow-hidden">
-                            <div class="bg-dark-custom text-white p-3 d-flex justify-content-between align-items-center flex-wrap gap-2 border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
-                                <div>
-                                    <h3 class="h6 mb-0 text-white fw-bold text-uppercase">Coaches Wishlist / Funding Request Form</h3>
-                                    <span class="small text-white-50"><i class="bi bi-send-check text-orange me-1"></i> Submitted directly to the Booster Club Executive Board</span>
-                                </div>
-                                <div class="d-flex gap-2">
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCkFWM9Kb3kmXvWOhgvZ3v2TDv9AOev7DTFmTEMOk5FhFZyg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-brand-primary">
-                                        Open Full Page <i class="bi bi-box-arrow-up-right ms-1"></i>
-                                    </a>   
-                                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="collapse" data-bs-target="#coachCollapse">Close ✕</button>
-                                </div>
-                            </div>
-                            <div class="p-2 p-md-4 bg-white text-center">
-                                <iframe 
-                                    title="Coaches Wishlist Form"
-                                    src="https://docs.google.com/forms/d/e/1FAIpQLSeCkFWM9Kb3kmXvWOhgvZ3v2TDv9AOev7DTFmTEMOk5FhFZyg/viewform?embedded=true" 
-                                    width="100%" 
-                                    height="850" 
-                                    frameborder="0" 
-                                    marginheight="0" 
-                                    marginwidth="0" 
-                                    style="border: none; max-width: 100%;">
-                                    Loading…
-                                </iframe>
-                            </div>
+                <div class="col-lg-8 col-md-10">
+                    <div class="card border-0 shadow-sm rounded-3 overflow-hidden bg-white">
+                        <div class="bg-dark-custom text-white px-3 py-2 border-bottom border-3 d-flex justify-content-between align-items-center flex-wrap gap-2" style="border-color: var(--wildcat-orange) !important;">
+                            <h3 class="h6 mb-0 text-white fw-bold text-uppercase" style="font-size: 0.88rem;">
+                                <i class="bi bi-calendar-event me-2 text-orange"></i>Booster Club Calendar
+                            </h3>
+                            <span class="small text-white-50" style="font-size: 0.78rem;">Live Agenda</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🏆 ATHLETIC HIGHLIGHTS SECTION -->
-    <section class="py-5 bg-dark-custom text-white" id="highlights">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="section-title text-white">Pride • Tradition • Excellence</h2>
-                <p class="text-white-50 col-md-8 mx-auto mt-2">
-                    Empowering New Bloomfield High School student-athletes on the court, on the track, and in the community.
-                </p>
-            </div>
-
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-6">
-                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg border border-secondary border-opacity-25">
-                        <video autoplay muted loop playsinline controls class="w-100 h-100 object-fit-cover">
-                            <source src="videos/Welcome-video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex flex-column gap-3">
-                        <div class="p-3 rounded-3 highlight-card shadow-sm border border-secondary border-opacity-25">
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="p-2 rounded bg-dark text-orange fs-4 d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-                                    <i class="bi bi-trophy-fill"></i>
-                                </div>
-                                <div>
-                                    <h3 class="h6 fw-bold text-white text-uppercase mb-1">Year-Round Athletic Support</h3>
-                                    <p class="small text-white-50 mb-0">Backing high school programs across volleyball, baseball, softball, basketball, track & field, cross country, cheer, dance, and golf.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-3 rounded-3 highlight-card shadow-sm border border-secondary border-opacity-25">
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="p-2 rounded bg-dark text-orange fs-4 d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-                                    <i class="bi bi-gear-wide-connected"></i>
-                                </div>
-                                <div>
-                                    <h3 class="h6 fw-bold text-white text-uppercase mb-1">Facility & Gear Grants</h3>
-                                    <p class="small text-white-50 mb-0">Funding supplemental coaching requests, venue equipment, strength conditioning tools, and training aids beyond standard budgets.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-3 rounded-3 highlight-card shadow-sm border border-secondary border-opacity-25">
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="p-2 rounded bg-dark text-orange fs-4 d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-                                    <i class="bi bi-shop-window"></i>
-                                </div>
-                                <div>
-                                    <h3 class="h6 fw-bold text-white text-uppercase mb-1">Wildcat Spirit & Events</h3>
-                                    <p class="small text-white-50 mb-0">Powering Wildcat pride through the official spirit store, tournament hospitality rooms, senior nights, and community fundraisers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Direct Links -->
-            <div class="mt-5 pt-4 border-top border-secondary border-opacity-25 text-center">
-                <h3 class="h5 fw-bold text-white text-uppercase mb-2">Live Scores, Broadcasts & Team Coverage</h3>
-                <p class="text-white-50 small mb-4 col-md-8 mx-auto">Follow the Wildcats all season long with official schedules, live audio commentary, and gymnasium video streams.</p>
-                
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <a href="https://www.mshsaa.org/MySchool/?s=376" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">
-                        <i class="bi bi-trophy-fill text-orange me-1"></i> MSHSAA Hub & Brackets
-                    </a>
-                    <a href="https://jwhite020.wixsite.com/my-site" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">
-                        <i class="bi bi-globe text-orange me-1"></i> Wildcat Athletics Site
-                    </a>
-                    <a href="https://nemopressbox.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">
-                        <i class="bi bi-mic-fill text-orange me-1"></i> NEMO Pressbox Audio
-                    </a>
-                    <a href="https://fan.hudl.com/" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-sm fw-bold text-uppercase px-3 py-2">
-                        <i class="bi bi-camera-video-fill me-1"></i> Watch Live on Hudl TV
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 📅 EVENTS & SCHEDULES SECTION -->
-    <section class="py-5 bg-light" id="events">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Meetings & Events</h2>
-                <p class="text-muted col-md-8 mx-auto mt-2">Get involved, attend booster sessions, and follow all Wildcat game schedules.</p>
-            </div>
-
-            <div class="row g-4 align-items-stretch">
-                <!-- Google Calendar -->
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100 bg-white d-flex flex-column">
-                        <div class="bg-dark-custom text-white p-3 border-bottom border-3 flex-shrink-0" style="border-color: var(--wildcat-orange) !important;">
-                            <h3 class="h6 mb-0 text-white fw-bold text-uppercase"><i class="bi bi-calendar-event me-2 text-orange"></i>Booster Club Calendar</h3>
-                        </div>
-                        <div class="p-0 text-center bg-white flex-grow-1" style="min-height: 520px;">
+                        <div class="p-0 text-center bg-white" style="height: 380px;">
                             <iframe 
                                 title="Booster Club Google Calendar"
-                                src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=America%2FChicago&amp;showPrint=0&amp;mode=AGENDA&amp;showTitle=0&amp;showTabs=0&amp;showTz=0&amp;src=bmJhdGhsZXRpY2Jvb3N0ZXJjbHViQGdtYWlsLmNvbQ&amp;color=%23f36c21" 
+                                src="https://calendar.google.com/calendar/embed?height=380&amp;wkst=1&amp;ctz=America%2FChicago&amp;showPrint=0&amp;mode=AGENDA&amp;showTitle=0&amp;showTabs=0&amp;showTz=0&amp;src=bmJhdGhsZXRpY2Jvb3N0ZXJjbHViQGdtYWlsLmNvbQ&amp;color=%23f36c21" 
                                 style="border: 0; display: block;" 
                                 width="100%" 
                                 height="100%" 
@@ -413,49 +364,30 @@
                         </div>
                     </div>
                 </div>
-                <!-- Side Cards -->
-                <div class="col-lg-4 d-flex flex-column gap-4">
-                    <!-- Game Schedules -->
-                    <div class="card border-0 shadow-sm bg-white rounded-3">
-                        <div class="card-body p-4 d-flex flex-column">
-                            <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange" style="width: 50px; height: 50px;">
-                                <i class="bi bi-trophy-fill fs-4"></i>
-                            </div>
-                            <h3 class="h5 fw-bold text-dark mb-2">Wildcat Game Schedules</h3>
-                            <p class="card-text text-secondary mb-4 flex-grow-1">View official MSHSAA calendars, game times, home/away locations, and tournament brackets for all high school sports.</p>
-                            <a href="https://www.mshsaa.org/MySchool/?s=376" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary w-100">
-                                View MSHSAA Schedules <i class="bi bi-box-arrow-up-right ms-1"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Scramble Card (Direct Link to golf.html) -->
-                    <div class="card border-0 shadow-sm bg-white rounded-3 overflow-hidden">
-                        <img src="Images/Scramble.jpg" alt="The Rod Haley Memorial Scramble" class="w-100 object-fit-cover">
-                        <div class="card-body p-3 text-center bg-dark-custom">
-                            <a href="golf.html" class="btn btn-brand-primary btn-sm w-100 fw-bold text-uppercase">
-                                Scramble Details & Registration →
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>	
+    </section>
 
-    <!-- ✨ CALL TO ACTION -->
-    <section class="py-5 bg-charcoal text-white border-top border-bottom border-2" style="border-color: var(--wildcat-orange) !important;" id="spotlight">
+    <!-- ✨ CALL TO ACTION / GET INVOLVED -->
+    <section class="py-5 bg-charcoal text-white border-top border-bottom border-2" style="border-color: var(--wildcat-orange) !important;" id="join">
         <div class="container py-4 text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <h2 class="display-6 fw-bold text-orange mb-3">BECOME AN ACTIVE BOOSTER MEMBER</h2>
-                    <p class="lead text-light opacity-75 mb-4">Whether you can volunteer for an hour at the spirit store, help with a hospitality room, or attend planning meetings, every bit of support directly empowers our student-athletes.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-lg">Join the Booster Club</a>
+                    <span class="badge bg-warning text-dark text-uppercase fw-bold mb-3 px-3 py-2" style="background-color: var(--wildcat-orange) !important; color: white !important; letter-spacing: 1px;">
+                        100% Free • Zero Membership Dues
+                    </span>
+                    <h2 class="display-6 fw-bold text-white mb-3">BECOME AN ACTIVE BOOSTER MEMBER</h2>
+                    <p class="lead text-light opacity-75 mb-4">
+                        Whether you can volunteer for an hour at an event, help with hospitality, or attend planning meetings, every bit of support directly empowers our student-athletes.
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-lg">
+                        Join the Booster Club (Free Form) ↗
+                    </a>
                 </div>     
             </div>
         </div>
     </section>
-	
+
     <!-- 👥 BOARD LEADERSHIP SECTION -->
     <section class="py-5 bg-light border-top" id="board-members">
         <div class="container py-4">
@@ -509,7 +441,7 @@
                             </div>
                             <h3 class="h5 card-title fw-bold text-dark mb-1">Carol Jordan</h3>
                             <span class="badge bg-secondary text-uppercase fw-bold mb-3">Treasurer</span>
-                            <p class="card-text small text-secondary">Maintains financial records, budget disbursements, and fundraising accounting.</p>
+                            <p class="card-text small text-secondary">Maintains financial records, grant disbursements, and fundraising accounting.</p>
                         </div>
                     </div>
                 </div>
@@ -541,54 +473,39 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark-custom text-white-50 py-5 border-top border-dark" id="contact">
-        <div class="container">
-            <div class="row g-4 align-items-start">
-                <div class="col-lg-5 col-md-6">
-                    <h4 class="h6 text-white text-uppercase fw-bold mb-2">New Bloomfield Athletic Booster Club</h4>
-                    <p class="small text-white-50 mb-0">Empowering student-athletes, supporting coaches, and building Wildcat pride.</p>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="h6 text-white text-uppercase fw-bold mb-2">Contact Us</h4>
-                    <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-                        <li>
-                            <i class="bi bi-envelope-fill text-orange me-2"></i>
-                            <a href="mailto:nbathleticboosterclub@gmail.com" class="text-white-50 text-decoration-none">
-                                nbathleticboosterclub@gmail.com
-                            </a>
-                        </li>
-                        <li>
-                            <i class="bi bi-telephone-fill text-orange me-2"></i>
-                            <a href="tel:3142885026" class="text-white-50 text-decoration-none">
-                                (314) 288-5026 <span class="text-white-50 opacity-75">(President)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <i class="bi bi-clipboard-check text-orange me-2"></i>
-                            <a href="#coaches" class="text-white-50 text-decoration-none">
-                                Coaches Wishlist Portal
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-12 text-lg-end d-flex flex-column align-items-lg-end gap-2">
-                    <a href="#hero" class="btn btn-outline-light btn-sm text-uppercase fw-semibold mb-1">
-                        Back to Top ↑
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1b0yw2IeDhy3M7X0SGL3deVTFxP-1U4vm?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-sm text-white-50 border border-secondary border-opacity-50 text-uppercase small">
-                        <i class="bi bi-shield-lock-fill text-orange me-1"></i> Officer Portal
-                    </a>
-                </div>
+    <!-- 🦶 FOOTER (Document 2 Style without Venmo) -->
+    <footer id="contact">
+        <div class="footer-inner">
+            <div class="footer-col" style="flex: 2; min-width: 250px;">
+                <h4>New Bloomfield Athletic Boosters</h4>
+                <p style="font-size: 0.88rem; max-width: 380px; color: #aaaaaa; margin: 0;">Empowering student-athletes, supporting coaches, and building Wildcat pride throughout Callaway County, Missouri.</p>
             </div>
 
-            <hr class="my-4 border-secondary opacity-50">
-
-            <div class="text-center small text-white-50">
-                <p class="mb-0">&copy; 2026 New Bloomfield Athletic Booster Club. All Rights Reserved.</p>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#events">Upcoming Events</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="coaches.html">Coaches Portal</a></li>
+                    <li><a href="golf.html">Golf Scramble</a></li>
+                    <li><a href="#board-members">Leadership Board</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col">
+                <h4>Contact &amp; Links</h4>
+                <ul>
+                    <li><a href="mailto:nbathleticboosterclub@gmail.com">nbathleticboosterclub@gmail.com</a></li>
+                    <li><a href="tel:3142885026">(314) 288-5026 (President)</a></li>
+                    <li><a href="coaches.html">Coach Wishlist Portal</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1b0yw2IeDhy3M7X0SGL3deVTFxP-1U4vm?usp=drive_link" target="_blank" rel="noopener noreferrer">Officer Portal ↗</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">&copy; 2026 New Bloomfield Athletic Booster Club. All Rights Reserved.</p>
         </div>
     </footer>
 
