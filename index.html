@@ -39,6 +39,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
+		/* Prevent horizontal page blow-out */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Responsive navbar brand scaling */
+.navbar-brand {
+    font-size: 1.1rem;
+    white-space: normal;
+    max-width: calc(100% - 60px);
+    line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 0.85rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.85rem !important;
+    }
+}
         :root {
             --wildcat-orange: #f36c21;
             --wildcat-orange-dark: #d95a13;
@@ -211,8 +234,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
     <div class="container">
         <a class="navbar-brand brand-font" href="index.html">
-            NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
-        </a>
+    NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
+</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

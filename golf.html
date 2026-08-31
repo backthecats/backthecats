@@ -39,6 +39,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
+		/* Prevent horizontal page blow-out */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Responsive navbar brand scaling */
+.navbar-brand {
+    font-size: 1.1rem;
+    white-space: normal;
+    max-width: calc(100% - 60px);
+    line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 0.85rem;
+    }
+}
         :root {
             --wildcat-orange: #f36c21;
             --wildcat-orange-dark: #d95a13;
