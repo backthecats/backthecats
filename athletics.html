@@ -222,6 +222,50 @@
             text-align: center;
             font-size: 0.8rem;
         }
+		/* Responsive Facility Schedule Embed */
+.sheet-embed-container {
+    width: 100%;
+    height: 680px;
+    background: #ffffff;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sheet-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    min-width: 1140px; /* Ensures all 7 days always render properly on smaller screens */
+    border: 0;
+    display: block;
+}
+
+/* On desktops/laptops: scale down so all 7 days fit without side-scrolling */
+@media (min-width: 992px) {
+    .sheet-embed-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 138.8%;
+        height: 138.8%;
+        transform: scale(0.72);
+        transform-origin: 0 0;
+        border: 0;
+    }
+}
+
+/* On tablets/phones: allow smooth natural touch scrolling */
+@media (max-width: 991.98px) {
+    .sheet-embed-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sheet-embed-container iframe {
+        width: 100%;
+        min-width: 1050px;
+        height: 100%;
+        border: 0;
+    }
+}
     </style>
 </head>
 <body>
@@ -565,9 +609,9 @@
         </div>
     </section>
 
-    <!-- 🏟️ FACILITY & GYM PRACTICE RESERVATIONS -->
+  <!-- 🏟️ FACILITY & GYM PRACTICE RESERVATIONS (PERFECT FIT) -->
     <section class="py-5 bg-white border-top" id="facility-schedule">
-        <div class="container py-2">
+        <div class="container-fluid px-3 py-2">
             <div class="text-center mb-4">
                 <h2 class="section-title">Facility &amp; Practice Gym Schedule</h2>
                 <p class="text-muted small col-md-8 mx-auto mt-2">
@@ -577,33 +621,35 @@
 
             <!-- Direct AD Contact Notice -->
             <div class="row justify-content-center mb-4">
-                <div class="col-lg-10">
-                    <div class="alert alert-light border shadow-sm rounded-3 d-flex align-items-center gap-3 p-3">
+                <div class="col-12" style="max-width: 1240px;">
+                    <div class="alert alert-light border shadow-sm rounded-3 d-flex align-items-center gap-3 p-3 mb-0">
                         <i class="bi bi-info-circle-fill text-orange fs-3 flex-shrink-0"></i>
                         <div class="small text-secondary mb-0">
-                            <strong>Facility Scheduling Notice:</strong> To request or reserve facility time for team practices, batting cages, or youth athletic events, please contact the <strong>Athletic Director</strong> directly via email at <a href="mailto:athletics@nb.k12.mo.us" class="text-orange fw-bold text-decoration-none">athletics@nb.k12.mo.us</a> or call the school office at <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">(573) 491-3700</a>.
+                            <strong>Facility Scheduling Notice:</strong> To request or reserve facility time for team practices, batting cages, or youth athletic events, please contact the <strong>Athletic Director</strong> directly via email at <a href="mailto:Jwhite@nb.k12.mo.us" class="text-orange fw-bold text-decoration-none">Jwhite@nb.k12.mo.us</a> or call the school office at <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">(573) 491-3700</a>.
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Live Google Sheet Schedule Container -->
+            <!-- Perfectly Sized Schedule Card (1240px Max Width) -->
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-12" style="max-width: 1240px;">
                     <div class="card border-0 shadow-sm rounded-3 overflow-hidden bg-white">
                         <div class="bg-dark-custom text-white px-3 py-2 border-bottom border-3 d-flex justify-content-between align-items-center flex-wrap gap-2" style="border-color: var(--wildcat-orange) !important;">
-                            <h3 class="h6 mb-0 text-white fw-bold text-uppercase" style="font-size: 0.88rem;">
-                                <i class="bi bi-table me-2 text-orange"></i>Live Facility Master Schedule
-                            </h3>
-                            <span class="small text-white-50" id="currentWeekIndicator" style="font-size: 0.78rem;">Loading current week…</span>
+                            <div class="d-flex align-items-center gap-2">
+                                <h3 class="h6 mb-0 text-white fw-bold text-uppercase" style="font-size: 0.88rem;">
+                                    <i class="bi bi-table me-2 text-orange"></i>Live Facility Master Schedule
+                                </h3>
+                                <span class="badge bg-dark border border-secondary text-white-50 small" id="currentWeekIndicator" style="font-size: 0.75rem;">Loading current week…</span>
+                            </div>
+                            <span class="small text-white-50" style="font-size: 0.78rem;">Use bottom tabs to navigate weeks</span>
                         </div>
-                        <div class="p-0 text-center bg-white" style="height: 650px;">
+                        
+                        <div class="sheet-embed-container">
                             <iframe 
                                 id="facilityScheduleFrame"
                                 title="Facility and Practice Gym Schedule"
-                                src="about:blank" 
-                                style="border: 0; width: 100%; height: 100%; display: block;" 
-                                frameborder="0">
+                                src="about:blank">
                                 Loading schedule…
                             </iframe>
                         </div>
@@ -614,76 +660,84 @@
         </div>
     </section>
 
-    <!-- 🗓️ Dynamic Tab Router by Sheet Name -->
+    <!-- 🗓️ Dynamic Tab Router by True GID -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sheetId = "1jqTUteELsQUv8-umnLRU60xeAFE0XWmCecVFVuTmC0w";
 
-            // Active list of tabs extracted from your spreadsheet
+            // Active tabs and their real numeric GIDs
             const tabs = [
-                "Week 9 - 8/30-9/5",
-                "Week 10 - 9/6-9/12",
-                "Week 11 - 9/13-9/19",
-                "Week 12  - 9/20-9/26",
-                "Week 13 - 9/27-10/3",
-                "Week 14  - 10/4-10/10",
-                "Week 15 - 10/11-10/17",
-                "Week 16 - 10/18-10/24",
-                "Week 17 - 10/25-10/31",
-                "Week 18 - 11/1-11/7",
-                "Week 19 - 11/8-11/14",
-                "Week 20 - 11/15-11/21",
-                "Week 21 - 11/22-11/28",
-                "Week 22 - 11/29-12/5",
-                "Week 23 - 12/6-12/12",
-                "Week 24 - 12/13-12/19",
-                "Week 25 - 12/20-12/26",
-                "Week 26 - 12/27-1/2",
-                "Week 27 - 1/3-1/9",
-                "Week 28 - 1/10-1/16",
-                "Week 29 - 1/17-1/23",
-                "Week 30 - 1/24-1/30",
-                "Week 31 - 1/31-2/6",
-                "Week 32 - 2/7-2/13",
-                "Week 33 - 2/14-2/20",
-                "Week 34 - 2/21-2/27",
-                "Week 35 - 2/28-3/6",
-                "Week 36 - 3/7-3/13",
-                "Week 37 - 3/14-3/20",
-                "Week 38 - 3/21-3/27",
-                "Week 39 - 3/28-4/3",
-                "Week 40 - 4/4-4/10",
-                "Week 41 - 4/11-4/17",
-                "Week 42 - 4/18-4/24",
-                "Week 43 - 4/25-5/1",
-                "Week 44 - 5/2-5/8",
-                "Week 45 - 5/9-5/15",
-                "Week 46 - 5/16-5/22",
-                "Week 47 - 5/23-5/29",
-                "Week 48 - 5/30-6/5",
-                "Week 49 - 6/6-6/12",
-                "Week 50 - 6/13-6/19",
-                "Week 51 - 6/20-6/26",
-                "Week 52 - 6/27-7/3"
+                { "name": "Week 9 - 8/30-9/5", "gid": "515925246" },
+                { "name": "Week 10 - 9/6-9/12", "gid": "1071672053" },
+                { "name": "Week 11 - 9/13-9/19", "gid": "482800635" },
+                { "name": "Week 12  - 9/20-9/26", "gid": "1233921310" },
+                { "name": "Week 13 - 9/27-10/3", "gid": "1456819462" },
+                { "name": "Week 14  - 10/4-10/10", "gid": "134810653" },
+                { "name": "Week 15 - 10/11-10/17", "gid": "1121504728" },
+                { "name": "Week 16 - 10/18-10/24", "gid": "1231950287" },
+                { "name": "Week 17 - 10/25-10/31", "gid": "1134902521" },
+                { "name": "Week 18 - 11/1-11/7", "gid": "1312576365" },
+                { "name": "Week 19 - 11/8-11/14", "gid": "1496291481" },
+                { "name": "Week 20 - 11/15-11/21", "gid": "2053354017" },
+                { "name": "Week 21 - 11/22-11/28", "gid": "965838036" },
+                { "name": "Week 22 - 11/29-12/5", "gid": "913551833" },
+                { "name": "Week 23 - 12/6-12/12", "gid": "709417923" },
+                { "name": "Week 24 - 12/13-12/19", "gid": "974678978" },
+                { "name": "Week 25 - 12/20-12/26", "gid": "74638975" },
+                { "name": "Week 26 - 12/27-1/2", "gid": "482263016" },
+                { "name": "Week 27 - 1/3-1/9", "gid": "1875609685" },
+                { "name": "Week 28 - 1/10-1/16", "gid": "619199701" },
+                { "name": "Week 29 - 1/17-1/23", "gid": "1406034020" },
+                { "name": "Week 30 - 1/24-1/30", "gid": "1471317660" },
+                { "name": "Week 31 - 1/31-2/6", "gid": "1159209596" },
+                { "name": "Week 32 - 2/7-2/13", "gid": "82964365" },
+                { "name": "Week 33 - 2/14-2/20", "gid": "813689742" },
+                { "name": "Week 34 - 2/21-2/27", "gid": "1684218865" },
+                { "name": "Week 35 - 2/28-3/6", "gid": "618490006" },
+                { "name": "Week 36 - 3/7-3/13", "gid": "477631257" },
+                { "name": "Week 37 - 3/14-3/20", "gid": "2047994212" },
+                { "name": "Week 38 - 3/21-3/27", "gid": "1965874936" },
+                { "name": "Week 39 - 3/28-4/3", "gid": "15083063" },
+                { "name": "Week 40 - 4/4-4/10", "gid": "892864558" },
+                { "name": "Week 41 - 4/11-4/17", "gid": "337871776" },
+                { "name": "Week 42 - 4/18-4/24", "gid": "678692307" },
+                { "name": "Week 43 - 4/25-5/1", "gid": "120207043" },
+                { "name": "Week 44 - 5/2-5/8", "gid": "129106108" },
+                { "name": "Week 45 - 5/9-5/15", "gid": "777521978" },
+                { "name": "Week 46 - 5/16-5/22", "gid": "270274445" },
+                { "name": "Week 47 - 5/23-5/29", "gid": "1691437829" },
+                { "name": "Week 48 - 5/30-6/5", "gid": "792030360" },
+                { "name": "Week 49 - 6/6-6/12", "gid": "215878971" },
+                { "name": "Week 50 - 6/13-6/19", "gid": "1857674165" },
+                { "name": "Week 51 - 6/20-6/26", "gid": "418293562" },
+                { "name": "Week 52 - 6/27-7/3", "gid": "414257862" },
+                { "name": "Week 1 - 7/5-7/11", "gid": "1891564606" },
+                { "name": "Week 2 - 7/12-7/18", "gid": "1533776685" },
+                { "name": "Week 3 - 7/19-7/25", "gid": "703899295" },
+                { "name": "Week 4 - 7/26-8/1", "gid": "136307653" },
+                { "name": "Week 5 - 8/2-8/8", "gid": "1350101449" },
+                { "name": "Week 7 - 8/16-8/22", "gid": "955963568" },
+                { "name": "Week 8 - 8/23-8/29", "gid": "1797248269" }
             ];
 
             const now = new Date();
             const currentYear = now.getFullYear();
-            let selectedTab = tabs[0]; // fallback default
 
-            // Evaluate which tab's date range encompasses today
+            let selectedGid = tabs[0].gid; // fallback default (Week 9)
+            let selectedName = tabs[0].name;
+
             for (let tab of tabs) {
-                const match = tab.match(/(\d{1,2})\/(\d{1,2})\s*-\s*(\d{1,2})\/(\d{1,2})/);
+                const match = tab.name.match(/(\d{1,2})\/(\d{1,2})\s*-\s*(\d{1,2})\/(\d{1,2})/);
                 if (match) {
                     const startMonth = parseInt(match[1], 10) - 1;
                     const startDay = parseInt(match[2], 10);
                     const endMonth = parseInt(match[3], 10) - 1;
                     const endDay = parseInt(match[4], 10);
 
-                    // Adjust years across the school calendar boundary
                     let startYear = currentYear;
                     let endYear = currentYear;
 
+                    // School year calendar adjustments across new year boundary
                     if (startMonth >= 6 && now.getMonth() < 6) {
                         startYear = currentYear - 1;
                     } else if (startMonth < 6 && now.getMonth() >= 6) {
@@ -700,69 +754,88 @@
                     const endDate = new Date(endYear, endMonth, endDay, 23, 59, 59);
 
                     if (now >= startDate && now <= endDate) {
-                        selectedTab = tab;
+                        selectedGid = tab.gid;
+                        selectedName = tab.name;
                         break;
                     }
                 }
             }
 
-            // Update badge indicator and iframe source
+            // Update badge text
             const badge = document.getElementById('currentWeekIndicator');
             if (badge) {
-                badge.textContent = `Defaulted to: ${selectedTab.replace(/\s+/g, ' ')}`;
+                badge.textContent = `Defaulted to: ${selectedName.replace(/\s+/g, ' ')}`;
             }
 
+            // Load iframe with true numeric gid
             const iframe = document.getElementById('facilityScheduleFrame');
             if (iframe) {
-                iframe.src = `https://docs.google.com/spreadsheets/d/${sheetId}/htmlembed?sheet=${encodeURIComponent(selectedTab)}&widget=true&chrome=false&headers=false`;
+                iframe.src = `https://docs.google.com/spreadsheets/d/${sheetId}/htmlembed?gid=${selectedGid}&widget=true&chrome=false&headers=false`;
             }
         });
     </script>
 	
-    <!-- 📑 ELIGIBILITY & PARTICIPATION FORMS -->
+   <!-- 📑 ELIGIBILITY & PARTICIPATION FORMS -->
     <section class="py-5 bg-white border-top" id="eligibility">
         <div class="container py-3">
             <div class="text-center mb-5">
                 <h2 class="section-title">Participation &amp; Eligibility Forms</h2>
-                <p class="text-muted small col-md-8 mx-auto mt-2">All student-athletes must have an up-to-date MSHSAA physical and signed eligibility documentation on file before participating in official practices or contests.</p>
+                <p class="text-muted small col-md-8 mx-auto mt-2">All student-athletes and parents must review athletic guidelines and have an up-to-date physical and eligibility forms on file before participating in practices or contests.</p>
             </div>
 
             <div class="row g-3 justify-content-center">
-                <div class="col-md-6 col-lg-4">
+                <!-- 1. MSHSAA Physical Form -->
+                <div class="col-md-6 col-lg-3">
                     <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-file-earmark-medical-fill text-orange fs-4"></i>
                             <h3 class="h6 fw-bold mb-0 text-dark">MSHSAA Physical Form</h3>
                         </div>
                         <p class="small text-secondary mb-3 flex-grow-1">Official state pre-participation physical exam form required annually for all middle and high school athletes.</p>
-                        <a href="https://www.mshsaa.org/resources/pdf/PreParticipationPhysicalEvaluation_1617.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">
+                        <a href="https://www.mshsaa.org/resources/pdf/PreParticipationPhysicalEvaluation_1617.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
                             Download Physical PDF <i class="bi bi-download ms-1"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <!-- 2. Medical & Emergency Consent -->
+                <div class="col-md-6 col-lg-3">
                     <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-shield-check text-orange fs-4"></i>
-                            <h3 class="h6 fw-bold mb-0 text-dark">Medical &amp; Emergency Consent</h3>
+                            <h3 class="h6 fw-bold mb-0 text-dark">Medical Consent</h3>
                         </div>
                         <p class="small text-secondary mb-3 flex-grow-1">Emergency treatment consent, student insurance verification, and concussion acknowledgement form.</p>
-                        <a href="https://www.mshsaa.org/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">
+                        <a href="https://www.mshsaa.org/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
                             View Documentation ↗
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <!-- 3. Student-Athlete Handbook -->
+                <div class="col-md-6 col-lg-3">
                     <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-book-half text-orange fs-4"></i>
-                            <h3 class="h6 fw-bold mb-0 text-dark">Student-Athlete Handbook</h3>
+                            <h3 class="h6 fw-bold mb-0 text-dark">Athlete Handbook</h3>
                         </div>
                         <p class="small text-secondary mb-3 flex-grow-1">New Bloomfield district athletic policies, academic eligibility thresholds, and athletic code of conduct.</p>
-                        <a href="#" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">
-                            Read Athletic Handbook ↗
+                        <a href="https://drive.google.com/file/d/102DDleVcJhPPcwrrN2nB2tOeU_7x8iAM/view" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                            Read Handbook ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. 2026-2027 Parent Presentation -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-easel-fill text-orange fs-4"></i>
+                            <h3 class="h6 fw-bold mb-0 text-dark">Parent Presentation</h3>
+                        </div>
+                        <p class="small text-secondary mb-3 flex-grow-1">2026–2027 orientation covering MSHSAA bylaws, parent &amp; coach communication, and team expectations.</p>
+                        <a href="https://drive.google.com/file/d/1JbhbKM35r7mhH6J90USrmgbeUNlqHJUz/view" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                            View Presentation ↗
                         </a>
                     </div>
                 </div>
@@ -779,74 +852,75 @@
             </div>
 
             <div class="row g-3 justify-content-center text-center">
-                <div class="col-6 col-md-3">
-                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
+                <!-- Adults -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card p-4 border-0 shadow-sm rounded-3 bg-white h-100">
                         <span class="small text-uppercase text-muted fw-bold">Adults</span>
-                        <div class="display-6 fw-bold text-orange my-1">$5.00</div>
-                        <span class="small text-secondary">General Public</span>
+                        <div class="display-6 fw-bold text-orange my-2">$5.00</div>
+                        <span class="small text-secondary">General Admission</span>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
-                        <span class="small text-uppercase text-muted fw-bold">Students (K-12)</span>
-                        <div class="display-6 fw-bold text-orange my-1">$3.00</div>
-                        <span class="small text-secondary">Visiting Students</span>
+
+                <!-- All Students K-12 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card p-4 border-0 shadow-sm rounded-3 bg-white h-100">
+                        <span class="small text-uppercase text-muted fw-bold">Students (K–12)</span>
+                        <div class="display-6 fw-bold text-orange my-2">FREE</div>
+                        <span class="small text-secondary">All K–12 Students (Home &amp; Visiting)</span>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
+
+                <!-- Senior Citizens -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card p-4 border-0 shadow-sm rounded-3 bg-white h-100">
                         <span class="small text-uppercase text-muted fw-bold">Senior Citizens</span>
-                        <div class="display-6 fw-bold text-orange my-1">FREE</div>
+                        <div class="display-6 fw-bold text-orange my-2">FREE</div>
                         <span class="small text-secondary">Age 62 and Older</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
-                        <span class="small text-uppercase text-muted fw-bold">NB Students</span>
-                        <div class="display-6 fw-bold text-orange my-1">FREE</div>
-                        <span class="small text-secondary">With School ID</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 👥 ATHLETIC DEPARTMENT DIRECTORY -->
+    <!-- 👥 ATHLETIC DEPARTMENT & COACHING DIRECTORY -->
     <section class="py-5 bg-white border-top" id="directory">
         <div class="container py-3">
             <div class="text-center mb-5">
-                <h2 class="section-title">Athletic Department Directory</h2>
-                <p class="text-muted small col-md-8 mx-auto mt-2">Contact school athletic administration and program directors.</p>
+                <h2 class="section-title">Athletic Department &amp; Staff Directory</h2>
+                <p class="text-muted small col-md-8 mx-auto mt-2">Contact athletic administration, booster leadership, and Wildcat program head coaches.</p>
             </div>
 
-            <div class="row g-3 justify-content-center">
+            <!-- Top Administration Row -->
+            <div class="row g-3 justify-content-center mb-5">
                 <!-- Athletic Director -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card border-0 shadow-sm p-4 text-center rounded-3 bg-light h-100">
                         <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange mx-auto" style="width: 65px; height: 65px;">
                             <i class="bi bi-person-workspace fs-2"></i>
                         </div>
-                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">Athletic Director</h3>
+                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">Jake White</h3>
+                        <span class="badge bg-dark-custom text-orange text-uppercase fw-bold mb-2">Athletic Director</span>
                         <p class="small text-muted mb-2">New Bloomfield R-III Schools</p>
                         <div class="d-flex flex-column gap-1 small mt-auto">
                             <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">
                                 <i class="bi bi-telephone-fill text-orange me-1"></i> (573) 491-3700
                             </a>
-                            <a href="mailto:athletics@nb.k12.mo.us" class="text-dark fw-bold text-decoration-none">
-                                <i class="bi bi-envelope-fill text-orange me-1"></i> athletics@nb.k12.mo.us
+                            <a href="mailto:Jwhite@nb.k12.mo.us" class="text-dark fw-bold text-decoration-none">
+                                <i class="bi bi-envelope-fill text-orange me-1"></i> Jwhite@nb.k12.mo.us
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- High School Principal / Admin -->
+                <!-- High School Principal / Admin Office -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card border-0 shadow-sm p-4 text-center rounded-3 bg-light h-100">
                         <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange mx-auto" style="width: 65px; height: 65px;">
                             <i class="bi bi-building fs-2"></i>
                         </div>
                         <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">High School Office</h3>
-                        <p class="small text-muted mb-2">Main Administrative Office</p>
+                        <span class="badge bg-secondary text-uppercase fw-bold mb-2">Main Administration</span>
+                        <p class="small text-muted mb-2">New Bloomfield High School</p>
                         <div class="d-flex flex-column gap-1 small mt-auto">
                             <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">
                                 <i class="bi bi-telephone-fill text-orange me-1"></i> (573) 491-3700
@@ -856,14 +930,15 @@
                     </div>
                 </div>
 
-                <!-- Booster Liaison -->
+                <!-- Booster Club Support -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card border-0 shadow-sm p-4 text-center rounded-3 bg-light h-100">
                         <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange mx-auto" style="width: 65px; height: 65px;">
                             <i class="bi bi-heart-fill fs-2"></i>
                         </div>
-                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">Booster Club Support</h3>
-                        <p class="small text-muted mb-2">Athletic Boosters Executive Board</p>
+                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">Booster Club Board</h3>
+                        <span class="badge bg-secondary text-uppercase fw-bold mb-2">Executive Leadership</span>
+                        <p class="small text-muted mb-2">Athletic Boosters Support</p>
                         <div class="d-flex flex-column gap-1 small mt-auto">
                             <a href="mailto:nbathleticboosterclub@gmail.com" class="text-dark fw-bold text-decoration-none">
                                 <i class="bi bi-envelope-fill text-orange me-1"></i> nbathleticboosterclub@gmail.com
@@ -875,6 +950,122 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 📋 COACHES CONTACT DIRECTORY (By Season) -->
+            <div class="border rounded-3 p-4 bg-light shadow-sm">
+                <div class="text-center mb-4">
+                    <h3 class="h5 fw-bold text-dark text-uppercase mb-1">
+                        <i class="bi bi-person-lines-fill text-orange me-2"></i>Head Coaches Directory
+                    </h3>
+                    <p class="small text-muted mb-0">Direct program leadership for High School and Junior High athletic programs.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Fall Coaches -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 bg-white shadow-sm rounded-3 overflow-hidden">
+                            <div class="bg-dark-custom text-white px-3 py-2 border-bottom border-3 d-flex align-items-center justify-content-between" style="border-color: var(--wildcat-orange) !important;">
+                                <span class="fw-bold text-uppercase small"><i class="bi bi-sun me-1 text-orange"></i> Fall Sports</span>
+                                <span class="badge bg-dark border border-secondary text-white-50" style="font-size: 0.7rem;">6 Programs</span>
+                            </div>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">HS Softball</span>
+                                    <span class="fw-bold text-dark">Brandon Talbot</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Fall Baseball</span>
+                                    <span class="fw-bold text-dark">Brent Gossett</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">HS Volleyball</span>
+                                    <span class="fw-bold text-dark">Sayde Taggart</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">HS/JH Cross Country</span>
+                                    <span class="fw-bold text-dark">Jake White</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Girls Golf</span>
+                                    <span class="fw-bold text-dark">Erin Bidlack</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">JH Volleyball</span>
+                                    <span class="fw-bold text-dark">Elly Crum</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Winter Coaches -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 bg-white shadow-sm rounded-3 overflow-hidden">
+                            <div class="bg-dark-custom text-white px-3 py-2 border-bottom border-3 d-flex align-items-center justify-content-between" style="border-color: var(--wildcat-orange) !important;">
+                                <span class="fw-bold text-uppercase small"><i class="bi bi-snow me-1 text-orange"></i> Winter Sports</span>
+                                <span class="badge bg-dark border border-secondary text-white-50" style="font-size: 0.7rem;">7 Programs</span>
+                            </div>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Boys Basketball</span>
+                                    <span class="fw-bold text-dark">Clint Finkemeier</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Girls Basketball</span>
+                                    <span class="fw-bold text-dark">Keyanna Hall</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Cheer</span>
+                                    <span class="fw-bold text-dark">McKenna Rackers</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Dance</span>
+                                    <span class="fw-bold text-dark">Lacey Quinn</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">JH Boys Basketball</span>
+                                    <span class="fw-bold text-dark">Jakorie Terrill</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">JH Girls Basketball</span>
+                                    <span class="fw-bold text-dark">Erin Bidlack</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">JH Cheer</span>
+                                    <span class="fw-bold text-dark">Amanda Toebben</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Spring Coaches -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card h-100 border-0 bg-white shadow-sm rounded-3 overflow-hidden">
+                            <div class="bg-dark-custom text-white px-3 py-2 border-bottom border-3 d-flex align-items-center justify-content-between" style="border-color: var(--wildcat-orange) !important;">
+                                <span class="fw-bold text-uppercase small"><i class="bi bi-flower1 me-1 text-orange"></i> Spring Sports</span>
+                                <span class="badge bg-dark border border-secondary text-white-50" style="font-size: 0.7rem;">3 Programs</span>
+                            </div>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Spring Baseball</span>
+                                    <span class="fw-bold text-dark">Brent Gossett</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Track &amp; Field</span>
+                                    <span class="fw-bold text-dark">Jake White</span>
+                                </li>
+								<li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-semibold text-secondary">Boys Golf</span>
+                                    <span class="fw-bold text-dark">Connor Arens</span>
+                                </li>
+                            </ul>
+                            <div class="p-3 bg-light text-center mt-auto border-top">
+                                <span class="small text-muted fst-italic">For general inquiries, reach out through the main high school office.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
