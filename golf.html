@@ -39,56 +39,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-	/* Prevent horizontal page blow-out */
-html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    position: relative;
-}
+        /* Prevent horizontal page blow-out */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            position: relative;
+        }
 
-/* Responsive navbar brand scaling */
-.navbar-brand {
-    font-size: 1.1rem;
-    white-space: normal;
-    max-width: calc(100% - 60px);
-    line-height: 1.2;
-}
+        /* Fixed navbar page offset */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #212529;
+            background-color: #ffffff;
+            padding-top: 70px;
+        }
 
-/* Mobile Typography & Container Adjustments */
-@media (max-width: 576px) {
-    .navbar-brand {
-        font-size: 0.85rem;
-    }
+        /* Responsive navbar brand scaling */
+        .navbar-brand {
+            font-size: 1.1rem;
+            white-space: normal;
+            max-width: calc(100% - 60px);
+            line-height: 1.2;
+        }
 
-    h1.display-4, h1.display-5 {
-        font-size: 1.75rem !important;
-    }
+        @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
 
-    /* Prevents Golf Countdown Timer from pushing screen width */
-    #golf-locked .p-3.bg-dark-custom {
-        min-width: 60px !important;
-        padding: 0.5rem !important;
-    }
+            .navbar-brand {
+                font-size: 0.85rem;
+            }
 
-    #golf-locked .display-6 {
-        font-size: 1.5rem !important;
-    }
+            h1.display-4, h1.display-5 {
+                font-size: 1.75rem !important;
+            }
 
-    iframe {
-        max-width: 100% !important;
-    }
-}
+            /* Prevents Golf Countdown Timer from pushing screen width */
+            #golf-locked .p-3.bg-dark-custom {
+                min-width: 60px !important;
+                padding: 0.5rem !important;
+            }
+
+            #golf-locked .display-6 {
+                font-size: 1.5rem !important;
+            }
+
+            iframe {
+                max-width: 100% !important;
+            }
+        }
+
         :root {
             --wildcat-orange: #f36c21;
             --wildcat-orange-dark: #d95a13;
             --wildcat-black: #111111;
             --wildcat-dark-gray: #1e1e1e;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: #212529;
-            background-color: #ffffff;
         }
 
         h1, h2, h3, h4, .brand-font {
@@ -216,7 +222,7 @@ html, body {
             border-color: var(--wildcat-orange);
         }
 		
-		/* 3-Column Footer Styles */
+        /* 3-Column Footer Styles */
         footer {
             background: var(--wildcat-black);
             border-top: 3px solid var(--wildcat-orange);
@@ -270,7 +276,8 @@ html, body {
             text-align: center;
             font-size: 0.8rem;
         }
-		/* Continuous Sponsor Ticker */
+
+        /* Continuous Sponsor Ticker */
         .sponsor-ticker-container {
             overflow: hidden;
             position: relative;
@@ -312,8 +319,8 @@ html, body {
 </head>
 <body>
 
- <!-- NAVBAR (Golf Page) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
+    <!-- NAVBAR (Golf Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
         <div class="container">
             <a class="navbar-brand brand-font" href="index.html">
                 NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
@@ -324,16 +331,17 @@ html, body {
             <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
                 <ul class="navbar-nav gap-2 align-items-center">
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="athletics.html">Athletics</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#coverage">Live Coverage</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="coaches.html">Coaches</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold text-orange active" href="golf.html">Golf Scramble</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#join">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#events">Events</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#board-members">Leadership</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- ⛳ HERO / HEADER -->
     <section class="py-5 bg-charcoal text-white text-center border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
         <div class="container py-4">
@@ -371,11 +379,10 @@ html, body {
                 <div class="col-lg-6">
                     <div class="card border-0 shadow-lg rounded-3 overflow-hidden bg-dark">
                         <div class="ratio ratio-16x9">
-                          <!-- To this (with ?v=2 on the video source and poster): -->
-<video controls preload="metadata" poster="Images/Scramble.jpg?v=2" playsinline class="w-100 h-100 object-fit-cover">
-    <source src="videos/Scramble-Recap.mp4?v=2" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+                            <video controls preload="metadata" poster="Images/Scramble.jpg?v=2" playsinline class="w-100 h-100 object-fit-cover">
+                                <source src="videos/Scramble-Recap.mp4?v=2" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div class="p-3 bg-dark-custom text-center text-white border-top border-secondary border-opacity-25">
                             <span class="small text-white-50"><i class="bi bi-play-circle-fill text-orange me-1"></i> Watch: Scramble Highlights & Course Flyover</span>
@@ -596,7 +603,7 @@ html, body {
         </div>
     </section>
 	
-<!-- 🤝 TOURNAMENT SPONSORS SHOWCASE -->
+    <!-- 🤝 TOURNAMENT SPONSORS SHOWCASE -->
     <section class="py-5 bg-white border-top border-bottom" id="past-sponsors">
         <div class="container py-2 text-center">
             
@@ -732,6 +739,7 @@ html, body {
 
         </div>
     </section>
+
     <!-- ⏰ TOURNAMENT SCHEDULE & FLIGHTS -->
     <section class="py-5 bg-white border-top" id="schedule">
         <div class="container py-4">
@@ -830,97 +838,96 @@ html, body {
     </section>
 
     <!-- ❓ FREQUENTLY ASKED QUESTIONS -->
-<section class="py-5 bg-light border-top" id="faq">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="text-muted col-md-8 mx-auto mt-2">Have questions regarding team entry, flight prizes, or sponsorships?</p>
-        </div>
+    <section class="py-5 bg-light border-top" id="faq">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="text-muted col-md-8 mx-auto mt-2">Have questions regarding team entry, flight prizes, or sponsorships?</p>
+            </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="accordion shadow-sm" id="golfFaqAccordion">
-                    
-                    <!-- Question 1 (Collapsed by default) -->
-                    <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
-                        <h3 class="accordion-header" id="faqOneHeader">
-                            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false" aria-controls="faqOne">
-                                What is the cost and what does registration include?
-                            </button>
-                        </h3>
-                        <div id="faqOne" class="accordion-collapse collapse" aria-labelledby="faqOneHeader" data-bs-parent="#golfFaqAccordion">
-                            <div class="accordion-body small text-secondary">
-                                Entry is <strong>$125 per individual golfer</strong> or <strong>$500 per 4-person team</strong>. Cost covers 18 holes of golf with riding carts, flighted scramble competition with prizes for 1st, 2nd, and 3rd place teams in each flight, mulligans, entry into Closest-to-the-Pin and Longest Drive contests, lunch, dinner, and drinks all day long! Plus, all morning teams are automatically entered into an exclusive door prize drawing.
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion shadow-sm" id="golfFaqAccordion">
+                        
+                        <!-- Question 1 (Collapsed by default) -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqOneHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false" aria-controls="faqOne">
+                                    What is the cost and what does registration include?
+                                </button>
+                            </h3>
+                            <div id="faqOne" class="accordion-collapse collapse" aria-labelledby="faqOneHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    Entry is <strong>$125 per individual golfer</strong> or <strong>$500 per 4-person team</strong>. Cost covers 18 holes of golf with riding carts, flighted scramble competition with prizes for 1st, 2nd, and 3rd place teams in each flight, mulligans, entry into Closest-to-the-Pin and Longest Drive contests, lunch, dinner, and drinks all day long! Plus, all morning teams are automatically entered into an exclusive door prize drawing.
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Question 2 -->
-                    <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
-                        <h3 class="accordion-header" id="faqTwoHeader">
-                            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
-                                What sponsorship tiers are available for businesses?
-                            </button>
-                        </h3>
-                        <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeader" data-bs-parent="#golfFaqAccordion">
-                            <div class="accordion-body small text-secondary">
-                                We offer three distinct tiers:
-                                <ul class="mb-0 mt-2">
-                                    <li><strong>Par Sponsor ($100):</strong> Hole sign on tee box + website ads.</li>
-                                    <li><strong>Birdie Sponsor ($125):</strong> Hole sign + website and social media ads.</li>
-                                    <li><strong>Eagle Sponsor ($250):</strong> All Birdie items + exclusive on-course tent spot on your hole + thank you recognition at the awards ceremony.</li>
-                                </ul>
+                        <!-- Question 2 -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqTwoHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                                    What sponsorship tiers are available for businesses?
+                                </button>
+                            </h3>
+                            <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    We offer three distinct tiers:
+                                    <ul class="mb-0 mt-2">
+                                        <li><strong>Par Sponsor ($100):</strong> Hole sign on tee box + website ads.</li>
+                                        <li><strong>Birdie Sponsor ($125):</strong> Hole sign + website and social media ads.</li>
+                                        <li><strong>Eagle Sponsor ($250):</strong> All Birdie items + exclusive on-course tent spot on your hole + thank you recognition at the awards ceremony.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Question 3 -->
-                    <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
-                        <h3 class="accordion-header" id="faqThreeHeader">
-                            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
-                                Where is the tournament held and what are the flight times?
-                            </button>
-                        </h3>
-                        <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeHeader" data-bs-parent="#golfFaqAccordion">
-                            <div class="accordion-body small text-secondary">
-                                The scramble is held at <strong>Meadow Lake Acres Country Club</strong> with two shotgun starts: <strong>8:00 AM (Morning Flight)</strong> and <strong>12:30 PM (Afternoon Flight)</strong>.
+                        <!-- Question 3 -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqThreeHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                                    Where is the tournament held and what are the flight times?
+                                </button>
+                            </h3>
+                            <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    The scramble is held at <strong>Meadow Lake Acres Country Club</strong> with two shotgun starts: <strong>8:00 AM (Morning Flight)</strong> and <strong>12:30 PM (Afternoon Flight)</strong>.
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Question 4 -->
+                        <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqFourHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                                    Who can I contact to donate items for the live auction?
+                                </button>
+                            </h3>
+                            <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    You can email the Booster Club at <strong>NBAthleticboosterclub@gmail.com</strong>, or contact a member of the Booster Club Presidency.
+                                </div>
+                            </div>
+                        </div>
+                                
+                        <!-- Question 5 (Last item) -->
+                        <div class="accordion-item border-0 rounded overflow-hidden">
+                            <h3 class="accordion-header" id="faqFiveHeader">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
+                                    How can I register a team or become a hole sponsor?
+                                </button>
+                            </h3>
+                            <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveHeader" data-bs-parent="#golfFaqAccordion">
+                                <div class="accordion-body small text-secondary">
+                                    To become a hole sponsor, select any tier above to open the online sponsorship form. To register a team, expand the team registration form above once the countdown timer officially opens entry.
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <!-- Question 4 -->
-<div class="accordion-item border-0 mb-2 rounded overflow-hidden">
-    <h3 class="accordion-header" id="faqFourHeader">
-        <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
-            Who can I contact to donate items for the live auction?
-        </button>
-    </h3>
-    <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourHeader" data-bs-parent="#golfFaqAccordion">
-        <div class="accordion-body small text-secondary">
-            You can email the Booster Club at <strong>NBAthleticboosterclub@gmail.com</strong>, or contact a member of the Booster Club Presidency.
-        </div>
-    </div>
-</div>
-        
-<!-- Question 5 (Last item, no mb-2 needed) -->
-<div class="accordion-item border-0 rounded overflow-hidden">
-    <h3 class="accordion-header" id="faqFiveHeader">
-        <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
-            How can I register a team or become a hole sponsor?
-        </button>
-    </h3>
-    <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveHeader" data-bs-parent="#golfFaqAccordion">
-        <div class="accordion-body small text-secondary">
-            To become a hole sponsor, select any tier above to open the online sponsorship form. To register a team, expand the team registration form above once the countdown timer officially opens entry.
-        </div>
-    </div>
-</div>
-
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+
             <!-- Return Home Button -->
             <div class="text-center mt-5">
                 <a href="index.html" class="btn btn-outline-dark fw-bold text-uppercase">
@@ -954,7 +961,7 @@ html, body {
         </div>
     </div>
 
-   <!-- 🦶 FOOTER (Consistent 3-Column Layout) -->
+    <!-- 🦶 FOOTER (Consistent 3-Column Layout) -->
     <footer id="contact">
         <div class="footer-inner">
             <div class="footer-col" style="flex: 2; min-width: 250px;">
@@ -966,10 +973,10 @@ html, body {
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#events">Upcoming Events</a></li>
-                    <li><a href="index.html#mission">Mission</a></li>
+                    <li><a href="athletics.html">Athletics Hub</a></li>
                     <li><a href="coaches.html">Coaches Portal</a></li>
                     <li><a href="golf.html">Golf Scramble</a></li>
+                    <li><a href="index.html#events">Upcoming Events</a></li>
                     <li><a href="index.html#board-members">Leadership Board</a></li>
                 </ul>
             </div>
@@ -989,7 +996,7 @@ html, body {
             <p class="mb-0">&copy; 2026 New Bloomfield Athletic Booster Club. All Rights Reserved.</p>
         </div>
     </footer>
-	
+
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

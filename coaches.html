@@ -16,46 +16,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-	/* Prevent horizontal page blow-out */
-html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    position: relative;
-}
+        /* Prevent horizontal page blow-out */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            position: relative;
+        }
 
-/* Responsive navbar brand scaling */
-.navbar-brand {
-    font-size: 1.1rem;
-    white-space: normal;
-    max-width: calc(100% - 60px);
-    line-height: 1.2;
-}
+        /* Fixed navbar page offset */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #212529;
+            background-color: #f8f9fa;
+            padding-top: 70px;
+        }
 
-/* Mobile Typography & Container Adjustments */
-@media (max-width: 576px) {
-    .navbar-brand {
-        font-size: 0.85rem;
-    }
+        /* Responsive navbar brand scaling */
+        .navbar-brand {
+            font-size: 1.1rem;
+            white-space: normal;
+            max-width: calc(100% - 60px);
+            line-height: 1.2;
+        }
 
-    h1.display-4, h1.display-5 {
-        font-size: 1.75rem !important;
-    }
+        @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
 
-    iframe {
-        max-width: 100% !important;
-    }
-}
+            .navbar-brand {
+                font-size: 0.85rem;
+            }
+
+            h1.display-4, h1.display-5 {
+                font-size: 1.75rem !important;
+            }
+
+            iframe {
+                max-width: 100% !important;
+            }
+        }
+
         :root {
             --wildcat-orange: #f36c21;
             --wildcat-orange-dark: #d95a13;
             --wildcat-black: #111111;
             --wildcat-dark-gray: #1e1e1e;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: #212529;
-            background-color: #f8f9fa;
         }
 
         h1, h2, h3, h4, .brand-font {
@@ -168,7 +174,7 @@ html, body {
 <body>
 
     <!-- 🧭 TOP NAVBAR (Coaches Page) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
         <div class="container">
             <a class="navbar-brand brand-font" href="index.html">
                 NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
@@ -179,11 +185,11 @@ html, body {
             <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
                 <ul class="navbar-nav gap-2 align-items-center">
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="athletics.html">Athletics</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#coverage">Live Coverage</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#events">Events</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold text-orange active" href="coaches.html">Coaches</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Scramble</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#events">Events</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#board-members">Leadership</a></li>
                 </ul>
             </div>
@@ -213,7 +219,7 @@ html, body {
                         <div class="card-body">
                             <i class="bi bi-calendar-check display-5 text-orange mb-3 d-inline-block"></i>
                             <h3 class="h6 card-title fw-bold text-dark">Submission Timeline</h3>
-                            <p class="card-text text-secondary small mb-0">Requests are reviewed and approved at the beginning of the school year. For additonal requests, please submit request form and notify a member of the board.</p>
+                            <p class="card-text text-secondary small mb-0">Requests are reviewed and approved at the beginning of the school year. For additional requests, please submit request form and notify a member of the board.</p>
                         </div>
                     </div>
                 </div>
@@ -269,6 +275,7 @@ html, body {
         </div>
     </main>
 
+
     <!-- 🦶 FOOTER -->
     <footer id="contact">
         <div class="footer-inner">
@@ -281,10 +288,10 @@ html, body {
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#events">Upcoming Events</a></li>
-                    <li><a href="index.html#mission">Mission</a></li>
+                    <li><a href="athletics.html">Athletics Hub</a></li>
                     <li><a href="coaches.html">Coaches Portal</a></li>
                     <li><a href="golf.html">Golf Scramble</a></li>
+                    <li><a href="index.html#events">Upcoming Events</a></li>
                     <li><a href="index.html#board-members">Leadership Board</a></li>
                 </ul>
             </div>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://backthecats.org/athletics.html">
+    <meta property="og:title" content="Wildcat Athletics Central | New Bloomfield High School">
+    <meta property="og:description" content="Official home for New Bloomfield Wildcat athletic schedules, eligibility forms, staff directory, and sports program information.">
+    <meta property="og:image" content="https://backthecats.org/Images/Wildcats-logo.jpg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RXHW0TS7Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1RXHW0TS7Y');
+    </script>
+
+    <!-- PWA & Mobile Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f36c21">
+    
+    <!-- Apple / iOS Specific Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NB Athletics">
+    <link rel="apple-touch-icon" href="Images/Wildcats-logo.jpg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildcat Athletics Hub | New Bloomfield High School</title>
+
+    <!-- Bootstrap 5 CSS & Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Prevent horizontal page blow-out */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            position: relative;
+        }
+
+        /* Fixed navbar page offset */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #212529;
+            background-color: #ffffff;
+            padding-top: 70px;
+        }
+
+        /* Responsive navbar brand scaling */
+        .navbar-brand {
+            font-size: 1.1rem;
+            white-space: normal;
+            max-width: calc(100% - 60px);
+            line-height: 1.2;
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-brand {
+                font-size: 0.85rem;
+            }
+
+            h1.display-4, h1.display-5 {
+                font-size: 1.75rem !important;
+            }
+
+            iframe {
+                max-width: 100% !important;
+            }
+        }
+
+        :root {
+            --wildcat-orange: #f36c21;
+            --wildcat-orange-dark: #d95a13;
+            --wildcat-black: #111111;
+            --wildcat-dark-gray: #1e1e1e;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .text-orange { color: var(--wildcat-orange) !important; }
+        .bg-dark-custom { background-color: var(--wildcat-black) !important; }
+        .bg-charcoal { background-color: var(--wildcat-dark-gray) !important; }
+
+        .btn-brand-primary {
+            background-color: var(--wildcat-orange);
+            border-color: var(--wildcat-orange);
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.65rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-brand-primary:hover {
+            background-color: var(--wildcat-orange-dark);
+            border-color: var(--wildcat-orange-dark);
+            color: #ffffff;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--wildcat-orange);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .sport-card {
+            border-top: 4px solid var(--wildcat-orange);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sport-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .doc-box {
+            border: 1px solid #dee2e6;
+            border-left: 4px solid var(--wildcat-orange);
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .doc-box:hover {
+            background-color: #fffaf6;
+        }
+
+        .nav-pills .nav-link {
+            color: #333333;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            padding: 0.6rem 1.4rem;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--wildcat-orange) !important;
+            color: #ffffff !important;
+        }
+
+        /* 3-Column Footer Styles */
+        footer {
+            background: var(--wildcat-black);
+            border-top: 3px solid var(--wildcat-orange);
+            padding: 45px 20px 25px;
+            font-size: 0.88rem;
+            color: #aaaaaa;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--wildcat-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #222222;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🧭 TOP NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand brand-font" href="index.html">
+                NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold text-orange active" href="athletics.html">Athletics</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#coverage">Live Coverage</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="coaches.html">Coaches</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Scramble</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="index.html#board-members">Leadership</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 📣 HERO / HEADER -->
+    <header class="py-5 bg-charcoal text-white text-center border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+        <div class="container py-3">
+            <span class="badge bg-warning text-dark text-uppercase fw-bold mb-3 px-3 py-2" style="background-color: var(--wildcat-orange) !important; color: white !important; letter-spacing: 1px;">
+                New Bloomfield R-III High School &amp; Middle School
+            </span>
+            <h1 class="display-4 fw-bold mb-2">WILDCAT <span class="text-orange">ATHLETICS HUB</span></h1>
+            <p class="lead text-white-50 col-md-8 mx-auto mb-4 fs-6">
+                Official program information, MSHSAA schedules, student-athlete participation forms, and coaching staff directory.
+            </p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <a href="#sports" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Sports Programs</a>
+                <a href="#facility-schedule" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Gym &amp; Facility Schedule</a>
+                <a href="#eligibility" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Forms &amp; Eligibility</a>
+                <a href="#directory" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Staff Directory</a>
+                <a href="#admissions" class="btn btn-outline-light btn-sm fw-bold text-uppercase px-3 py-2">Game Day &amp; Passes</a>
+                <a href="index.html#coverage" class="btn btn-brand-primary btn-sm fw-bold text-uppercase px-3 py-2"><i class="bi bi-broadcast me-1"></i> Live Broadcasts</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🐾 RESTORE THE ROAR & NB PROUD CULTURE BANNER -->
+    <section class="py-4 bg-dark-custom text-white border-bottom border-2" style="border-color: var(--wildcat-orange) !important;">
+        <div class="container text-center">
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+                <span class="badge bg-warning text-dark text-uppercase fw-bold px-3 py-2" style="background-color: var(--wildcat-orange) !important; color: white !important; letter-spacing: 1px;">
+                    Wildcat Pride
+                </span>
+                <h2 class="h4 mb-0 fw-bold text-uppercase text-white">
+                    Restore The Roar <span class="text-orange mx-2">•</span> <span class="text-white-50">#NBProud</span>
+                </h2>
+            </div>
+            <p class="small text-white-50 col-md-8 mx-auto mb-0 mt-2">
+                Rebuilding tradition, supporting our student-athletes across every program, and packing the stands with Wildcat community spirit.
+            </p>
+        </div>
+    </section>
+
+    <!-- 🏆 SPORTS DIRECTORY (Full Program Breakdown) -->
+    <section class="py-5 bg-light" id="sports">
+        <div class="container py-2">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Wildcat Sports Schedules</h2>
+                <p class="text-muted small col-md-8 mx-auto mt-2">
+                    Select a season below to view individual schedules for High School and Middle School teams via MSHSAA.
+                </p>
+            </div>
+
+            <!-- Season Navigation Tabs -->
+            <ul class="nav nav-pills justify-content-center gap-2 mb-4" id="sportsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="fall-tab" data-bs-toggle="pill" data-bs-target="#fall" type="button" role="tab" aria-controls="fall" aria-selected="true">
+                        <i class="bi bi-sun me-1"></i> Fall Sports
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="winter-tab" data-bs-toggle="pill" data-bs-target="#winter" type="button" role="tab" aria-controls="winter" aria-selected="false">
+                        <i class="bi bi-snow me-1"></i> Winter Sports
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="spring-tab" data-bs-toggle="pill" data-bs-target="#spring" type="button" role="tab" aria-controls="spring" aria-selected="false">
+                        <i class="bi bi-flower1 me-1"></i> Spring Sports
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Season Panels -->
+            <div class="tab-content" id="sportsTabContent">
+                
+                <!-- ==================== 🍂 FALL SPORTS ==================== -->
+                <div class="tab-pane fade show active" id="fall" role="tabpanel" aria-labelledby="fall-tab">
+                    
+                    <!-- High School Programs (4 Across) -->
+                    <h3 class="h6 fw-bold text-uppercase text-secondary mb-3" style="letter-spacing: 1px;">
+                        <i class="bi bi-trophy-fill text-orange me-1"></i> High School (Varsity &amp; JV)
+                    </h3>
+                    <div class="row g-3 mb-4">
+                        <!-- HS Softball -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Girls Softball</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity &amp; JV</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Fall championship season, tournament play, and conference games.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=38" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- HS Cross Country -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Cross Country</h4>
+                                    <span class="badge bg-dark-custom text-orange">Boys &amp; Girls</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Varsity invitationals, conference championship, and district qualifiers.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=11" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- HS Volleyball -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Girls Volleyball</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity &amp; JV</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Regular season duals, quad matches, and MSHSAA post-season brackets.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=57" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- HS Girls Golf -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Girls Golf</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity Team</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Dual matches, tournament invites, and post-season championship play.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=24" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle School Programs (2 items centered) -->
+                    <h3 class="h6 fw-bold text-uppercase text-secondary mb-3" style="letter-spacing: 1px;">
+                        <i class="bi bi-mortarboard-fill text-orange me-1"></i> Junior High / Middle School
+                    </h3>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">JH Cross Country</h4>
+                                    <span class="badge bg-light text-dark border">Boys &amp; Girls</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Middle school distance running meets and invitationals.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=13" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">JH Volleyball</h4>
+                                    <span class="badge bg-light text-dark border">7th &amp; 8th Grade</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Middle school girls volleyball regular matches and tournaments.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=59" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==================== ❄️ WINTER SPORTS ==================== -->
+                <div class="tab-pane fade" id="winter" role="tabpanel" aria-labelledby="winter-tab">
+                    
+                    <!-- High School Programs (2 items centered) -->
+                    <h3 class="h6 fw-bold text-uppercase text-secondary mb-3" style="letter-spacing: 1px;">
+                        <i class="bi bi-trophy-fill text-orange me-1"></i> High School (Varsity &amp; JV)
+                    </h3>
+                    <div class="row g-3 mb-4 justify-content-center">
+                        <!-- HS Boys Basketball -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Boys Basketball</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity &amp; JV</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Wildcat high school boys basketball winter schedule and tournament play.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=5" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- HS Girls Basketball -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Girls Basketball</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity &amp; JV</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Lady Wildcats varsity &amp; JV winter basketball matchups and brackets.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=6" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle School Programs (2 items centered) -->
+                    <h3 class="h6 fw-bold text-uppercase text-secondary mb-3" style="letter-spacing: 1px;">
+                        <i class="bi bi-mortarboard-fill text-orange me-1"></i> Junior High / Middle School
+                    </h3>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">JH Boys Basketball</h4>
+                                    <span class="badge bg-light text-dark border">7th &amp; 8th Grade</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Middle school boys basketball season schedule and tournaments.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=7" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">JH Girls Basketball</h4>
+                                    <span class="badge bg-light text-dark border">7th &amp; 8th Grade</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Middle school girls basketball games and tournament brackets.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=8" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==================== 🌸 SPRING SPORTS ==================== -->
+                <div class="tab-pane fade" id="spring" role="tabpanel" aria-labelledby="spring-tab">
+                    
+                    <!-- High School Programs (3 Across) -->
+                    <h3 class="h6 fw-bold text-uppercase text-secondary mb-3" style="letter-spacing: 1px;">
+                        <i class="bi bi-trophy-fill text-orange me-1"></i> High School (Varsity &amp; JV)
+                    </h3>
+                    <div class="row g-3 mb-4">
+                        <!-- HS Baseball -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Baseball</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity &amp; JV</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Wildcat varsity &amp; junior varsity spring baseball season.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=3" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- HS Track & Field -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Track &amp; Field</h4>
+                                    <span class="badge bg-dark-custom text-orange">Boys &amp; Girls</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Wildcat Relays, district championship, and sectional/state meets.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=52" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- HS Boys Golf -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">Boys Golf</h4>
+                                    <span class="badge bg-dark-custom text-orange">Varsity Team</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Matches and invitationals hosted at Meadow Lake Acres and regional courses.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=23" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle School Programs (Single item centered) -->
+                    <h3 class="h6 fw-bold text-uppercase text-secondary mb-3" style="letter-spacing: 1px;">
+                        <i class="bi bi-mortarboard-fill text-orange me-1"></i> Junior High / Middle School
+                    </h3>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white p-3 rounded-3 sport-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="h6 fw-bold mb-0 text-dark text-uppercase">JH Track &amp; Field</h4>
+                                    <span class="badge bg-light text-dark border">Boys &amp; Girls</span>
+                                </div>
+                                <p class="small text-secondary mb-3 flex-grow-1">Middle school track meets, conference relays, and invitationals.</p>
+                                <a href="https://www.mshsaa.org/MySchool/Schedule.aspx?s=376&amp;alg=54" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase mt-auto">
+                                    View Schedule <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏟️ FACILITY & GYM PRACTICE RESERVATIONS -->
+    <section class="py-5 bg-white border-top" id="facility-schedule">
+        <div class="container py-2">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Facility &amp; Practice Gym Schedule</h2>
+                <p class="text-muted small col-md-8 mx-auto mt-2">
+                    Weekly practice allocations and reserved times for the High School Gymnasium, Multi-Purpose Gym, batting cages, and athletic fields.
+                </p>
+            </div>
+
+            <!-- Direct AD Contact Notice -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-10">
+                    <div class="alert alert-light border shadow-sm rounded-3 d-flex align-items-center gap-3 p-3">
+                        <i class="bi bi-info-circle-fill text-orange fs-3 flex-shrink-0"></i>
+                        <div class="small text-secondary mb-0">
+                            <strong>Facility Scheduling Notice:</strong> To request or reserve facility time for team practices, batting cages, or youth athletic events, please contact the <strong>Athletic Director</strong> directly via email at <a href="mailto:athletics@nb.k12.mo.us" class="text-orange fw-bold text-decoration-none">athletics@nb.k12.mo.us</a> or call the school office at <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">(573) 491-3700</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Google Sheet Schedule Container -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-sm rounded-3 overflow-hidden bg-white">
+                        <div class="bg-dark-custom text-white px-3 py-2 border-bottom border-3 d-flex justify-content-between align-items-center flex-wrap gap-2" style="border-color: var(--wildcat-orange) !important;">
+                            <h3 class="h6 mb-0 text-white fw-bold text-uppercase" style="font-size: 0.88rem;">
+                                <i class="bi bi-table me-2 text-orange"></i>Live Facility Master Schedule
+                            </h3>
+                            <span class="small text-white-50" id="currentWeekIndicator" style="font-size: 0.78rem;">Loading current week…</span>
+                        </div>
+                        <div class="p-0 text-center bg-white" style="height: 650px;">
+                            <iframe 
+                                id="facilityScheduleFrame"
+                                title="Facility and Practice Gym Schedule"
+                                src="about:blank" 
+                                style="border: 0; width: 100%; height: 100%; display: block;" 
+                                frameborder="0">
+                                Loading schedule…
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🗓️ Dynamic Tab Router by Sheet Name -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sheetId = "1jqTUteELsQUv8-umnLRU60xeAFE0XWmCecVFVuTmC0w";
+
+            // Active list of tabs extracted from your spreadsheet
+            const tabs = [
+                "Week 9 - 8/30-9/5",
+                "Week 10 - 9/6-9/12",
+                "Week 11 - 9/13-9/19",
+                "Week 12  - 9/20-9/26",
+                "Week 13 - 9/27-10/3",
+                "Week 14  - 10/4-10/10",
+                "Week 15 - 10/11-10/17",
+                "Week 16 - 10/18-10/24",
+                "Week 17 - 10/25-10/31",
+                "Week 18 - 11/1-11/7",
+                "Week 19 - 11/8-11/14",
+                "Week 20 - 11/15-11/21",
+                "Week 21 - 11/22-11/28",
+                "Week 22 - 11/29-12/5",
+                "Week 23 - 12/6-12/12",
+                "Week 24 - 12/13-12/19",
+                "Week 25 - 12/20-12/26",
+                "Week 26 - 12/27-1/2",
+                "Week 27 - 1/3-1/9",
+                "Week 28 - 1/10-1/16",
+                "Week 29 - 1/17-1/23",
+                "Week 30 - 1/24-1/30",
+                "Week 31 - 1/31-2/6",
+                "Week 32 - 2/7-2/13",
+                "Week 33 - 2/14-2/20",
+                "Week 34 - 2/21-2/27",
+                "Week 35 - 2/28-3/6",
+                "Week 36 - 3/7-3/13",
+                "Week 37 - 3/14-3/20",
+                "Week 38 - 3/21-3/27",
+                "Week 39 - 3/28-4/3",
+                "Week 40 - 4/4-4/10",
+                "Week 41 - 4/11-4/17",
+                "Week 42 - 4/18-4/24",
+                "Week 43 - 4/25-5/1",
+                "Week 44 - 5/2-5/8",
+                "Week 45 - 5/9-5/15",
+                "Week 46 - 5/16-5/22",
+                "Week 47 - 5/23-5/29",
+                "Week 48 - 5/30-6/5",
+                "Week 49 - 6/6-6/12",
+                "Week 50 - 6/13-6/19",
+                "Week 51 - 6/20-6/26",
+                "Week 52 - 6/27-7/3"
+            ];
+
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            let selectedTab = tabs[0]; // fallback default
+
+            // Evaluate which tab's date range encompasses today
+            for (let tab of tabs) {
+                const match = tab.match(/(\d{1,2})\/(\d{1,2})\s*-\s*(\d{1,2})\/(\d{1,2})/);
+                if (match) {
+                    const startMonth = parseInt(match[1], 10) - 1;
+                    const startDay = parseInt(match[2], 10);
+                    const endMonth = parseInt(match[3], 10) - 1;
+                    const endDay = parseInt(match[4], 10);
+
+                    // Adjust years across the school calendar boundary
+                    let startYear = currentYear;
+                    let endYear = currentYear;
+
+                    if (startMonth >= 6 && now.getMonth() < 6) {
+                        startYear = currentYear - 1;
+                    } else if (startMonth < 6 && now.getMonth() >= 6) {
+                        startYear = currentYear + 1;
+                    }
+
+                    if (endMonth < startMonth) {
+                        endYear = startYear + 1;
+                    } else {
+                        endYear = startYear;
+                    }
+
+                    const startDate = new Date(startYear, startMonth, startDay, 0, 0, 0);
+                    const endDate = new Date(endYear, endMonth, endDay, 23, 59, 59);
+
+                    if (now >= startDate && now <= endDate) {
+                        selectedTab = tab;
+                        break;
+                    }
+                }
+            }
+
+            // Update badge indicator and iframe source
+            const badge = document.getElementById('currentWeekIndicator');
+            if (badge) {
+                badge.textContent = `Defaulted to: ${selectedTab.replace(/\s+/g, ' ')}`;
+            }
+
+            const iframe = document.getElementById('facilityScheduleFrame');
+            if (iframe) {
+                iframe.src = `https://docs.google.com/spreadsheets/d/${sheetId}/htmlembed?sheet=${encodeURIComponent(selectedTab)}&widget=true&chrome=false&headers=false`;
+            }
+        });
+    </script>
+	
+    <!-- 📑 ELIGIBILITY & PARTICIPATION FORMS -->
+    <section class="py-5 bg-white border-top" id="eligibility">
+        <div class="container py-3">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Participation &amp; Eligibility Forms</h2>
+                <p class="text-muted small col-md-8 mx-auto mt-2">All student-athletes must have an up-to-date MSHSAA physical and signed eligibility documentation on file before participating in official practices or contests.</p>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-file-earmark-medical-fill text-orange fs-4"></i>
+                            <h3 class="h6 fw-bold mb-0 text-dark">MSHSAA Physical Form</h3>
+                        </div>
+                        <p class="small text-secondary mb-3 flex-grow-1">Official state pre-participation physical exam form required annually for all middle and high school athletes.</p>
+                        <a href="https://www.mshsaa.org/resources/pdf/PreParticipationPhysicalEvaluation_1617.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">
+                            Download Physical PDF <i class="bi bi-download ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-shield-check text-orange fs-4"></i>
+                            <h3 class="h6 fw-bold mb-0 text-dark">Medical &amp; Emergency Consent</h3>
+                        </div>
+                        <p class="small text-secondary mb-3 flex-grow-1">Emergency treatment consent, student insurance verification, and concussion acknowledgement form.</p>
+                        <a href="https://www.mshsaa.org/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">
+                            View Documentation ↗
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3 bg-light doc-box h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-book-half text-orange fs-4"></i>
+                            <h3 class="h6 fw-bold mb-0 text-dark">Student-Athlete Handbook</h3>
+                        </div>
+                        <p class="small text-secondary mb-3 flex-grow-1">New Bloomfield district athletic policies, academic eligibility thresholds, and athletic code of conduct.</p>
+                        <a href="#" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">
+                            Read Athletic Handbook ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎟️ GAME DAY ADMISSIONS & TICKET PASSES -->
+    <section class="py-5 bg-light border-top" id="admissions">
+        <div class="container py-3">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Game Day &amp; Admission Info</h2>
+                <p class="text-muted small col-md-8 mx-auto mt-2">Gate admission details for regular-season home athletic contests held at New Bloomfield High School.</p>
+            </div>
+
+            <div class="row g-3 justify-content-center text-center">
+                <div class="col-6 col-md-3">
+                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
+                        <span class="small text-uppercase text-muted fw-bold">Adults</span>
+                        <div class="display-6 fw-bold text-orange my-1">$5.00</div>
+                        <span class="small text-secondary">General Public</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
+                        <span class="small text-uppercase text-muted fw-bold">Students (K-12)</span>
+                        <div class="display-6 fw-bold text-orange my-1">$3.00</div>
+                        <span class="small text-secondary">Visiting Students</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
+                        <span class="small text-uppercase text-muted fw-bold">Senior Citizens</span>
+                        <div class="display-6 fw-bold text-orange my-1">FREE</div>
+                        <span class="small text-secondary">Age 62 and Older</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card p-3 border-0 shadow-sm rounded-3 bg-white h-100">
+                        <span class="small text-uppercase text-muted fw-bold">NB Students</span>
+                        <div class="display-6 fw-bold text-orange my-1">FREE</div>
+                        <span class="small text-secondary">With School ID</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👥 ATHLETIC DEPARTMENT DIRECTORY -->
+    <section class="py-5 bg-white border-top" id="directory">
+        <div class="container py-3">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Athletic Department Directory</h2>
+                <p class="text-muted small col-md-8 mx-auto mt-2">Contact school athletic administration and program directors.</p>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+                <!-- Athletic Director -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm p-4 text-center rounded-3 bg-light h-100">
+                        <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange mx-auto" style="width: 65px; height: 65px;">
+                            <i class="bi bi-person-workspace fs-2"></i>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">Athletic Director</h3>
+                        <p class="small text-muted mb-2">New Bloomfield R-III Schools</p>
+                        <div class="d-flex flex-column gap-1 small mt-auto">
+                            <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">
+                                <i class="bi bi-telephone-fill text-orange me-1"></i> (573) 491-3700
+                            </a>
+                            <a href="mailto:athletics@nb.k12.mo.us" class="text-dark fw-bold text-decoration-none">
+                                <i class="bi bi-envelope-fill text-orange me-1"></i> athletics@nb.k12.mo.us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School Principal / Admin -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm p-4 text-center rounded-3 bg-light h-100">
+                        <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange mx-auto" style="width: 65px; height: 65px;">
+                            <i class="bi bi-building fs-2"></i>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">High School Office</h3>
+                        <p class="small text-muted mb-2">Main Administrative Office</p>
+                        <div class="d-flex flex-column gap-1 small mt-auto">
+                            <a href="tel:5734913700" class="text-dark fw-bold text-decoration-none">
+                                <i class="bi bi-telephone-fill text-orange me-1"></i> (573) 491-3700
+                            </a>
+                            <span class="text-secondary small">Mon–Fri: 7:30 AM – 3:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booster Liaison -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm p-4 text-center rounded-3 bg-light h-100">
+                        <div class="mb-3 d-inline-flex justify-content-center align-items-center rounded-circle bg-dark-custom text-orange mx-auto" style="width: 65px; height: 65px;">
+                            <i class="bi bi-heart-fill fs-2"></i>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-1 text-uppercase">Booster Club Support</h3>
+                        <p class="small text-muted mb-2">Athletic Boosters Executive Board</p>
+                        <div class="d-flex flex-column gap-1 small mt-auto">
+                            <a href="mailto:nbathleticboosterclub@gmail.com" class="text-dark fw-bold text-decoration-none">
+                                <i class="bi bi-envelope-fill text-orange me-1"></i> nbathleticboosterclub@gmail.com
+                            </a>
+                            <a href="coaches.html" class="text-orange fw-bold text-decoration-none">
+                                Coaches Wishlist Portal →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🦶 FOOTER (Consistent 3-Column Layout) -->
+    <footer id="contact">
+        <div class="footer-inner">
+            <div class="footer-col" style="flex: 2; min-width: 250px;">
+                <h4>New Bloomfield Athletic Boosters</h4>
+                <p style="font-size: 0.88rem; max-width: 380px; color: #aaaaaa; margin: 0;">Empowering student-athletes, supporting coaches, and building Wildcat pride throughout Callaway County, Missouri.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="athletics.html">Athletics Hub</a></li>
+                    <li><a href="coaches.html">Coaches Portal</a></li>
+                    <li><a href="golf.html">Golf Scramble</a></li>
+                    <li><a href="index.html#events">Upcoming Events</a></li>
+                    <li><a href="index.html#board-members">Leadership Board</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact &amp; Links</h4>
+                <ul>
+                    <li><a href="mailto:nbathleticboosterclub@gmail.com">nbathleticboosterclub@gmail.com</a></li>
+                    <li><a href="tel:3142885026">(314) 288-5026 (President)</a></li>
+                    <li><a href="coaches.html">Coach Wishlist Portal</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1b0yw2IeDhy3M7X0SGL3deVTFxP-1U4vm?usp=drive_link" target="_blank" rel="noopener noreferrer">Officer Portal ↗</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">&copy; 2026 New Bloomfield Athletic Booster Club. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+    </script>
+</body>
+</html>

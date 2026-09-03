@@ -39,40 +39,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-		/* Prevent horizontal page blow-out */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
+        /* Prevent horizontal page blow-out */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
 
-/* Responsive navbar brand scaling */
-.navbar-brand {
-    font-size: 1.1rem;
-    white-space: normal;
-    max-width: calc(100% - 60px);
-    line-height: 1.2;
-}
+        /* Fixed navbar page offset */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #212529;
+            background-color: #ffffff;
+            padding-top: 70px;
+        }
 
-@media (max-width: 576px) {
-    .navbar-brand {
-        font-size: 0.85rem;
-    }
-    
-    .hero-section h1 {
-        font-size: 1.85rem !important;
-    }
-}
+        /* Responsive navbar brand scaling */
+        .navbar-brand {
+            font-size: 1.1rem;
+            white-space: normal;
+            max-width: calc(100% - 60px);
+            line-height: 1.2;
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .navbar-brand {
+                font-size: 0.85rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.85rem !important;
+            }
+        }
+
         :root {
             --wildcat-orange: #f36c21;
             --wildcat-orange-dark: #d95a13;
             --wildcat-black: #111111;
             --wildcat-dark-gray: #1e1e1e;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: #212529;
-            background-color: #ffffff;
         }
 
         h1, h2, h3, h4, .brand-font {
@@ -172,7 +179,7 @@ html, body {
             color: var(--wildcat-orange);
         }
 
-        /* Document 2 Footer Styles */
+        /* Footer Styles */
         footer {
             background: var(--wildcat-black);
             border-top: 3px solid var(--wildcat-orange);
@@ -226,70 +233,71 @@ html, body {
             text-align: center;
             font-size: 0.8rem;
         }
-		/* Continuous Sponsor Ticker */
-.sponsor-ticker-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 12px 0;
-    border: 1px solid #e9ecef;
-}
 
-.sponsor-ticker-track {
-    display: flex;
-    width: max-content;
-    animation: scrollTicker 160s linear infinite;
-}
+        /* Continuous Sponsor Ticker */
+        .sponsor-ticker-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px 0;
+            border: 1px solid #e9ecef;
+        }
 
-.sponsor-ticker-track:hover {
-    animation-play-state: paused;
-}
+        .sponsor-ticker-track {
+            display: flex;
+            width: max-content;
+            animation: scrollTicker 160s linear infinite;
+        }
 
-.ticker-badge {
-    flex-shrink: 0;
-    margin: 0 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 50rem;
-    background: #ffffff;
-    border: 1px solid #dee2e6;
-    color: #333333;
-    white-space: nowrap;
-}
+        .sponsor-ticker-track:hover {
+            animation-play-state: paused;
+        }
 
-@keyframes scrollTicker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+        .ticker-badge {
+            flex-shrink: 0;
+            margin: 0 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 50rem;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            color: #333333;
+            white-space: nowrap;
+        }
+
+        @keyframes scrollTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" tabindex="0">
 
-   <!-- 🧭 TOP NAVBAR (Reordered to Match Page Scroll Flow) -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand brand-font" href="index.html">
-    NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
-</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-            <ul class="navbar-nav gap-2 align-items-center">
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#mission">Mission</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#coverage">Live Coverage</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#events">Events</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="coaches.html">Coaches</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Scramble</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#join">Get Involved</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#board-members">Leadership</a></li>
-            </ul>
+    <!-- 🧭 TOP NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top border-bottom border-3" style="border-color: var(--wildcat-orange) !important;" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand brand-font" href="index.html">
+                NEW BLOOMFIELD <span class="text-orange">ATHLETIC BOOSTERS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold text-orange active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="athletics.html">Athletics</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#coverage">Live Coverage</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="coaches.html">Coaches</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="golf.html">Golf Scramble</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#board-members">Leadership</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- 📣 HERO SECTION -->
     <section class="hero-section text-white d-flex align-items-center justify-content-center text-center py-5" id="hero">
@@ -305,8 +313,8 @@ html, body {
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-lg">
                             Join the Booster Club Today (100% Free)
                         </a>
-                        <a href="https://www.mshsaa.org/MySchool/?s=376" target="_blank" rel="noopener noreferrer" class="btn btn-brand-outline btn-lg">
-                            View Upcoming Schedule ↗
+                        <a href="athletics.html" class="btn btn-brand-outline btn-lg">
+                            View Athletic Schedules ↗
                         </a>
                     </div>
                 </div>
@@ -383,7 +391,7 @@ html, body {
                 </div>
                 <div class="col-6 col-md-4 col-lg">
                     <a href="https://gc.com/" target="_blank" rel="noopener noreferrer" class="quick-link-btn">
-                        <i class="bi bi-broadcast-pin text-orange"></i> GameChanger 
+                        <i class="bi bi-broadcast-pin text-orange"></i> GameChanger (BB/SB)
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg">
@@ -392,8 +400,8 @@ html, body {
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg">
-                    <a href="https://jwhite020.wixsite.com/my-site" target="_blank" rel="noopener noreferrer" class="quick-link-btn">
-                        <i class="bi bi-globe text-orange"></i> Wildcat Athletics Site
+                    <a href="athletics.html" class="quick-link-btn">
+                        <i class="bi bi-mortarboard-fill text-orange"></i> Wildcat Athletics Hub
                     </a>
                 </div>
             </div>
@@ -432,6 +440,9 @@ html, body {
                 </div>
             </div>
         </div>
+        <p class="text-center small text-muted mt-2 mb-0">
+            Looking for gym reservations or practice allocations? <a href="athletics.html#facility-schedule" class="text-orange fw-bold text-decoration-none">View Facility Practice Schedule →</a>
+        </p>
     </section>
 
     <!-- ✨ CALL TO ACTION / GET INVOLVED -->
@@ -454,143 +465,143 @@ html, body {
         </div>
     </section>
 	
-<!-- 🤝 TOURNAMENT SPONSORS SHOWCASE -->
-<section class="py-5 bg-white border-top border-bottom" id="sponsors">
-    <div class="container py-2 text-center">
-        
-      <span class="badge bg-warning text-dark text-uppercase fw-bold mb-2 px-3 py-2" style="background-color: var(--wildcat-orange) !important; color: white !important; letter-spacing: 1px;">
-            Community Champions
-        </span>
-        <h2 class="section-title d-block">Thank You to Our Tournament Sponsors</h2>
-        <p class="text-muted small col-md-8 mx-auto mb-4">
-            Proud businesses, families, and alumni investing directly in New Bloomfield student-athletes through the Rod Haley Memorial Scramble.
-        </p>
-
-        <!-- ⭐ Featured Eagle Sponsors ($250) -->
-        <div class="mb-4">
-            <h3 class="h6 fw-bold text-dark text-uppercase mb-3" style="letter-spacing: 1px;">
-                <i class="bi bi-star-fill text-orange me-1"></i> Eagle Sponsors ($250 Level)
-            </h3>
-            <div class="row g-3 justify-content-center">
-                <div class="col-sm-6 col-md-4 col-lg">
-                    <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-uppercase small">Angie Robinson Sullivan<br><span class="text-orange" style="font-size: 0.75rem;">NB Class of 1993</span></span>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg">
-                    <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-uppercase small">Fenwick Project</span>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg">
-                    <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-uppercase small">Kaiser Electric</span>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg">
-                    <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-uppercase small">Mike &amp; Gracia Backer</span>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg">
-                    <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                        <span class="fw-bold text-uppercase small">Oak Tree Villa<br><span class="text-orange" style="font-size: 0.75rem;">Stonebridge</span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 🥤 Beverage & Hospitality Sponsors -->
-        <div class="mb-4">
-          <h3 class="h6 fw-bold text-dark text-uppercase mb-2" style="letter-spacing: 0.5px; font-size: 0.82rem;">
-                <i class="bi bi-cup-straw text-orange me-1"></i> Beverage Sponsors
-            </h3>
-          <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> Coca-Cola</span>
-                <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> Fechtel Beverage</span>
-                <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> N H Scheppers Distributing</span>
-
-            <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> Finteris Wealth Management</span>
-            </div>
-        </div>
-
-        <!-- ⛳ Scrolling Ticker: Birdie & Par Sponsors (Small Footprint) -->
-        <div class="mt-4">
-            <h3 class="h6 fw-bold text-muted text-uppercase mb-2" style="font-size: 0.78rem; letter-spacing: 0.5px;">
-                <i class="bi bi-flag-fill text-orange me-1"></i> Birdie &amp; Par Level Sponsors 
-            </h3>
+    <!-- 🤝 TOURNAMENT SPONSORS SHOWCASE -->
+    <section class="py-5 bg-white border-top border-bottom" id="sponsors">
+        <div class="container py-2 text-center">
             
-            <div class="sponsor-ticker-container">
-                <div class="sponsor-ticker-track">
-                    <!-- Set 1 -->
-                    <span class="ticker-badge">Booth Agency and Associates</span>
-                    <span class="ticker-badge">Brenda Maddox (In Memory of Bruce Maddox)</span>
-                    <span class="ticker-badge">C2C Associates - Jill Hancock</span>
-                    <span class="ticker-badge">Central Bank</span>
-                    <span class="ticker-badge">Christian Motors, LLC</span>
-                    <span class="ticker-badge">Come to the Table Catering</span>
-                    <span class="ticker-badge">Drace Johnson &amp; Ashley Briggs</span>
-                    <span class="ticker-badge">Edward Jones - Andy March</span>
-                    <span class="ticker-badge">Edward Jones - Joe March</span>
-                    <span class="ticker-badge">EWJ Welding</span>
-                    <span class="ticker-badge">Farm Power Lawn &amp; Leisure</span>
-                    <span class="ticker-badge">Finteris Wealth Management</span>
-                    <span class="ticker-badge">FlatBranch - Kelly Henning</span>
-                    <span class="ticker-badge">Gastineau Log Homes</span>
-                    <span class="ticker-badge">Hager Construction</span>
-                    <span class="ticker-badge">Jerry &amp; Paula Allen</span>
-                    <span class="ticker-badge">KPs Carwash &amp; Pet Wash</span>
-                    <span class="ticker-badge">Landmarc Env</span>
-                    <span class="ticker-badge">Mitch &amp; Dottie Robertson</span>
-                    <span class="ticker-badge">OCCI</span>
-                    <span class="ticker-badge">Plan Design Consultants, Inc.</span>
-                    <span class="ticker-badge">Roger Rackers Hauling, LLC</span>
-                    <span class="ticker-badge">Russ Weyland - State Farm</span>
-                    <span class="ticker-badge">Shikles Land Care</span>
-                    <span class="ticker-badge">Summit Chiropractic</span>
-                    <span class="ticker-badge">The Custard Family</span>
-                    <span class="ticker-badge">The Family of Billy Joe Trammell</span>
-                    <span class="ticker-badge">Wesley Walker Trucking</span>
-                    <span class="ticker-badge">Wilson's Backhoe Service</span>
-                    <span class="ticker-badge">Zach &amp; Shannon Bedsworth</span>
+            <span class="badge bg-warning text-dark text-uppercase fw-bold mb-2 px-3 py-2" style="background-color: var(--wildcat-orange) !important; color: white !important; letter-spacing: 1px;">
+                Community Champions
+            </span>
+            <h2 class="section-title d-block">Thank You to Our Tournament Sponsors</h2>
+            <p class="text-muted small col-md-8 mx-auto mb-4">
+                Proud businesses, families, and alumni investing directly in New Bloomfield student-athletes through the Rod Haley Memorial Scramble.
+            </p>
 
-                    <!-- Set 2 (Exact Duplicate for Infinite Seamless Loop) -->
-                    <span class="ticker-badge">Booth Agency and Associates</span>
-                    <span class="ticker-badge">Brenda Maddox (In Memory of Bruce Maddox)</span>
-                    <span class="ticker-badge">C2C Associates - Jill Hancock</span>
-                    <span class="ticker-badge">Central Bank</span>
-                    <span class="ticker-badge">Christian Motors, LLC</span>
-                    <span class="ticker-badge">Come to the Table Catering</span>
-                    <span class="ticker-badge">Drace Johnson &amp; Ashley Briggs</span>
-                    <span class="ticker-badge">Edward Jones - Andy March</span>
-                    <span class="ticker-badge">Edward Jones - Joe March</span>
-                    <span class="ticker-badge">EWJ Welding</span>
-                    <span class="ticker-badge">Farm Power Lawn &amp; Leisure</span>
-                    <span class="ticker-badge">Finteris Wealth Management</span>
-                    <span class="ticker-badge">FlatBranch - Kelly Henning</span>
-                    <span class="ticker-badge">Gastineau Log Homes</span>
-                    <span class="ticker-badge">Hager Construction</span>
-                    <span class="ticker-badge">Jerry &amp; Paula Allen</span>
-                    <span class="ticker-badge">KPs Carwash &amp; Pet Wash</span>
-                    <span class="ticker-badge">Landmarc Env</span>
-                    <span class="ticker-badge">Mitch &amp; Dottie Robertson</span>
-                    <span class="ticker-badge">OCCI</span>
-                    <span class="ticker-badge">Plan Design Consultants, Inc.</span>
-                    <span class="ticker-badge">Roger Rackers Hauling, LLC</span>
-                    <span class="ticker-badge">Russ Weyland - State Farm</span>
-                    <span class="ticker-badge">Shikles Land Care</span>
-                    <span class="ticker-badge">Summit Chiropractic</span>
-                    <span class="ticker-badge">The Custard Family</span>
-                    <span class="ticker-badge">The Family of Billy Joe Trammell</span>
-                    <span class="ticker-badge">Wesley Walker Trucking</span>
-                    <span class="ticker-badge">Wilson's Backhoe Service</span>
-                    <span class="ticker-badge">Zach &amp; Shannon Bedsworth</span>
+            <!-- ⭐ Featured Eagle Sponsors ($250) -->
+            <div class="mb-4">
+                <h3 class="h6 fw-bold text-dark text-uppercase mb-3" style="letter-spacing: 1px;">
+                    <i class="bi bi-star-fill text-orange me-1"></i> Eagle Sponsors ($250 Level)
+                </h3>
+                <div class="row g-3 justify-content-center">
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                            <span class="fw-bold text-uppercase small">Angie Robinson Sullivan<br><span class="text-orange" style="font-size: 0.75rem;">NB Class of 1993</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                            <span class="fw-bold text-uppercase small">Fenwick Project</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                            <span class="fw-bold text-uppercase small">Kaiser Electric</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                            <span class="fw-bold text-uppercase small">Mike &amp; Gracia Backer</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg">
+                        <div class="p-3 rounded-3 bg-dark-custom text-white border border-secondary border-opacity-25 shadow-sm h-100 d-flex align-items-center justify-content-center">
+                            <span class="fw-bold text-uppercase small">Oak Tree Villa<br><span class="text-orange" style="font-size: 0.75rem;">Stonebridge</span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-</section>
+            <!-- 🥤 Beverage & Hospitality Sponsors -->
+            <div class="mb-4">
+                <h3 class="h6 fw-bold text-dark text-uppercase mb-2" style="letter-spacing: 0.5px; font-size: 0.82rem;">
+                    <i class="bi bi-cup-straw text-orange me-1"></i> Beverage Sponsors
+                </h3>
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> Coca-Cola</span>
+                    <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> Fechtel Beverage</span>
+                    <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> N H Scheppers Distributing</span>
+                    <span class="badge bg-dark-custom text-white border px-3 py-2 fw-semibold shadow-sm"><i class="bi bi-check2 text-orange me-1"></i> Finteris Wealth Management</span>
+                </div>
+            </div>
+
+            <!-- ⛳ Scrolling Ticker: Birdie & Par Sponsors (Small Footprint) -->
+            <div class="mt-4">
+                <h3 class="h6 fw-bold text-muted text-uppercase mb-2" style="font-size: 0.78rem; letter-spacing: 0.5px;">
+                    <i class="bi bi-flag-fill text-orange me-1"></i> Birdie &amp; Par Level Sponsors 
+                </h3>
+                
+                <div class="sponsor-ticker-container">
+                    <div class="sponsor-ticker-track">
+                        <!-- Set 1 -->
+                        <span class="ticker-badge">Booth Agency and Associates</span>
+                        <span class="ticker-badge">Brenda Maddox (In Memory of Bruce Maddox)</span>
+                        <span class="ticker-badge">C2C Associates - Jill Hancock</span>
+                        <span class="ticker-badge">Central Bank</span>
+                        <span class="ticker-badge">Christian Motors, LLC</span>
+                        <span class="ticker-badge">Come to the Table Catering</span>
+                        <span class="ticker-badge">Drace Johnson &amp; Ashley Briggs</span>
+                        <span class="ticker-badge">Edward Jones - Andy March</span>
+                        <span class="ticker-badge">Edward Jones - Joe March</span>
+                        <span class="ticker-badge">EWJ Welding</span>
+                        <span class="ticker-badge">Farm Power Lawn &amp; Leisure</span>
+                        <span class="ticker-badge">Finteris Wealth Management</span>
+                        <span class="ticker-badge">FlatBranch - Kelly Henning</span>
+                        <span class="ticker-badge">Gastineau Log Homes</span>
+                        <span class="ticker-badge">Hager Construction</span>
+                        <span class="ticker-badge">Jerry &amp; Paula Allen</span>
+                        <span class="ticker-badge">KPs Carwash &amp; Pet Wash</span>
+                        <span class="ticker-badge">Landmarc Env</span>
+                        <span class="ticker-badge">Mitch &amp; Dottie Robertson</span>
+                        <span class="ticker-badge">OCCI</span>
+                        <span class="ticker-badge">Plan Design Consultants, Inc.</span>
+                        <span class="ticker-badge">Roger Rackers Hauling, LLC</span>
+                        <span class="ticker-badge">Russ Weyland - State Farm</span>
+                        <span class="ticker-badge">Shikles Land Care</span>
+                        <span class="ticker-badge">Summit Chiropractic</span>
+                        <span class="ticker-badge">The Custard Family</span>
+                        <span class="ticker-badge">The Family of Billy Joe Trammell</span>
+                        <span class="ticker-badge">Wesley Walker Trucking</span>
+                        <span class="ticker-badge">Wilson's Backhoe Service</span>
+                        <span class="ticker-badge">Zach &amp; Shannon Bedsworth</span>
+
+                        <!-- Set 2 (Exact Duplicate for Infinite Seamless Loop) -->
+                        <span class="ticker-badge">Booth Agency and Associates</span>
+                        <span class="ticker-badge">Brenda Maddox (In Memory of Bruce Maddox)</span>
+                        <span class="ticker-badge">C2C Associates - Jill Hancock</span>
+                        <span class="ticker-badge">Central Bank</span>
+                        <span class="ticker-badge">Christian Motors, LLC</span>
+                        <span class="ticker-badge">Come to the Table Catering</span>
+                        <span class="ticker-badge">Drace Johnson &amp; Ashley Briggs</span>
+                        <span class="ticker-badge">Edward Jones - Andy March</span>
+                        <span class="ticker-badge">Edward Jones - Joe March</span>
+                        <span class="ticker-badge">EWJ Welding</span>
+                        <span class="ticker-badge">Farm Power Lawn &amp; Leisure</span>
+                        <span class="ticker-badge">Finteris Wealth Management</span>
+                        <span class="ticker-badge">FlatBranch - Kelly Henning</span>
+                        <span class="ticker-badge">Gastineau Log Homes</span>
+                        <span class="ticker-badge">Hager Construction</span>
+                        <span class="ticker-badge">Jerry &amp; Paula Allen</span>
+                        <span class="ticker-badge">KPs Carwash &amp; Pet Wash</span>
+                        <span class="ticker-badge">Landmarc Env</span>
+                        <span class="ticker-badge">Mitch &amp; Dottie Robertson</span>
+                        <span class="ticker-badge">OCCI</span>
+                        <span class="ticker-badge">Plan Design Consultants, Inc.</span>
+                        <span class="ticker-badge">Roger Rackers Hauling, LLC</span>
+                        <span class="ticker-badge">Russ Weyland - State Farm</span>
+                        <span class="ticker-badge">Shikles Land Care</span>
+                        <span class="ticker-badge">Summit Chiropractic</span>
+                        <span class="ticker-badge">The Custard Family</span>
+                        <span class="ticker-badge">The Family of Billy Joe Trammell</span>
+                        <span class="ticker-badge">Wesley Walker Trucking</span>
+                        <span class="ticker-badge">Wilson's Backhoe Service</span>
+                        <span class="ticker-badge">Zach &amp; Shannon Bedsworth</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- 👥 BOARD LEADERSHIP SECTION -->
     <section class="py-5 bg-light border-top" id="board-members">
         <div class="container py-4">
@@ -670,7 +681,7 @@ html, body {
                     <i class="bi bi-calendar-event me-1"></i> Meeting Schedule
                 </a>
                 <a href="https://drive.google.com/drive/folders/1b0yw2IeDhy3M7X0SGL3deVTFxP-1U4vm?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-sm fw-bold text-uppercase px-4">
-                    <i class="bi bi-shield-lock-fill text-orange me-1"></i> Presidency Drive Portal
+                    <i class="bi bi-shield-lock-fill text-orange me-1"></i> Officer Portal
                 </a>
             </div>
         </div>
@@ -688,11 +699,11 @@ html, body {
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#events">Upcoming Events</a></li>
-                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="athletics.html">Athletics Hub</a></li>
                     <li><a href="coaches.html">Coaches Portal</a></li>
                     <li><a href="golf.html">Golf Scramble</a></li>
-                    <li><a href="#board-members">Leadership Board</a></li>
+                    <li><a href="index.html#events">Upcoming Events</a></li>
+                    <li><a href="index.html#board-members">Leadership Board</a></li>
                 </ul>
             </div>
 
