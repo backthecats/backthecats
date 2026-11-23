@@ -154,12 +154,6 @@
             transform: translateY(-3px);
         }
 
-        .toggle-btn-custom[aria-expanded="true"] {
-            border-color: var(--wildcat-orange) !important;
-            background-color: #fffaf6 !important;
-            color: var(--wildcat-orange) !important;
-        }
-
         .feature-box {
             border-top: 4px solid var(--wildcat-orange);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -225,7 +219,7 @@
             box-shadow: none;
             border-color: var(--wildcat-orange);
         }
-		
+
         /* 4-Column Footer Styles */
         footer {
             background: var(--wildcat-black);
@@ -237,7 +231,6 @@
 
         .footer-inner {
             max-width: 1140px;
-
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
@@ -510,37 +503,15 @@
                 </div>
             </div>
 
-            <!-- 🔓 ACTIVE TEAM REGISTRATION STATE (Revealed when countdown finishes) -->
+            <!-- 🔓 ACTIVE TEAM REGISTRATION STATE (Revealed automatically Jan 1, 2027 at 8:00 AM) -->
             <div id="golf-active" style="display: none;">
-                <div class="row justify-content-center g-3 mb-4">
+                <div class="row justify-content-center g-3 mb-2">
                     <div class="col-md-6 col-lg-5">
-                        <button class="btn btn-outline-dark w-100 py-3 fw-bold text-uppercase shadow-sm toggle-btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#teamCollapse" aria-expanded="false" aria-controls="teamCollapse">
+                        <button class="btn btn-outline-dark w-100 py-3 fw-bold text-uppercase shadow-sm toggle-btn-custom" type="button" onclick="openTeamModal()">
                             <i class="bi bi-people-fill text-orange fs-4 d-block mb-1"></i>
                             Register a Team ($500 / 4-Some)
-                            <span class="d-block small text-muted font-monospace mt-1">Click to Expand Form ↓</span>
+                            <span class="d-block small text-muted font-monospace mt-1">Click to Register On-Page →</span>
                         </button>
-                    </div>
-                </div>
-
-                <!-- Team Form Container -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="collapse mb-4" id="teamCollapse">
-                            <div class="card border-0 shadow rounded-3 overflow-hidden">
-                                <div class="bg-dark-custom text-white p-3 d-flex justify-content-between align-items-center flex-wrap gap-2 border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
-                                    <h3 class="h6 mb-0 text-white fw-bold text-uppercase">4-Person Scramble Team Entry ($500 / 4-Some)</h3>
-                                    <div class="d-flex gap-2">
-                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9tRXKiUufZOgJpCC5vtPhRJ7ZiV8VFPyzuW5Vxzg-k_JFvA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-brand-primary">
-                                            Open Full Page <i class="bi bi-box-arrow-up-right ms-1"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="collapse" data-bs-target="#teamCollapse">Close ✕</button>
-                                    </div>
-                                </div>
-                                <div class="p-2 p-md-4 bg-white text-center">
-                                    <iframe title="Team Registration Form" src="https://docs.google.com/forms/d/e/1FAIpQLSf9tRXKiUufZOgJpCC5vtPhRJ7ZiV8VFPyzuW5Vxzg-k_JFvA/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border: none; max-width: 100%;">Loading…</iframe>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -691,7 +662,7 @@
             </div>
         </div>
     </section>
-	
+
     <!-- 🤝 TOURNAMENT SPONSORS SHOWCASE -->
     <section class="py-5 bg-white border-top border-bottom" id="past-sponsors">
         <div class="container py-2 text-center">
@@ -939,7 +910,7 @@
                 <div class="col-lg-8">
                     <div class="accordion shadow-sm" id="golfFaqAccordion">
                         
-                        <!-- Question 1 (Collapsed by default) -->
+                        <!-- Question 1 -->
                         <div class="accordion-item border-0 mb-2 rounded overflow-hidden">
                             <h3 class="accordion-header" id="faqOneHeader">
                                 <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false" aria-controls="faqOne">
@@ -1001,7 +972,7 @@
                             </div>
                         </div>
                                 
-                        <!-- Question 5 (Last item) -->
+                        <!-- Question 5 -->
                         <div class="accordion-item border-0 rounded overflow-hidden">
                             <h3 class="accordion-header" id="faqFiveHeader">
                                 <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
@@ -1010,7 +981,7 @@
                             </h3>
                             <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveHeader" data-bs-parent="#golfFaqAccordion">
                                 <div class="accordion-body small text-secondary">
-                                    To become a sponsor, select any open tier above to open the online sponsorship form. To register a team, expand the team registration form above once the countdown timer officially opens entry.
+                                    To become a sponsor, select any open tier above to complete the quick on-page sponsorship form. To register a team, click the team registration button above once the countdown timer officially opens entry on January 1, 2027.
                                 </div>
                             </div>
                         </div>
@@ -1029,30 +1000,178 @@
         </div>
     </section>
 
-    <!-- 📱 POPUP SPONSOR MODAL -->
-    <div class="modal fade" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <!-- 📋 ON-PAGE WILDCAT SIGNUP MODAL (Teams + Sponsors) -->
+    <div class="modal fade" id="wildcatSignupModal" tabindex="-1" aria-labelledby="wildcatSignupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-3 overflow-hidden">
-                <div class="bg-dark-custom text-white p-3 d-flex justify-content-between align-items-center border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
-                    <div>
-                        <h3 class="h6 mb-0 text-white fw-bold text-uppercase" id="sponsorModalLabel">Tournament Sponsorship Form</h3>
-                        <span class="small text-white-50" id="modalSelectedTierBadge"><i class="bi bi-tag-fill text-orange me-1"></i> Selected: Par Sponsor ($100)</span>
-                    </div>
-                    <div class="d-flex gap-2">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjRSaV3p_L8fxGclqkKinfXHBEC7E6KiVIXWUjBuQeBzIjkg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-brand-primary">
-                            Open Full Page <i class="bi bi-box-arrow-up-right ms-1"></i>
-                        </a>
-                        <button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal" aria-label="Close">✕</button>
+
+                <!-- Header -->
+                <div class="modal-header bg-dark-custom text-white border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+                    <h5 class="modal-title fw-bold text-uppercase mb-0" id="wildcatSignupModalLabel">
+                        <i class="bi bi-clipboard-check text-orange me-2"></i><span id="modalTitleText">Wildcat Signup</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body p-4">
+                    <form id="wildcatSignupForm">
+                        <input type="hidden" name="formMode" id="formModeInput" value="golf-sponsor">
+                        <input type="hidden" name="signupTitle" id="signupTitleInput" value="Golf Tournament Sponsorship">
+
+                        <!-- Honeypot anti-spam field -->
+                        <div class="d-none" aria-hidden="true">
+                            <label for="websiteField">Website</label>
+                            <input type="text" id="websiteField" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <!-- ⛳ GOLF TEAM-ONLY FIELDS -->
+                        <div id="golfTeamFields" class="d-none">
+                            <div class="mb-3">
+                                <label for="golfFlight" class="form-label small fw-bold text-uppercase">Select Flight *</label>
+                                <select class="form-select" id="golfFlight" name="flight" required>
+                                    <option value="" selected disabled>Choose a flight...</option>
+                                    <option id="optMorningFlight" value="Morning Flight">Morning Flight (8:00 AM)</option>
+                                    <option id="optAfternoonFlight" value="Afternoon Flight">Afternoon Flight (12:30 PM)</option>
+                                </select>
+                                <div id="allFlightsFullNotice" class="form-text text-danger fw-semibold d-none">
+                                    Both flights are currently full. Please email nbathleticboosterclub@gmail.com to join the waitlist.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 🏆 GOLF SPONSOR-ONLY FIELDS -->
+                        <div id="golfSponsorFields" class="d-none">
+                            <div class="mb-3">
+                                <label for="businessName" class="form-label small fw-bold text-uppercase">Business / Sponsor Name *</label>
+                                <input type="text" class="form-control" id="businessName" name="businessName" required placeholder="Name as it should appear on signage">
+                            </div>
+                            <div class="mb-3">
+                                <label for="golfTier" class="form-label small fw-bold text-uppercase">Sponsorship Tier *</label>
+                                <select class="form-select" id="golfTier" name="golfTier" required>
+                                    <option value="" selected disabled>Choose a sponsorship level...</option>
+                                    <option value="Par Sponsor ($100)">Par Sponsor ($100)</option>
+                                    <option value="Birdie Sponsor ($125)">Birdie Sponsor ($125)</option>
+                                    <option value="Eagle Sponsor ($250)">Eagle Sponsor ($250)</option>
+                                    <option value="Raffle / Prize Donation">Raffle / Prize Donation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- SHARED PRIMARY CONTACT / CAPTAIN FIELD -->
+                        <div class="mb-3">
+                            <label for="signupName" id="signupNameLabel" class="form-label small fw-bold text-uppercase">Full Name *</label>
+                            <input type="text" class="form-control" id="signupName" name="fullName" required placeholder="Your full name">
+                        </div>
+
+                        <!-- ⛳ GOLF TEAM PLAYERS 2-4 -->
+                        <div id="golfPlayersFields" class="d-none">
+                            <div class="row g-2 mb-3">
+                                <div class="col-12">
+                                    <label for="player2" class="form-label small fw-bold text-uppercase mb-1">Player 2 Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="player2" name="player2" placeholder="Player 2 full name (or leave blank if TBD)">
+                                </div>
+                                <div class="col-12">
+                                    <label for="player3" class="form-label small fw-bold text-uppercase mb-1">Player 3 Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="player3" name="player3" placeholder="Player 3 full name (or leave blank if TBD)">
+                                </div>
+                                <div class="col-12">
+                                    <label for="player4" class="form-label small fw-bold text-uppercase mb-1">Player 4 Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="player4" name="player4" placeholder="Player 4 full name (or leave blank if TBD)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SHARED EMAIL & PHONE -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="signupEmail" class="form-label small fw-bold text-uppercase">Email Address *</label>
+                                <input type="email" class="form-control" id="signupEmail" name="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="signupPhone" class="form-label small fw-bold text-uppercase">Phone Number</label>
+                                <input type="tel" class="form-control" id="signupPhone" name="phone" placeholder="(573) 555-0123">
+                            </div>
+                        </div>
+
+                        <!-- PAYMENT METHOD -->
+                        <div id="paymentFieldGroup" class="mb-3">
+                            <label for="paymentMethod" class="form-label small fw-bold text-uppercase">Preferred Payment Method *</label>
+                            <select class="form-select" id="paymentMethod" name="paymentMethod" required>
+                                <option value="Venmo">Venmo (@Carol-Jordan-32)</option>
+                                <option value="Check">Check (Mail or Pay at Check-In)</option>
+                                <option value="Invoice">Please Send Me an Invoice</option>
+                            </select>
+                        </div>
+
+                        <!-- NOTES -->
+                        <div class="mb-4">
+                            <label for="signupNotes" id="signupNotesLabel" class="form-label small fw-bold text-uppercase">Additional Notes</label>
+                            <textarea class="form-control" id="signupNotes" name="notes" rows="2" placeholder="Optional details or questions"></textarea>
+                        </div>
+
+                        <div id="signupErrorAlert" class="alert alert-danger small d-none" role="alert">
+                            Something went wrong submitting your form. Please try again or email nbathleticboosterclub@gmail.com.
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" id="signupSubmitBtn" class="btn btn-brand-primary fw-bold text-uppercase">
+                                Submit Registration
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Confirmation View -->
+                    <div id="signupSuccessView" class="text-center py-2 d-none">
+                        <i class="bi bi-check-circle-fill text-orange display-4 mb-2 d-block"></i>
+                        <h4 class="h5 fw-bold text-uppercase mb-2">Submission Received!</h4>
+                        <p class="small text-secondary mb-3">
+                            Thank you for supporting New Bloomfield Athletics. A confirmation email has been sent to you.
+                        </p>
+
+                        <!-- Auto-shown if they chose Venmo -->
+                        <div id="venmoPaymentBox" class="p-3 bg-light border rounded-3 mb-3 d-none">
+                            <p class="small fw-bold text-dark mb-2">Complete Your Payment via Venmo</p>
+                            <div class="p-2 bg-white rounded-3 d-inline-block shadow-sm mb-2">
+                                <img src="Images/venmo-qr.png" alt="Venmo QR Code" class="img-fluid" style="width: 120px; height: 120px; object-fit: contain;">
+                            </div>
+                            <div class="small text-muted mb-2" style="font-family: monospace;">@Carol-Jordan-32</div>
+                            <a href="https://account.venmo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark fw-bold text-uppercase px-3">
+                                <i class="bi bi-wallet2 text-orange me-1"></i> Open Venmo ↗
+                            </a>
+                        </div>
+
+                        <!-- Auto-shown if they chose Check -->
+                        <div id="checkPaymentBox" class="p-3 bg-light border rounded-3 mb-3 text-start d-none">
+                            <p class="small fw-bold text-dark text-uppercase text-center mb-2">
+                                <i class="bi bi-envelope-paper-fill text-orange me-1"></i> Check Payment Instructions
+                            </p>
+                            <div class="small text-secondary mb-2">
+                                <strong class="text-dark">Make Checks Payable To:</strong><br>
+                                NB Athletic Booster Club
+                            </div>
+                            <div class="small text-secondary mb-2">
+                                <strong class="text-dark">Mail Check To:</strong><br>
+                                NB Athletic Booster Club<br>
+                                7436 Paris Farm Rd<br>
+                                New Bloomfield, MO 65063
+                            </div>
+                            <p class="small text-muted mb-0 fst-italic">
+                                Please include your name, team, or business name in the memo line. Checks for golf teams may also be brought to check-in on tournament day.
+                            </p>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-dark btn-sm fw-bold text-uppercase px-4" data-bs-dismiss="modal">
+                            Close Window
+                        </button>
                     </div>
                 </div>
-                <div class="p-2 p-md-4 bg-white text-center">
-                    <iframe title="Tournament Sponsor Form" src="https://docs.google.com/forms/d/e/1FAIpQLSdjRSaV3p_L8fxGclqkKinfXHBEC7E6KiVIXWUjBuQeBzIjkg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border: none; max-width: 100%;">Loading…</iframe>
-                </div>
+
             </div>
         </div>
     </div>
 
-     <!-- 🦶 FOOTER (4-Column Layout with Venmo Donation) -->
+    <!-- 🦶 FOOTER (4-Column Layout with Venmo Donation) -->
     <footer id="contact">
         <div class="footer-inner">
             <!-- Col 1: About -->
@@ -1061,7 +1180,6 @@
                 <p style="font-size: 0.88rem; max-width: 360px; color: #aaaaaa; margin: 0 0 12px 0;">
                     Empowering student-athletes, supporting coaches, and building Wildcat pride throughout Callaway County, Missouri.
                 </p>
-               
             </div>
 
             <!-- Col 2: Navigation -->
@@ -1116,10 +1234,18 @@
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- ⏱️ Team Registration Countdown Script -->
+    <!-- ⏱️ Countdown, Live Flight Availability & On-Page Signup Controller -->
     <script>
-        const openDate = new Date(2027, 0, 1, 8, 0, 0).getTime();
+        // 🔗 PASTE YOUR DEPLOYED GOOGLE APPS SCRIPT /exec URL BELOW:
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyDxqd7bT0Q7zJj7DGlTqjb-h49H599cF6lDUOkSGZ_-waHeJ2J5fyu_Uod3QPSM4RpvQ/exec';
 
+        const openDate = new Date(2027, 0, 1, 8, 0, 0).getTime();
+        let latestCounts = {
+            morning: { registered: 0, cap: 15, remaining: 15 },
+            afternoon: { registered: 0, cap: 30, remaining: 30 }
+        };
+
+        // --- 1. COUNTDOWN CLOCK ---
         function updateCountdown() {
             const now = new Date().getTime();
             const timeRemaining = openDate - now;
@@ -1135,6 +1261,7 @@
                 if (lockedSection) lockedSection.style.display = 'none';
                 if (activeSection) activeSection.style.display = 'block';
                 if (window.countdownTimer) clearInterval(window.countdownTimer);
+                applySpotCounts(latestCounts);
                 return;
             }
 
@@ -1149,37 +1276,7 @@
             if (secsElem) secsElem.textContent = String(seconds).padStart(2, '0');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCountdown();
-            window.countdownTimer = setInterval(updateCountdown, 1000);
-        });
-
-        // Instant In-Place Modal Trigger
-        function openSponsorModal(tierName) {
-            const badgeEl = document.getElementById('modalSelectedTierBadge');
-            if (badgeEl) {
-                badgeEl.innerHTML = '<i class="bi bi-tag-fill text-orange me-1"></i> Selected: ' + tierName;
-            }
-            const modalEl = document.getElementById('sponsorModal');
-            if (modalEl) {
-                const sponsorModal = new bootstrap.Modal(modalEl);
-                sponsorModal.show();
-            }
-        }
-    </script>
-
-    <!-- 📊 Live Flight Availability Script -->
-    <script>
-        const FLIGHT_CONFIG = {
-            morningMax: 15,
-            afternoonMax: 30,
-            // Manual fallback counts (used until you paste your published Google Sheet CSV URL below)
-            morningRegisteredFallback: 0,
-            afternoonRegisteredFallback: 0,
-            // Paste your published "LiveCounts" CSV URL inside the quotes when ready:
-            sheetCsvUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBgrKj10ci12F15CnftVUh-0w_wnN9ppKJqpm_x9TYz1fOV7T8jyEarTvaTO2STOkW2n_UWmheQ3o6/pub?gid=1606475175&single=true&output=csv'
-        };
-
+        // --- 2. LIVE FLIGHT AVAILABILITY CARDS & DROPDOWN ---
         function renderFlightCard(prefix, maxTeams, registeredCount) {
             const safeReg = Math.max(0, Math.min(maxTeams, registeredCount));
             const spotsLeft = maxTeams - safeReg;
@@ -1213,37 +1310,185 @@
             }
         }
 
-        async function loadFlightCounts() {
-            let morningReg = FLIGHT_CONFIG.morningRegisteredFallback;
-            let afternoonReg = FLIGHT_CONFIG.afternoonRegisteredFallback;
+        function applySpotCounts(counts) {
+            if (!counts) return;
+            latestCounts = counts;
 
-            if (FLIGHT_CONFIG.sheetCsvUrl) {
-                try {
-                    const cacheBuster = FLIGHT_CONFIG.sheetCsvUrl.includes('?') ? '&' : '?';
-                    const response = await fetch(`${FLIGHT_CONFIG.sheetCsvUrl}${cacheBuster}t=${Date.now()}`);
-                    if (response.ok) {
-                        const csvText = await response.text();
-                        const lines = csvText.trim().split(/\r?\n/);
+            // Update the two progress bar cards on the page
+            renderFlightCard('morning', counts.morning.cap, counts.morning.registered);
+            renderFlightCard('afternoon', counts.afternoon.cap, counts.afternoon.registered);
 
-                        lines.forEach(line => {
-                            const [label, count] = line.split(',').map(s => s.replace(/"/g, '').trim());
-                            const parsed = parseInt(count, 10);
-                            if (!isNaN(parsed)) {
-                                if (label.toLowerCase() === 'morning') morningReg = parsed;
-                                if (label.toLowerCase() === 'afternoon') afternoonReg = parsed;
-                            }
-                        });
-                    }
-                } catch (err) {
-                    console.warn('Could not fetch live flight counts; using fallback values.', err);
-                }
+            // Update the flight dropdown inside the modal
+            const optMorning = document.getElementById('optMorningFlight');
+            const optAfternoon = document.getElementById('optAfternoonFlight');
+            const fullNotice = document.getElementById('allFlightsFullNotice');
+            const submitBtn = document.getElementById('signupSubmitBtn');
+            const formModeInput = document.getElementById('formModeInput');
+
+            if (optMorning) {
+                optMorning.textContent = counts.morning.remaining > 0
+                    ? `Morning Flight — 8:00 AM (${counts.morning.remaining} of ${counts.morning.cap} spots left)`
+                    : 'Morning Flight — FULL';
+                optMorning.disabled = counts.morning.remaining <= 0;
+            }
+            if (optAfternoon) {
+                optAfternoon.textContent = counts.afternoon.remaining > 0
+                    ? `Afternoon Flight — 12:30 PM (${counts.afternoon.remaining} of ${counts.afternoon.cap} spots left)`
+                    : 'Afternoon Flight — FULL';
+                optAfternoon.disabled = counts.afternoon.remaining <= 0;
             }
 
-            renderFlightCard('morning', FLIGHT_CONFIG.morningMax, morningReg);
-            renderFlightCard('afternoon', FLIGHT_CONFIG.afternoonMax, afternoonReg);
+            const bothFull = counts.morning.remaining <= 0 && counts.afternoon.remaining <= 0;
+            if (formModeInput && formModeInput.value === 'golf-team') {
+                if (fullNotice) fullNotice.classList.toggle('d-none', !bothFull);
+                if (submitBtn) submitBtn.disabled = bothFull;
+            }
         }
 
-        document.addEventListener('DOMContentLoaded', loadFlightCounts);
+        async function fetchLiveSpots() {
+            if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_YOUR_WEB_APP_URL_HERE') {
+                applySpotCounts(latestCounts);
+                return;
+            }
+            try {
+                const res = await fetch(`${SCRIPT_URL}?t=${Date.now()}`);
+                const data = await res.json();
+                if (data.status === 'success' && data.counts) {
+                    applySpotCounts(data.counts);
+                }
+            } catch (err) {
+                console.warn('Could not fetch live flight counts; showing defaults.', err);
+                applySpotCounts(latestCounts);
+            }
+        }
+
+        // --- 3. MODAL HELPERS (Pre-select Sponsor Tier OR Open Team Registration) ---
+        function setSectionVisible(sectionEl, visible) {
+            if (!sectionEl) return;
+            sectionEl.classList.toggle('d-none', !visible);
+            sectionEl.querySelectorAll('input, select, textarea').forEach(el => {
+                el.disabled = !visible;
+            });
+        }
+
+        function openSponsorModal(tierName) {
+            const modalEl = document.getElementById('wildcatSignupModal');
+            document.getElementById('modalTitleText').textContent = 'Golf Tournament Sponsorship';
+            document.getElementById('formModeInput').value = 'golf-sponsor';
+            document.getElementById('signupTitleInput').value = 'Golf Tournament Sponsorship';
+
+            setSectionVisible(document.getElementById('golfTeamFields'), false);
+            setSectionVisible(document.getElementById('golfPlayersFields'), false);
+            setSectionVisible(document.getElementById('golfSponsorFields'), true);
+            setSectionVisible(document.getElementById('paymentFieldGroup'), true);
+
+            document.getElementById('signupNameLabel').textContent = 'Contact Person Name *';
+            document.getElementById('signupNotesLabel').textContent = 'Signage Wording / Logo Notes';
+            document.getElementById('signupNotes').placeholder = 'e.g., Text for tee box sign, website URL for Eagle backlink, or logo instructions';
+            document.getElementById('allFlightsFullNotice').classList.add('d-none');
+            document.getElementById('signupSubmitBtn').disabled = false;
+
+            // Auto-select the clicked tier in the dropdown
+            const tierSelect = document.getElementById('golfTier');
+            if (tierSelect && tierName) {
+                tierSelect.value = tierName;
+            }
+
+            bootstrap.Modal.getOrCreateInstance(modalEl).show();
+        }
+
+        function openTeamModal() {
+            const modalEl = document.getElementById('wildcatSignupModal');
+            document.getElementById('modalTitleText').textContent = '4-Person Golf Team Registration';
+            document.getElementById('formModeInput').value = 'golf-team';
+            document.getElementById('signupTitleInput').value = '4-Person Golf Team Registration';
+
+            setSectionVisible(document.getElementById('golfTeamFields'), true);
+            setSectionVisible(document.getElementById('golfPlayersFields'), true);
+            setSectionVisible(document.getElementById('golfSponsorFields'), false);
+            setSectionVisible(document.getElementById('paymentFieldGroup'), true);
+
+            document.getElementById('signupNameLabel').textContent = 'Player 1 / Team Captain Name *';
+            document.getElementById('signupNotesLabel').textContent = 'Team Notes / Cart Requests';
+            document.getElementById('signupNotes').placeholder = 'Optional: Mulligans, cart requests, or pairing notes';
+
+            applySpotCounts(latestCounts);
+            fetchLiveSpots();
+            bootstrap.Modal.getOrCreateInstance(modalEl).show();
+        }
+
+        // --- 4. INITIALIZE ON PAGE LOAD ---
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCountdown();
+            window.countdownTimer = setInterval(updateCountdown, 1000);
+            fetchLiveSpots();
+
+            const modalEl = document.getElementById('wildcatSignupModal');
+            const form = document.getElementById('wildcatSignupForm');
+            const submitBtn = document.getElementById('signupSubmitBtn');
+            const successView = document.getElementById('signupSuccessView');
+            const venmoBox = document.getElementById('venmoPaymentBox');
+            const checkBox = document.getElementById('checkPaymentBox');
+            const errorAlert = document.getElementById('signupErrorAlert');
+
+            // Reset modal cleanly whenever closed
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                form.reset();
+                form.classList.remove('d-none');
+                successView.classList.add('d-none');
+                venmoBox.classList.add('d-none');
+                checkBox.classList.add('d-none');
+                errorAlert.classList.add('d-none');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit Registration';
+            });
+
+            // Handle form submission to Google Apps Script
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                errorAlert.classList.add('d-none');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...';
+
+                const chosenPayment = document.getElementById('paymentMethod').value;
+
+                try {
+                    const payload = new URLSearchParams(new FormData(form));
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        body: payload
+                    });
+                    const result = await response.json();
+
+                    if (result.counts) {
+                        applySpotCounts(result.counts);
+                    }
+
+                    if (result.status === 'success') {
+                        form.classList.add('d-none');
+                        successView.classList.remove('d-none');
+                        if (chosenPayment === 'Venmo') {
+                            venmoBox.classList.remove('d-none');
+                        } else if (chosenPayment === 'Check') {
+                            checkBox.classList.remove('d-none');
+                        }
+                    } else if (result.status === 'full') {
+                        errorAlert.textContent = result.message;
+                        errorAlert.classList.remove('d-none');
+                        document.getElementById('golfFlight').value = '';
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Submit Registration';
+                    } else {
+                        throw new Error(result.message || 'Submission failed');
+                    }
+                } catch (err) {
+                    errorAlert.textContent = 'Something went wrong submitting your form. Please try again or email nbathleticboosterclub@gmail.com.';
+                    errorAlert.classList.remove('d-none');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit Registration';
+                }
+            });
+        });
     </script>
 
     <!-- PWA Service Worker Registration -->

@@ -337,9 +337,14 @@
                         <a href="#donate" class="btn btn-brand-primary btn-lg shadow">
                             <i class="bi bi-heart-fill me-1"></i> Donate Now
                         </a>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-outline btn-lg">
+                        <button type="button"
+                                class="btn btn-brand-outline btn-lg"
+                                data-bs-toggle="modal"
+                                data-bs-target="#wildcatSignupModal"
+                                data-form-mode="booster-member"
+                                data-signup-title="Join the Booster Club (Free)">
                             Join Free Today
-                        </a>
+                        </button>
                         <a href="athletics.html" class="btn btn-outline-light btn-lg text-uppercase fw-bold">
                             Athletic Schedules ↗
                         </a>
@@ -366,7 +371,14 @@
                             <h3 class="h5 card-title fw-bold text-dark">Fund (Coach Requests)</h3>
                             <p class="card-text text-secondary mb-3">Partnering with Wildcat teams to fund essential practice gear, safety aids, and facility upgrades after district athletic budgets and team-generated fundraising (such as concession shifts and team events) have been applied.</p>
                             <div class="mt-auto">
-                                <a href="coaches.html" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">Submit Coach Wishlist →</a>
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-dark fw-bold text-uppercase"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#wildcatSignupModal"
+                                        data-form-mode="coach-wishlist"
+                                        data-signup-title="Coach Wishlist Request">
+                                    Submit Coach Wishlist →
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -378,7 +390,14 @@
                             <h3 class="h5 card-title fw-bold text-dark">Elevate (Wildcat Spirit)</h3>
                             <p class="card-text text-secondary mb-3">Enhancing program culture through running the spirit store, tournament hospitality rooms, senior recognition, and game-day atmospheres.</p>
                             <div class="mt-auto">
-                                <a href="#join" class="btn btn-sm btn-outline-dark fw-bold text-uppercase">Volunteer for Events →</a>
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-dark fw-bold text-uppercase"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#wildcatSignupModal"
+                                        data-form-mode="booster-member"
+                                        data-signup-title="Volunteer for Wildcat Events">
+                                    Volunteer for Events →
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -484,9 +503,14 @@
                     <p class="lead text-light opacity-75 mb-4">
                         Whether you can volunteer for an hour at an event, help with hospitality, or attend planning meetings, every bit of support directly empowers our student-athletes.
                     </p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_RMPRdLoUuvv9m3brLbx_uRQOS8JdMOUtpofAYhWSWznUGg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-brand-primary btn-lg">
-                        Join the Booster Club (Free Form) ↗
-                    </a>
+                    <button type="button"
+                            class="btn btn-brand-primary btn-lg"
+                            data-bs-toggle="modal"
+                            data-bs-target="#wildcatSignupModal"
+                            data-form-mode="booster-member"
+                            data-signup-title="Join the Booster Club (Free)">
+                        Join the Booster Club (Free) →
+                    </button>
                 </div>     
             </div>
         </div>
@@ -714,6 +738,224 @@
         </div>
     </section>
 
+    <!-- 📋 ON-PAGE WILDCAT SIGNUP MODAL (Free Booster Member / Volunteer + 5-Item Coach Wishlist) -->
+    <div class="modal fade" id="wildcatSignupModal" tabindex="-1" aria-labelledby="wildcatSignupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow-lg rounded-3 overflow-hidden">
+
+                <!-- Header -->
+                <div class="modal-header bg-dark-custom text-white border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+                    <h5 class="modal-title fw-bold text-uppercase mb-0" id="wildcatSignupModalLabel">
+                        <i class="bi bi-clipboard-check text-orange me-2"></i><span id="modalTitleText">Join the Booster Club</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body p-4">
+                    <form id="wildcatSignupForm">
+                        <input type="hidden" name="formMode" id="formModeInput" value="booster-member">
+                        <input type="hidden" name="signupTitle" id="signupTitleInput" value="Join the Booster Club (Free)">
+
+                        <!-- Honeypot anti-spam field -->
+                        <div class="d-none" aria-hidden="true">
+                            <label for="websiteField">Website</label>
+                            <input type="text" id="websiteField" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <!-- SHARED NAME FIELD -->
+                        <div class="mb-3">
+                            <label for="signupName" id="signupNameLabel" class="form-label small fw-bold text-uppercase">Full Name *</label>
+                            <input type="text" class="form-control" id="signupName" name="fullName" required placeholder="Your full name">
+                        </div>
+
+                        <!-- SHARED EMAIL & PHONE -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="signupEmail" class="form-label small fw-bold text-uppercase">Email Address *</label>
+                                <input type="email" class="form-control" id="signupEmail" name="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="signupPhone" class="form-label small fw-bold text-uppercase">Phone Number</label>
+                                <input type="tel" class="form-control" id="signupPhone" name="phone" placeholder="(573) 555-0123">
+                            </div>
+                        </div>
+
+                        <!-- ❤️ FREE BOOSTER MEMBER / VOLUNTEER FIELDS -->
+                        <div id="boosterMemberFields">
+                            <div class="mb-3">
+                                <label for="boosterTier" class="form-label small fw-bold text-uppercase">How Would You Like to Be Involved? *</label>
+                                <select class="form-select" id="boosterTier" name="boosterTier" required>
+                                    <option value="Active Member (Free — Meetings & Updates)">Active Member (Free — Meetings &amp; Updates)</option>
+                                    <option value="Event / Hospitality Volunteer">Event &amp; Hospitality Volunteer</option>
+                                    <option value="Spirit Store / Game-Day Helper">Spirit Store &amp; Game-Day Helper</option>
+                                    <option value="Golf Scramble Committee / Volunteer">Golf Scramble Committee / Volunteer</option>
+                                    <option value="Corporate / Business Sponsor Inquiry">Corporate / Business Sponsor Inquiry</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="paymentMethod" value="Free Membership">
+                        </div>
+
+                        <!-- 📋 COACH WISHLIST-ONLY FIELDS (Up to 5 Prioritized Items) -->
+                        <div id="coachWishlistFields" class="d-none">
+                            <div class="mb-3">
+                                <label for="coachSport" class="form-label small fw-bold text-uppercase">Sport / Program *</label>
+                                <select class="form-select" id="coachSport" name="coachSport" required>
+                                    <option value="" selected disabled>Select your Wildcat program...</option>
+                                    <option value="HS Boys Basketball">HS Boys Basketball</option>
+                                    <option value="HS Girls Basketball">HS Girls Basketball</option>
+                                    <option value="JH Boys / Girls Basketball">JH Boys / Girls Basketball</option>
+                                    <option value="HS Softball">HS Softball</option>
+                                    <option value="HS Baseball (Fall / Spring)">HS Baseball (Fall / Spring)</option>
+                                    <option value="HS Volleyball">HS Volleyball</option>
+                                    <option value="JH Volleyball">JH Volleyball</option>
+                                    <option value="HS / JH Cross Country">HS / JH Cross Country</option>
+                                    <option value="HS / JH Track & Field">HS / JH Track &amp; Field</option>
+                                    <option value="HS Boys / Girls Golf">HS Boys / Girls Golf</option>
+                                    <option value="HS / JH Cheer">HS / JH Cheer</option>
+                                    <option value="Dance Team">Dance Team</option>
+                                    <option value="Athletic Department / General">Athletic Department / General</option>
+                                </select>
+                            </div>
+
+                            <p class="small text-muted mb-2">
+                                List up to <strong>5 items in order of priority</strong> (#1 = highest priority).
+                            </p>
+
+                            <!-- Priority #1 (Always Visible & Required) -->
+                            <div class="p-3 bg-light border rounded-3 mb-2 priority-row" data-priority="1">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-dark-custom text-orange text-uppercase">Priority #1 (Top Need) *</span>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm" id="item1" name="item1" required placeholder="Item description &amp; quantity (e.g., 12 Practice Basketballs)">
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control form-control-sm" id="cost1" name="cost1" required placeholder="Est. cost ($450)">
+                                    </div>
+                                    <div class="col-7">
+                                        <input type="text" class="form-control form-control-sm" id="link1" name="link1" placeholder="Vendor or product link (optional)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Priority #2 -->
+                            <div class="p-3 bg-light border rounded-3 mb-2 priority-row d-none" data-priority="2">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary text-uppercase">Priority #2</span>
+                                    <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn" data-remove="2">Remove</button>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm" id="item2" name="item2" placeholder="Item description &amp; quantity">
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control form-control-sm" id="cost2" name="cost2" placeholder="Est. cost">
+                                    </div>
+                                    <div class="col-7">
+                                        <input type="text" class="form-control form-control-sm" id="link2" name="link2" placeholder="Vendor or product link (optional)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Priority #3 -->
+                            <div class="p-3 bg-light border rounded-3 mb-2 priority-row d-none" data-priority="3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary text-uppercase">Priority #3</span>
+                                    <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn" data-remove="3">Remove</button>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm" id="item3" name="item3" placeholder="Item description &amp; quantity">
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control form-control-sm" id="cost3" name="cost3" placeholder="Est. cost">
+                                    </div>
+                                    <div class="col-7">
+                                        <input type="text" class="form-control form-control-sm" id="link3" name="link3" placeholder="Vendor or product link (optional)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Priority #4 -->
+                            <div class="p-3 bg-light border rounded-3 mb-2 priority-row d-none" data-priority="4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary text-uppercase">Priority #4</span>
+                                    <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn" data-remove="4">Remove</button>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm" id="item4" name="item4" placeholder="Item description &amp; quantity">
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control form-control-sm" id="cost4" name="cost4" placeholder="Est. cost">
+                                    </div>
+                                    <div class="col-7">
+                                        <input type="text" class="form-control form-control-sm" id="link4" name="link4" placeholder="Vendor or product link (optional)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Priority #5 -->
+                            <div class="p-3 bg-light border rounded-3 mb-2 priority-row d-none" data-priority="5">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary text-uppercase">Priority #5</span>
+                                    <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn" data-remove="5">Remove</button>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm" id="item5" name="item5" placeholder="Item description &amp; quantity">
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control form-control-sm" id="cost5" name="cost5" placeholder="Est. cost">
+                                    </div>
+                                    <div class="col-7">
+                                        <input type="text" class="form-control form-control-sm" id="link5" name="link5" placeholder="Vendor or product link (optional)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add Priority Item Button -->
+                            <button type="button" id="addPriorityBtn" class="btn btn-sm btn-outline-dark fw-bold text-uppercase w-100 mb-3">
+                                <i class="bi bi-plus-circle-fill text-orange me-1"></i> Add Priority #2 Item (Up to 5)
+                            </button>
+                        </div>
+
+                        <!-- SHARED NOTES FIELD -->
+                        <div class="mb-4">
+                            <label for="signupNotes" id="signupNotesLabel" class="form-label small fw-bold text-uppercase">Athlete Name(s) &amp; Sports / Notes</label>
+                            <textarea class="form-control" id="signupNotes" name="notes" rows="2" placeholder="Optional: Student-athlete names, sports, or ideas"></textarea>
+                        </div>
+
+                        <div id="signupErrorAlert" class="alert alert-danger small d-none" role="alert">
+                            Something went wrong submitting your form. Please try again or email nbathleticboosterclub@gmail.com.
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" id="signupSubmitBtn" class="btn btn-brand-primary fw-bold text-uppercase">
+                                Submit Form
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Confirmation View -->
+                    <div id="signupSuccessView" class="text-center py-3 d-none">
+                        <i class="bi bi-check-circle-fill text-orange display-4 mb-2 d-block"></i>
+                        <h4 class="h5 fw-bold text-uppercase mb-2" id="successHeading">Submission Received!</h4>
+                        <p class="small text-secondary mb-4" id="successMessage">
+                            Thank you for supporting New Bloomfield Athletics. A confirmation email has been sent to you.
+                        </p>
+                        <button type="button" class="btn btn-outline-dark btn-sm fw-bold text-uppercase px-4" data-bs-dismiss="modal">
+                            Close Window
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- 🦶 FOOTER (4-Column Layout with Venmo Donation) -->
     <footer id="contact">
         <div class="footer-inner">
@@ -777,6 +1019,160 @@
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 📩 On-Page Signup & 5-Item Coach Wishlist Controller -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyDxqd7bT0Q7zJj7DGlTqjb-h49H599cF6lDUOkSGZ_-waHeJ2J5fyu_Uod3QPSM4RpvQ/exec';
+
+            const modalEl = document.getElementById('wildcatSignupModal');
+            const form = document.getElementById('wildcatSignupForm');
+            const submitBtn = document.getElementById('signupSubmitBtn');
+            const successView = document.getElementById('signupSuccessView');
+            const successHeading = document.getElementById('successHeading');
+            const successMessage = document.getElementById('successMessage');
+            const errorAlert = document.getElementById('signupErrorAlert');
+
+            const titleText = document.getElementById('modalTitleText');
+            const formModeInput = document.getElementById('formModeInput');
+            const signupTitleInput = document.getElementById('signupTitleInput');
+            const nameLabel = document.getElementById('signupNameLabel');
+            const notesLabel = document.getElementById('signupNotesLabel');
+            const notesInput = document.getElementById('signupNotes');
+
+            const boosterFields = document.getElementById('boosterMemberFields');
+            const coachFields = document.getElementById('coachWishlistFields');
+
+            // --- Coach Wishlist: Up to 5 Priority Items ---
+            const addPriorityBtn = document.getElementById('addPriorityBtn');
+            const priorityRows = document.querySelectorAll('#coachWishlistFields .priority-row');
+
+            function updateAddPriorityButton() {
+                const nextHidden = Array.from(priorityRows).find(row => row.classList.contains('d-none'));
+                if (nextHidden) {
+                    const nextNum = nextHidden.getAttribute('data-priority');
+                    addPriorityBtn.classList.remove('d-none');
+                    addPriorityBtn.innerHTML = `<i class="bi bi-plus-circle-fill text-orange me-1"></i> Add Priority #${nextNum} Item (Up to 5)`;
+                } else {
+                    addPriorityBtn.classList.add('d-none');
+                }
+            }
+
+            function resetPriorityRows() {
+                priorityRows.forEach(row => {
+                    const num = row.getAttribute('data-priority');
+                    if (num !== '1') {
+                        row.classList.add('d-none');
+                        row.querySelectorAll('input').forEach(inp => inp.value = '');
+                    }
+                });
+                updateAddPriorityButton();
+            }
+
+            if (addPriorityBtn) {
+                addPriorityBtn.addEventListener('click', function () {
+                    const nextHidden = Array.from(priorityRows).find(row => row.classList.contains('d-none'));
+                    if (nextHidden) {
+                        nextHidden.classList.remove('d-none');
+                        updateAddPriorityButton();
+                    }
+                });
+            }
+
+            document.querySelectorAll('.remove-priority-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const row = btn.closest('.priority-row');
+                    if (row) {
+                        row.classList.add('d-none');
+                        row.querySelectorAll('input').forEach(inp => inp.value = '');
+                        updateAddPriorityButton();
+                    }
+                });
+            });
+
+            function setSectionVisible(sectionEl, visible) {
+                sectionEl.classList.toggle('d-none', !visible);
+                sectionEl.querySelectorAll('input, select, textarea').forEach(el => {
+                    el.disabled = !visible;
+                });
+            }
+
+            // Configure modal fields when opened
+            modalEl.addEventListener('show.bs.modal', function (event) {
+                const btn = event.relatedTarget;
+                const mode = btn ? (btn.getAttribute('data-form-mode') || 'booster-member') : 'booster-member';
+                const title = btn ? (btn.getAttribute('data-signup-title') || 'Join the Booster Club (Free)') : 'Join the Booster Club (Free)';
+
+                titleText.textContent = title;
+                formModeInput.value = mode;
+                signupTitleInput.value = title;
+
+                if (mode === 'coach-wishlist') {
+                    setSectionVisible(boosterFields, false);
+                    setSectionVisible(coachFields, true);
+                    nameLabel.textContent = 'Coach Name *';
+                    notesLabel.textContent = 'How Will This Benefit Your Athletes?';
+                    notesInput.placeholder = 'Optional: Timeline, urgency, or additional details for the board';
+                    submitBtn.innerHTML = 'Submit Wishlist Request';
+                } else {
+                    setSectionVisible(boosterFields, true);
+                    setSectionVisible(coachFields, false);
+                    nameLabel.textContent = 'Member / Family Name *';
+                    notesLabel.textContent = 'Athlete Name(s) & Sports / Notes';
+                    notesInput.placeholder = 'Optional: Student-athlete names, sports, or how you would like to help';
+                    submitBtn.innerHTML = 'Join Booster Club';
+                }
+            });
+
+            // Reset modal cleanly when closed
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                form.reset();
+                resetPriorityRows();
+                form.classList.remove('d-none');
+                successView.classList.add('d-none');
+                errorAlert.classList.add('d-none');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit Form';
+            });
+
+            // Handle submission directly to Google Apps Script
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                errorAlert.classList.add('d-none');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...';
+
+                const activeMode = formModeInput.value;
+
+                try {
+                    const payload = new URLSearchParams(new FormData(form));
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        body: payload
+                    });
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        form.classList.add('d-none');
+                        successView.classList.remove('d-none');
+                        if (activeMode === 'coach-wishlist') {
+                            successHeading.textContent = 'Wishlist Request Sent!';
+                            successMessage.textContent = 'Thank you, Coach! Your prioritized request has been logged for review by the Booster Club board, and a confirmation email is on its way.';
+                        } else {
+                            successHeading.textContent = 'Welcome to the Boosters!';
+                            successMessage.textContent = 'Thank you for supporting New Bloomfield Athletics. A confirmation email has been sent to you.';
+                        }
+                    } else {
+                        throw new Error(result.message || 'Submission failed');
+                    }
+                } catch (err) {
+                    errorAlert.classList.remove('d-none');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = activeMode === 'coach-wishlist' ? 'Submit Wishlist Request' : 'Join Booster Club';
+                }
+            });
+        });
+    </script>
 
     <!-- PWA Service Worker Registration -->
     <script>

@@ -209,7 +209,7 @@
         </div>
     </header>
 
-    <!-- 📋 GUIDELINES & FORM CONTENT -->
+    <!-- 📋 GUIDELINES & ON-PAGE WISHLIST FORM -->
     <main class="py-5">
         <div class="container">
             <!-- 3 Info Cards -->
@@ -219,7 +219,7 @@
                         <div class="card-body">
                             <i class="bi bi-calendar-check display-5 text-orange mb-3 d-inline-block"></i>
                             <h3 class="h6 card-title fw-bold text-dark">Submission Timeline</h3>
-                            <p class="card-text text-secondary small mb-0">Requests are reviewed and approved at the beginning of the school year. For additional requests, please submit request form and notify a member of the board.</p>
+                            <p class="card-text text-secondary small mb-0">Requests are reviewed and approved at the beginning of the school year. For additional requests, please submit the request form below and notify a member of the board.</p>
                         </div>
                     </div>
                 </div>
@@ -243,31 +243,199 @@
                 </div>
             </div>
 
-            <!-- Embedded Google Form Container -->
+            <!-- Native On-Page Wishlist Form Card -->
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-lg-8">
                     <div class="card border-0 shadow rounded-3 overflow-hidden bg-white">
-                        <div class="bg-dark-custom text-white p-3 d-flex justify-content-between align-items-center flex-wrap gap-2 border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
-                            <div>
-                                <h2 class="h6 mb-0 text-white fw-bold text-uppercase">Coaches Wishlist / Funding Request Form</h2>
-                                <span class="small text-white-50"><i class="bi bi-send-check text-orange me-1"></i> Submitted directly to the Booster Club Executive Board</span>
-                            </div>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCkFWM9Kb3kmXvWOhgvZ3v2TDv9AOev7DTFmTEMOk5FhFZyg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-brand-primary">
-                                Open Full Page <i class="bi bi-box-arrow-up-right ms-1"></i>
-                            </a>
+                        <div class="bg-dark-custom text-white p-3 p-md-4 border-bottom border-3" style="border-color: var(--wildcat-orange) !important;">
+                            <h2 class="h5 mb-1 text-white fw-bold text-uppercase">
+                                <i class="bi bi-clipboard-check text-orange me-2"></i>Coaches Wishlist / Funding Request Form
+                            </h2>
+                            <span class="small text-white-50">Submitted directly to the Booster Club Executive Board • List up to 5 items in priority order</span>
                         </div>
-                        <div class="p-2 p-md-3 bg-white text-center">
-                            <iframe 
-                                title="Coaches Wishlist Form"
-                                src="https://docs.google.com/forms/d/e/1FAIpQLSeCkFWM9Kb3kmXvWOhgvZ3v2TDv9AOev7DTFmTEMOk5FhFZyg/viewform?embedded=true" 
-                                width="100%" 
-                                height="850" 
-                                frameborder="0" 
-                                marginheight="0" 
-                                marginwidth="0" 
-                                style="border: none; max-width: 100%;">
-                                Loading…
-                            </iframe>
+
+                        <div class="p-4 p-md-5 bg-white">
+                            <form id="coachWishlistForm">
+                                <input type="hidden" name="formMode" value="coach-wishlist">
+                                <input type="hidden" name="signupTitle" value="Coach Wishlist Request">
+
+                                <!-- Honeypot anti-spam field -->
+                                <div class="d-none" aria-hidden="true">
+                                    <label for="websiteField">Website</label>
+                                    <input type="text" id="websiteField" name="website" tabindex="-1" autocomplete="off">
+                                </div>
+
+                                <!-- Coach Info -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="coachName" class="form-label small fw-bold text-uppercase">Coach Name *</label>
+                                        <input type="text" class="form-control" id="coachName" name="fullName" required placeholder="Your full name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="coachSport" class="form-label small fw-bold text-uppercase">Sport / Program *</label>
+                                        <select class="form-select" id="coachSport" name="coachSport" required>
+                                            <option value="" selected disabled>Select your Wildcat program...</option>
+                                            <option value="HS Boys Basketball">HS Boys Basketball</option>
+                                            <option value="HS Girls Basketball">HS Girls Basketball</option>
+                                            <option value="JH Boys / Girls Basketball">JH Boys / Girls Basketball</option>
+                                            <option value="HS Softball">HS Softball</option>
+                                            <option value="HS Baseball (Fall / Spring)">HS Baseball (Fall / Spring)</option>
+                                            <option value="HS Volleyball">HS Volleyball</option>
+                                            <option value="JH Volleyball">JH Volleyball</option>
+                                            <option value="HS / JH Cross Country">HS / JH Cross Country</option>
+                                            <option value="HS / JH Track & Field">HS / JH Track &amp; Field</option>
+                                            <option value="HS Boys / Girls Golf">HS Boys / Girls Golf</option>
+                                            <option value="HS / JH Cheer">HS / JH Cheer</option>
+                                            <option value="Dance Team">Dance Team</option>
+                                            <option value="Athletic Department / General">Athletic Department / General</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label for="coachEmail" class="form-label small fw-bold text-uppercase">Email Address *</label>
+                                        <input type="email" class="form-control" id="coachEmail" name="email" required placeholder="coach@nb.k12.mo.us">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="coachPhone" class="form-label small fw-bold text-uppercase">Phone Number</label>
+                                        <input type="tel" class="form-control" id="coachPhone" name="phone" placeholder="(573) 555-0123">
+                                    </div>
+                                </div>
+
+                                <!-- Prioritized Items Section -->
+                                <div class="mb-2 d-flex justify-content-between align-items-center flex-wrap gap-1">
+                                    <label class="form-label small fw-bold text-uppercase mb-0">Prioritized Wishlist Items *</label>
+                                    <span class="small text-muted">List up to 5 items (#1 = highest priority)</span>
+                                </div>
+
+                                <!-- Priority #1 (Always Visible & Required) -->
+                                <div class="p-3 bg-light border rounded-3 mb-3 priority-row" data-priority="1">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-dark-custom text-orange text-uppercase">Priority #1 (Top Need) *</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="item1" name="item1" required placeholder="Item description &amp; quantity (e.g., 12 Practice Basketballs)">
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="cost1" name="cost1" required placeholder="Est. cost ($450)">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="link1" name="link1" placeholder="Vendor or product link (optional)">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority #2 -->
+                                <div class="p-3 bg-light border rounded-3 mb-3 priority-row d-none" data-priority="2">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary text-uppercase">Priority #2</span>
+                                        <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn">Remove</button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="item2" name="item2" placeholder="Item description &amp; quantity">
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="cost2" name="cost2" placeholder="Est. cost">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="link2" name="link2" placeholder="Vendor or product link (optional)">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority #3 -->
+                                <div class="p-3 bg-light border rounded-3 mb-3 priority-row d-none" data-priority="3">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary text-uppercase">Priority #3</span>
+                                        <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn">Remove</button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="item3" name="item3" placeholder="Item description &amp; quantity">
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="cost3" name="cost3" placeholder="Est. cost">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="link3" name="link3" placeholder="Vendor or product link (optional)">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority #4 -->
+                                <div class="p-3 bg-light border rounded-3 mb-3 priority-row d-none" data-priority="4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary text-uppercase">Priority #4</span>
+                                        <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn">Remove</button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="item4" name="item4" placeholder="Item description &amp; quantity">
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="cost4" name="cost4" placeholder="Est. cost">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="link4" name="link4" placeholder="Vendor or product link (optional)">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority #5 -->
+                                <div class="p-3 bg-light border rounded-3 mb-3 priority-row d-none" data-priority="5">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary text-uppercase">Priority #5</span>
+                                        <button type="button" class="btn btn-link btn-sm text-danger p-0 text-decoration-none remove-priority-btn">Remove</button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" id="item5" name="item5" placeholder="Item description &amp; quantity">
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="cost5" name="cost5" placeholder="Est. cost">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="link5" name="link5" placeholder="Vendor or product link (optional)">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Add Another Priority Item Button -->
+                                <button type="button" id="addPriorityBtn" class="btn btn-sm btn-outline-dark fw-bold text-uppercase w-100 mb-4">
+                                    <i class="bi bi-plus-circle-fill text-orange me-1"></i> Add Priority #2 Item (Up to 5)
+                                </button>
+
+                                <!-- Notes -->
+                                <div class="mb-4">
+                                    <label for="coachNotes" class="form-label small fw-bold text-uppercase">How Will These Items Benefit Your Athletes?</label>
+                                    <textarea class="form-control" id="coachNotes" name="notes" rows="3" placeholder="Optional: Timeline, urgency, or additional details for the Booster Club board"></textarea>
+                                </div>
+
+                                <div id="wishlistErrorAlert" class="alert alert-danger small d-none" role="alert">
+                                    Something went wrong submitting your request. Please try again or email nbathleticboosterclub@gmail.com.
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="submit" id="wishlistSubmitBtn" class="btn btn-brand-primary btn-lg fw-bold text-uppercase">
+                                        <i class="bi bi-send-fill me-2"></i>Submit Wishlist Request
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- Inline Success Confirmation View -->
+                            <div id="wishlistSuccessView" class="text-center py-4 d-none">
+                                <i class="bi bi-check-circle-fill text-orange display-3 mb-3 d-block"></i>
+                                <h3 class="h4 fw-bold text-uppercase mb-2">Wishlist Request Submitted!</h3>
+                                <p class="text-secondary col-md-8 mx-auto mb-4">
+                                    Thank you, Coach! Your prioritized wishlist has been logged for review by the Booster Club Executive Board, and a confirmation email has been sent to your inbox.
+                                </p>
+                                <button type="button" id="submitAnotherBtn" class="btn btn-outline-dark fw-bold text-uppercase px-4">
+                                    <i class="bi bi-plus-circle me-1"></i> Submit Another Request
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,8 +443,7 @@
         </div>
     </main>
 
-
-     <!-- 🦶 FOOTER (4-Column Layout with Venmo Donation) -->
+    <!-- 🦶 FOOTER (4-Column Layout with Venmo Donation) -->
     <footer id="contact">
         <div class="footer-inner">
             <!-- Col 1: About -->
@@ -285,7 +452,6 @@
                 <p style="font-size: 0.88rem; max-width: 360px; color: #aaaaaa; margin: 0 0 12px 0;">
                     Empowering student-athletes, supporting coaches, and building Wildcat pride throughout Callaway County, Missouri.
                 </p>
-               
             </div>
 
             <!-- Col 2: Navigation -->
@@ -336,7 +502,106 @@
             <p class="mb-0">&copy; 2026 New Bloomfield Athletic Booster Club. All Rights Reserved.</p>
         </div>
     </footer>
+
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 📩 5-Item Prioritized Coach Wishlist Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyDxqd7bT0Q7zJj7DGlTqjb-h49H599cF6lDUOkSGZ_-waHeJ2J5fyu_Uod3QPSM4RpvQ/exec';
+
+            const form = document.getElementById('coachWishlistForm');
+            const submitBtn = document.getElementById('wishlistSubmitBtn');
+            const successView = document.getElementById('wishlistSuccessView');
+            const errorAlert = document.getElementById('wishlistErrorAlert');
+            const submitAnotherBtn = document.getElementById('submitAnotherBtn');
+
+            const addPriorityBtn = document.getElementById('addPriorityBtn');
+            const priorityRows = document.querySelectorAll('#coachWishlistForm .priority-row');
+
+            function updateAddPriorityButton() {
+                const nextHidden = Array.from(priorityRows).find(row => row.classList.contains('d-none'));
+                if (nextHidden) {
+                    const nextNum = nextHidden.getAttribute('data-priority');
+                    addPriorityBtn.classList.remove('d-none');
+                    addPriorityBtn.innerHTML = `<i class="bi bi-plus-circle-fill text-orange me-1"></i> Add Priority #${nextNum} Item (Up to 5)`;
+                } else {
+                    addPriorityBtn.classList.add('d-none');
+                }
+            }
+
+            function resetPriorityRows() {
+                priorityRows.forEach(row => {
+                    const num = row.getAttribute('data-priority');
+                    if (num !== '1') {
+                        row.classList.add('d-none');
+                        row.querySelectorAll('input').forEach(inp => inp.value = '');
+                    }
+                });
+                updateAddPriorityButton();
+            }
+
+            if (addPriorityBtn) {
+                addPriorityBtn.addEventListener('click', function () {
+                    const nextHidden = Array.from(priorityRows).find(row => row.classList.contains('d-none'));
+                    if (nextHidden) {
+                        nextHidden.classList.remove('d-none');
+                        updateAddPriorityButton();
+                    }
+                });
+            }
+
+            document.querySelectorAll('.remove-priority-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const row = btn.closest('.priority-row');
+                    if (row) {
+                        row.classList.add('d-none');
+                        row.querySelectorAll('input').forEach(inp => inp.value = '');
+                        updateAddPriorityButton();
+                    }
+                });
+            });
+
+            if (submitAnotherBtn) {
+                submitAnotherBtn.addEventListener('click', function () {
+                    form.reset();
+                    resetPriorityRows();
+                    successView.classList.add('d-none');
+                    form.classList.remove('d-none');
+                    errorAlert.classList.add('d-none');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i>Submit Wishlist Request';
+                });
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                errorAlert.classList.add('d-none');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...';
+
+                try {
+                    const payload = new URLSearchParams(new FormData(form));
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        body: payload
+                    });
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        form.classList.add('d-none');
+                        successView.classList.remove('d-none');
+                    } else {
+                        throw new Error(result.message || 'Submission failed');
+                    }
+                } catch (err) {
+                    errorAlert.classList.remove('d-none');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i>Submit Wishlist Request';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
