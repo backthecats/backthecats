@@ -1146,6 +1146,36 @@
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	
+	<!-- 🗓️ Auto-Select Current Sports Season Tab -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const now = new Date();
+            // Convert current date to MMDD format (e.g., Nov 23 = 1123, Mar 1 = 301)
+            const mmdd = (now.getMonth() + 1) * 100 + now.getDate();
+
+            let targetTabId;
+
+            if (mmdd >= 715 && mmdd < 1110) {
+                // Fall Sports: July 15 – November 9
+                targetTabId = 'fall-tab';
+            } else if (mmdd >= 301 && mmdd < 715) {
+                // Spring Sports: March 1 – July 14
+                targetTabId = 'spring-tab';
+            } else {
+                // Winter Sports: November 10 – February 28/29
+                targetTabId = 'winter-tab';
+            }
+
+            // Allow direct links like athletics.html#spring to override auto-detection
+            const hashMap = { '#fall': 'fall-tab', '#winter': 'winter-tab', '#spring': 'spring-tab' };
+            if (hashMap[window.location.hash]) {
+                targetTabId = hashMap[window.location.hash];
+            }
+
+            const tabTrigger = document.getElementById(targetTabId);
+            if (tabTrigger && typeof bootstrap !== 'undefined') {
+                bootstrap.Tab.getOrCreateInstance(tabTrigger).show();
 
     <!-- PWA Service Worker Registration -->
     <script>
